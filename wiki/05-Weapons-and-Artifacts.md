@@ -1,62 +1,185 @@
-# 05. Weapons & Artifacts Arsenal (All 27 Items) / 武器・アーティファクト・三越商会アイテム完全図鑑
+# 05. 全29種 3D武器・魔道具・消費アイテム完全図鑑（Weapons & Artifacts Catalog）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 04. "I Am Atomic" Magic System](04-I-Am-Atomic.md) | [➡️ Next: 06. Bosses, Mastery Ranks & Companions](06-Bosses-and-Companions.md)
-
----
-
-![3D Weapons & Arsenal](../docs/images/screenshot_1_arsenal.png)
-
-Every weapon in this mod features a **custom 3D model**, **unbreakable Slime/Mana infusion** (or infinite scaling), **passive on-hit effects**, and up to **two active skills** (**Right-Click** and **Sneak + Right-Click**).
-本MODに収録されている全27種の武器・アーティファクト・消費アイテムの完全データシートです。すべての武器は固有の3Dモデル、パッシブ効果、右クリックスキル（さらに主要武器はスニーク＋右クリックの第2スキル）を備えています。
+[⬅ 前章：04. 究極奥義『I am Atomic.』](04-I-Am-Atomic.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：06. 全26体 ボス攻略＆仲間化 ➔](06-Bosses-and-Companions.md)
 
 ---
 
-## 🗡️ 8.1 Core Shadow & Seven Shadows Weapons / シャドウ＆七陰のメイン武器（10種）
-
-| # | Weapon / 武器名<br>(`Registry ID`) | Total ATK / 攻撃力<br>(Attack Speed) | Passive On-Hit Effect / 通常攻撃パッシブ | Right-Click Skill / 右クリックスキル<br>(Mana Cost / Cooldown) | Sneak + Right-Click Skill / スニーク＋右クリックスキル<br>(Mana Cost / Cooldown) |
-| :-: | :--- | :---: | :--- | :--- | :--- |
-| **1** | **Slime Sword**<br>スライムソード<br>`slime_sword` | **`12.0` + Rank Bonus**<br>(`1.6` SPD)<br>*Unbreakable* | **Mana Overdrive**: When Current Mana `>= 50%`, deals **`+30%` Bonus Magic Damage** (`1.3x`). Scales up to `+12.0` additional base damage at Rank 8 (`24.0` base!). | **Slime Edge Wave / 魔力斬撃波**<br>(`20 Mana` / `20t = 1.0s`)<br>Fires a piercing slime crescent wave up to `24m`, dealing **`16.0 + (Rank × 2.5)` Magic Damage** in a `2.5m` radius along its path. | **Overdrive Thrust / 空間圧縮突進斬り**<br>(`35 Mana` / `45t = 2.25s`)<br>Teleports/lunges `9m` forward, striking all enemies along the path for **`26.0 + (Rank × 3.5)` Magic Damage** + **`[EXPOSED]` (`3s`)**. *(Also enables `G` Key "I Am Atomic"!)* |
-| **2** | **Golden Crowbar**<br>黄金のバール<br>`golden_crowbar` | **`11.0`**<br>(`1.8` SPD)<br>*Unbreakable* | **Aesthetic Multi-Hit**: Every melee swing strikes **twice** (main hit + `4.5` follow-up blunt magic damage) with high knockback (`+0.4`). | **Stylish execution / 黄金の破滅刻印**<br>(`30 Mana` / `50t = 2.5s`)<br>Slams targets within `5m` for **`18.0` Damage** and brands them with **`[GOLDEN_DOOM]`** (`60t`), which detonates for **`28.0` Golden Explosion Damage** + upward launch! | **Mob-Fu Parry Stance / モブ式カウンター構え**<br>(`20 Mana` / `40t = 2.0s`)<br>Grants **Resistance III (`1.5s`) + Speed II (`3s`)** and immediately triggers an AoE shockwave (`14.0` dmg + `+30 Posture`) around you. |
-| **3** | **Alpha's Slime Blade**<br>アルファの黒刃<br>`alpha_blade` | **`14.0`**<br>(`1.7` SPD)<br>*Unbreakable* | **First Seat Precision**: Deals **`+25%` Bonus Damage** to targets above `70%` HP and restores **`+4 Mana`** per melee hit. | **Mist Flash Step / 霧閃・瞬歩一閃**<br>(`30 Mana` / `35t = 1.75s`)<br>Shadow-steps up to `12m` through enemies, dealing **`28.0` Magic Damage** and applying **`[EXPOSED]` (`80t / 4s`)** + **`+25 Posture`**. | **Commander's Judgment / 七陰筆頭の号令**<br>(`45 Mana` / `80t = 4.0s`)<br>Unleashes a `7m` golden-black radial slash for **`36.0` Magic Damage** and grants you & nearby allies **Strength II + Speed II (`8s`)**. |
-| **4** | **Beta's Magic Bow & Quill**<br>ベータの魔導弓<br>`beta_bow` | **`10.0` Melee**<br>**`18.0` Arrow**<br>*No Arrows Needed* | **Chronicle Shot**: Fires high-velocity mana arrows without consuming vanilla arrows. Melee hits apply **Slowness II (`2s`)**. | **Starlight Volley / 星光の連射**<br>(`25 Mana` / `25t = 1.25s`)<br>Fires a 5-arrow fan barrage of piercing mana arrows (`22.0` Magic Damage each, `0` gravity drop) that apply **Glowing (`6s`)**. | **Natsume's Finale / 漆黒の叙事詩・終章**<br>(`45 Mana` / `70t = 3.5s`)<br>Calls down a rain of魔力 arrows in an `8m` target zone (`25m` range), dealing **`34.0` AoE Magic Damage** + **Slowness IV (`3s`)**. |
-| **5** | **Gamma's Slime Sword**<br>ガンマのスライム剣<br>`gamma_sword` | **`13.0`**<br>(`1.4` SPD)<br>*Unbreakable* | **Unpredictable Trip**: Each melee swing has a **`35%` chance to trigger a Comic Trip Shockwave**, dealing **`2.5x` (`32.5`) AoE Damage** + **`[CONDUCTIVE]`**! | **Tripping Calamity / 最強の転倒スラッシュ**<br>(`35 Mana` / `45t = 2.25s`)<br>Lunges wildly forward (`1.6` speed) and faceplants into a massive **`6m` explosion**, dealing **`42.0` Magic Damage** + **`[CONDUCTIVE]` (`5s`)** to all enemies (0 self-damage!). | **Mitsugoshi Gold Bribe / 三越商会の札束攻勢**<br>(`30 Mana` / `60t = 3.0s`)<br>Scatters explosive gold coins in a `6m` radius for **`26.0` Magic Damage**, stunning mobs (`30t`) and granting **Absorption II (`10s`)**. |
-| **6** | **Delta's Feral Greatsword**<br>デルタの剛剣<br>`delta_greatsword` | **`17.0`**<br>(`1.1` SPD)<br>*Unbreakable* | **Beast Hunt**: Inflicts **`[BLEED]` (+1 Stack)** on every hit and restores **`2.0 HP`** when striking a bleeding enemy. | **Feral Leap Slam / 獣王の跳躍粉砕**<br>(`35 Mana` / `45t = 2.25s`)<br>Leaps forward and slams the ground (`6.5m` radius) for **`38.0` Physical/Magic Damage**, inflicting **+2 `[BLEED]` Stacks** and **`+35 Posture`**. | **Predator Rampage / 狩りの時間です！**<br>(`50 Mana` / `90t = 4.5s`)<br>Enters a feral frenzy: **Strength III + Speed III + Resistance II (`8s`)** and releases a **`7m` roar (`28.0` Damage + Slowness III)**. |
-| **7** | **Epsilon's Slime Conductor**<br>イプシロンの魔力細剣<br>`epsilon_blade` | **`12.5`**<br>(`1.8` SPD)<br>*Unbreakable* | **99% Slime Precision**: Reduces the **Mana Cost of all Weapon Skills by `-20%`** while held and fires a `6m` micro-wave (`+5.0` magic dmg) on every swing. | **Sonata Slash Array / 魔力収束・協奏斬**<br>(`24 Mana` / `30t = 1.5s`)<br>Fires 3 converging long-range mana crescents (`28m` range), each dealing **`15.0` Magic Damage** (`45.0` total on single target). | **Slime Armor Reinforcement / 精密スライム装甲展開**<br>(`35 Mana` / `65t = 3.25s`)<br>Condenses high-density slime barriers, granting **Absorption IV (`15s`) + Regeneration II (`8s`)** and pushing enemies back (`18.0` dmg). |
-| **8** | **Zeta's Beast Claw**<br>ゼータの隠密鉤爪<br>`zeta_claw` | **`12.0`**<br>(`2.2` SPD)<br>*Unbreakable* | **Shadow Assassination**: Attacks from behind or while invisible deal **`2.0x` Critical Damage** and apply **`[BLEED]` (+1 Stack)**. | **Phantom Ambush / 影猫の瞬獄殺**<br>(`25 Mana` / `30t = 1.5s`)<br>Teleports directly behind the targeted enemy within `16m`, striking for **`30.0` Backstab Magic Damage** + **+2 `[BLEED]` Stacks** + **Invisibility (`4s`)**. | **Smoke Screen Vanish / 隠密煙幕・神隠し**<br>(`30 Mana` / `55t = 2.75s`)<br>Blinds & slows enemies within `6m` (`16.0` Damage + **Blindness `4s`**) while granting **Invisibility + Speed III (`6s`)**. |
-| **9** | **Eta's Mad Wrench**<br>イータの魔導レンチ<br>`eta_wrench` | **`11.5`**<br>(`1.5` SPD)<br>*Unbreakable* | **Artifact Analysis**: Every hit has a **`40%` chance** to inflict **`[EXPOSED]` (`4s`)** or **`[SILENCED]` (`3s`)** while draining **`+6 Mana`** for the wielder. | **EMP Suppression Field / 魔力阻害パルス展開**<br>(`35 Mana` / `50t = 2.5s`)<br>Emits an `8m` technological pulse dealing **`24.0` Magic Damage** and applying **`[SILENCED]` (`100t / 5s` — Seals Boss Skills!)** + **`[EXPOSED]` (`5s`)**. | **Gravity Anomaly Trap / 重力異常フィールド**<br>(`45 Mana` / `75t = 3.75s`)<br>Pulls all enemies within `9m` into a singularity (`32.0` Magic Damage + **Slowness V `4s`** + **`+40 Posture`**). |
-| **10** | **John Smith's Monofilament Gloves**<br>ジョン・スミスの鋼糸手袋<br>`john_smith_gloves` | **`12.5`**<br>(`2.0` SPD)<br>*Unbreakable* | **Steel Thread Snare**: Melee range extended by floating threads; hits apply **Slowness II (`3s`)** and **`[BLEED]` (+1 Stack)**. | **Monofilament Web Bind / 鋼糸結界・拘束切断**<br>(`30 Mana` / `35t = 1.75s`)<br>Slices all enemies within a `9m` radius with razor threads for **`28.0` Magic Damage**, inflicting **Slowness V (`3.5s`)** + **+2 `[BLEED]` Stacks** and pulling them inward. | **Puppeteer's Execution / 糸の処刑場**<br>(`45 Mana` / `65t = 3.25s`)<br>Detonates all thread-bound / bleeding targets within `12m` for **`38.0` Armor-Bypassing Damage** + **`[EXPOSED]` (`5s`)**. |
+> [!NOTE]
+> - 表中の **「攻撃力」** はプレイヤー基礎攻撃力（`1.0`）を含めたゲーム内表示の合計近接物理攻撃力、**「攻撃速度」** はプレイヤー基礎値（`4.0`）からの実効値です。
+> - **「通常攻撃追撃」** は近接攻撃命中時に `1 MP`（99%スーツ時）を消費して物理無敵時間を貫通して与える追加魔法ダメージです。
+> - スキルの **「消費MP」** は基礎値（99%フルスライムスーツ着用時は `1.01倍`）を表記しています。
 
 ---
 
-## ⚔️ 8.2 Heroic, Royal & Numbers Weapons / 英雄・王族・ナンバーズ・幹部武器（14種）
+## 1. シャドウ / シド・カゲノー系武器・魔道具（全9種）
 
-| # | Weapon / 武器名<br>(`Registry ID`) | Total ATK / 攻撃力<br>(Attack Speed) | Passive On-Hit Effect / 通常攻撃パッシブ | Right-Click Skill / 右クリックスキル<br>(Mana Cost / Cooldown) |
-| :-: | :--- | :---: | :--- | :--- |
-| **11** | **Blood Queen's Scythe**<br>血の女王エリザベートの鎌<br>`blood_queen_scythe` | **`15.0`**<br>(`1.3` SPD) | **Vampiric Harvest**: Inflicts **`[BLEED]` (+1 Stack)** and heals the wielder for **`25%` of damage dealt** (`+50%` vs bleeding targets). | **Crimson Moon Harvest / 紅月の血鎌乱舞** (`40 Mana` / `45t = 2.25s`)<br>Sweeps a `7.5m` crimson crescent around the caster for **`34.0` Magic Damage**, applying **+3 `[BLEED]` Stacks** and healing **`4.0 HP` per enemy hit** (up to `24.0 HP`). |
-| **12** | **Mist Dragon Blade**<br>霧の竜刃（ミストドラゴン）<br>`mist_dragon_blade` | **`15.5`**<br>(`1.6` SPD) | **Immortal Dragon Breath**: Applies **`[VOIDMARK]` (`5s`)** on hit; next heavy hit detonates for **`+40%` Bonus Damage** + **`+15 Mana`**. | **Mist Dragon Breath / 霧竜の咆哮ブレス** (`40 Mana` / `45t = 2.25s`)<br>Unleashes a `16m` cone of poisonous draconic mist dealing **`36.0` Magic Damage**, applying **`[VOIDMARK]`** + **Wither II (`5s`)** + **Weakness II (`5s`)**. |
-| **13** | **Olivier's Hero Sword**<br>英雄オリヴィエの聖剣<br>`olivier_sword` | **`16.0`**<br>(`1.7` SPD) | **Hero's Sanctuary**: Deals **`+30%` Bonus Damage** to Bosses & Cult entities and inflicts **`[FROSTBITE]` (`4s`)**. | **Sanctuary Judgment Slash / 聖域の断罪剣** (`45 Mana` / `50t = 2.5s`)<br>Dashes forward `10m` with a blinding holy-azure wave, dealing **`40.0` Magic Damage** in a `5m` width, applying **`[FROSTBITE]` (`5s`)** + **`[EXPOSED]` (`4s`)**. |
-| **14** | **Aurora's Violet Spear**<br>厄災の魔女アウロラの血槍<br>`aurora_spear` | **`15.5`**<br>(`1.5` SPD) | **Calamity Blood Pierce**: Pierces armor (`+4.0` bypass damage) and applies **`[BLEED]` (+2 Stacks)** on every thrust. | **Diabolos Blood Rain / 魔人ディアボロスの血槍雨** (`45 Mana` / `50t = 2.5s`)<br>Summons erupting blood spears in an `8.5m` radius around the target (`20m` range), dealing **`38.0` Magic Damage** + **+3 `[BLEED]` Stacks** (instant Hemorrhage trigger!). |
-| **15** | **Beatrix's Elven Blade**<br>剣聖ベアトリクスのエルフ剣<br>`beatrix_blade` | **`14.5`**<br>(`1.9` SPD) | **Goddess of War**: Grants **Speed I** while held; melee hits apply **`[FROSTBITE]` (`3s`)** and **`+15 Posture`**. | **Goddess Gale Flurry / 武神の疾風連斬** (`30 Mana` / `35t = 1.75s`)<br>Executes a 4-hit high-speed sword combo across `6m` (`4 × 9.0 = 36.0` total Magic Damage), applying **`[FROSTBITE]`** + **`+35 Posture`** and granting **Speed III (`5s`)**. |
-| **16** | **Iris's Crimson Broadsword**<br>アイリス王女の紅蓮大剣<br>`iris_broadsword` | **`15.0`**<br>(`1.4` SPD) | **Crimson Flame**: Ignites targets for **`6 seconds`** and deals **`+4.0` Fire/Magic Damage** to burning enemies. | **Artifact Inferno Eruption / 紅蓮の覇王斬** (`40 Mana` / `45t = 2.25s`)<br>Slams the flaming broadsword to create an `8m` firestorm pillar, dealing **`36.0` Fire/Magic Damage**, igniting enemies for `8s`, and inflicting **`+30 Posture`**. |
-| **17** | **Alexia's Royal Rapier**<br>アレクシア王女の王家細剣<br>`alexia_rapier` | **`13.0`**<br>(`1.8` SPD) | **Fencer's Form**: Perfect fundamentals—grants **`+20%` Counter Damage** after parrying or dashing and applies **`[FROSTBITE]` (`3s`)**. | **Ordinary Fencer's Perfection / 凡人の極致・王家正統剣** (`25 Mana` / `30t = 1.5s`)<br>Lunges `8m` with textbook precision, dealing **`28.0` Armor-Piercing Magic Damage**, applying **`[FROSTBITE]` (`4s`)** + **`[EXPOSED]` (`4s`)**, and resetting Dash CD! |
-| **18** | **Rose's Royal Rapier (666)**<br>ローズ（666番）の王剣<br>`rose_rapier` | **`13.5`**<br>(`1.8` SPD) | **Queen's Resolve**: Applies **`[SILENCED]` (`3s`)** on critical hits and restores **`+5 Mana`** per strike. | **Golden Petal Storm / 黄金薔薇の連突** (`30 Mana` / `35t = 1.75s`)<br>Unleashes a `7m` flurry of golden rose thrusts for **`30.0` Magic Damage**, inflicting **`[SILENCED]` (`4s`)** and granting **Resistance II (`5s`)**. |
-| **19** | **Victoria's Rose Blade (559)**<br>ヴィクトリア（559番）の聖剣<br>`victoria_blade` | **`14.5`**<br>(`1.7` SPD) | **Zealot's Devotion**: Inflicts **`[BLEED]` (+1 Stack)** and deals **`+25%` Damage** while the wielder is above `80%` HP. | **Saint's Crimson Judgment / 第559番・狂信の聖光斬** (`35 Mana` / `40t = 2.0s`)<br>Fires a cross-shaped crimson-gold wave (`18m` range), dealing **`34.0` Magic Damage** + **+2 `[BLEED]` Stacks** + **`[EXPOSED]` (`4s`)**. |
-| **20** | **Claire's Crimson Rapier**<br>クレアの紅細剣<br>`claire_rapier` | **`13.5`**<br>(`1.8` SPD) | **Possessed Bloodline**: Applies **`[BLEED]` (+1 Stack)** and **`[SILENCED]` (`2s`)** on hit. | **Aurora's Borrowed Seal / 暴走魔力・紅の縛鎖** (`30 Mana` / `40t = 2.0s`)<br>Binds all enemies within `7m` in crimson magic chains for **`30.0` Magic Damage**, applying **`[SILENCED]` (`5s`)** + **Slowness IV (`4s`)** + **+2 `[BLEED]` Stacks**. |
-| **21** | **Yukime's Nine-Tailed Fan**<br>ユキメの九尾鉄扇<br>`yukime_fan` | **`12.5`**<br>(`1.9` SPD) | **White Fox Illusion**: Applies **`[FROSTBITE]` (`4s`)** and **Weakness I (`3s`)** on hit. | **Blizzard Fox Mirage / 白狐の吹雪幻影** (`30 Mana` / `40t = 2.0s`)<br>Whips up a `9m` freezing cyclone for **`28.0` Magic Damage**, applying **`[FROSTBITE]` (`6s`)** + **Slowness IV (`4s`)**, and grants **Invisibility + Speed II (`5s`)**. |
-| **22** | **Crimson's Lion Claws**<br>紅蓮の獅子クリムゾンの鉤爪<br>`crimson_claws` | **`13.5`**<br>(`2.0` SPD) | **Savage Rending**: Inflicts **`[BLEED]` (+1 Stack)** and ignites targets for `4s`. | **Flame Claw Ripper / 紅蓮獅子の裂傷乱舞** (`30 Mana` / `35t = 1.75s`)<br>Slashes forward `7m` in a fiery X-pattern for **`30.0` Fire/Magic Damage** + **+2 `[BLEED]` Stacks**. |
-| **23** | **Juggernaut's Tyrant Cleaver**<br>暴君ジャガーノートの大鉈<br>`juggernaut_cleaver` | **`16.5`**<br>(`1.1` SPD) | **Lawless Crusher**: Deals **`+25 Posture Damage`** per heavy swing and applies **`[BLEED]` (+1 Stack)**. | **Tyrant Earthshatter / 無法都市の覇王断** (`40 Mana` / `50t = 2.5s`)<br>Crushes the ground in a `6.5m` radius for **`38.0` Damage**, dealing **`+45 Posture Damage`** (instant or near-instant Posture Break!) and launching enemies. |
-| **24** | **Lambda's Tactical Whip-Blade**<br>ラムダ教官の魔導鞭剣<br>`lambda_whip` | **`13.0`**<br>(`1.7` SPD) | **Instructor's Discipline**: Extended sweep reach; applies **`[CONDUCTIVE]` (`4s`)** and **`[EXPOSED]` (`3s`)**. | **Shadow Garden Drill Lash / 鬼教官の雷鳴鞭打** (`30 Mana` / `35t = 1.75s`)<br>Lashes an `8.5m` arc in front of the player for **`28.0` Magic Damage**, applying **`[CONDUCTIVE]` (`6s`)** (triggering Chain Lightning across all hit targets!) + **`[EXPOSED]` (`4s`)**. |
+### ① 『漆黒の剣』（Jet-Black Sword）
+- **アイテムID**: `eminence_shadow:atomic_sword`
+- **入手方法**: ボス「シャドウ」撃破ドロップ / シャドウ撃破後にフルスライムスーツ＋素手 `Shift + 右クリック` で具現化
+- **基本性能**: 攻撃力 **`40.0`** ｜ 攻撃速度 **`2.15`** ｜ 射程 **`+1.25`** ｜ 移動速度 **`+8%`** ｜ 通常攻撃追撃 **`+35.0` 魔法ダメージ**
+- **パッシブ効果**: 最大MP `+2,000` ＆ 自然回復 `+28.0 MP/s` 共鳴 / 地上・空中で `Space × 2` による **無制限高速移動（瞬駆）** / フルスーツ時自動修復
+
+| 技番号 | スキル名（日 / 英） | 消費MP | CT (硬直) | 詳細効果・威力 |
+| :---: | :--- | :---: | :---: | :--- |
+| **1** | **ファントムブレード**<br/>*(Phantom Blade)* | `1 MP` | `0.4s` (8t) | 前方へ最大5体貫通する漆黒の三日月魔力斬撃（威力 **`120.0`**）を高速発射する主力牽制技。 |
+| **2** | **オーバーロード連斬**<br/>*(Overload Barrage)* | `3 MP` | `0.8s` (16t) | 前方扇状に7枚の漆黒魔力斬撃（**`84.0 × 7枚`** ＝ 最大 **`588.0`**）を同時掃射する広域弾幕技。 |
+| **3** | **陰に潜む閃撃**<br/>*(Shadow Lurker Blitz)* | `45 MP` | `1.2s` (14t) | **霧化無敵（0.9秒 / 18 ticks）** を得ると同時に半径18m以内の敵の背後へ瞬間移動し、至近距離から直接魔法撃（**`180.0`**）＋3連扇状斬撃（**`120.0 × 3`**）を叩き込む（敵不在時は前方へ高速突進＋3連斬撃）。 |
+| **4** | **スライム防壁展開**<br/>*(Slime Barrier)* | `90 MP` | `3.0s` (10t) | **`10.0秒間（200 ticks）`** スライム防壁と耐性IIを展開。効果中は **全被ダメージを75%軽減**（スーツのMP消費も75%節約）し、**飛来するすべての飛び道具を完全遮断**する。 |
+| **5** | **I am Recovery Atomic.** | `350 MP` | `8.0s` (20t) | 半径40mの浄化波動。自身と味方全員のHP・満腹度を100%全快＋全デバフ解除＋味方に `+500 MP` 供給＋再生II・耐性II・移動速度I付与＋村人ゾンビを村人へ即時蘇生。敵には通常Mob **`1,800`**（プレイヤー発動時のボス **`180`**）×距離減衰ダメージ。地形非破壊。 |
+| **6** | **I am Atomic.** | `500 MP` | `30.0s` (10t) | 5.0秒詠唱の究極奥義。姿勢により **通常球体 / 指向性ビーム(Shift) / 天蓋ピラー(真上 Pitch <= -45°)** に分岐。半径100mに **固定 `5,000` ダメージ**。 |
+| **7** | **I am the All-Range Atomic.** | `750 MP` | `30.0s` (10t) | 6.5秒詠唱の超広域抹消奥義。通常の1.25倍（半径125m）の空間を削り取り、範囲内の全敵対者に **固定 `7,500` ダメージ** を与える。 |
+| **8** | **スライム収納**<br/>*(Absorb into Suit)* | `0 MP` | 即時 | *(フルスライムスーツ着用時のみ選択可)* 漆黒の剣をスーツへ吸収して消し、**MPを `+150.0` 即時回復**する。 |
+
+### ② 『開闢の漆黒剣』（Archetype Shadow Blade）
+- **アイテムID**: `eminence_shadow:archetype_slime_blade`
+- **入手方法**: クラフト（ネザースター ＋ エンダーパール×2 ＋ 漆黒の剣 ＋ スライムブロック）
+- **基本性能**: 攻撃力 **`36.0`** ｜ 攻撃速度 **`2.10`** ｜ 射程 **`+1.10`** ｜ 移動速度 **`+10%`** ｜ 通常攻撃追撃 **`+28.0`（会心 `+48.0`）**
+- **パッシブ効果**: 味方の第一席アルファが半径16m以内にいる状態で奥義（技3・技5）を放つと、アルファが5連斬撃（`62.0 × 5`、防御35%貫通）で追撃する **【アトミック・ユニゾン】** が発動！
+
+| 技番号 | スキル名（日 / 英） | 消費MP | CT (硬直) | 詳細効果・威力 |
+| :---: | :--- | :---: | :---: | :--- |
+| **1** | **ファントム・ストライク** | `18 MP` | `1.2s` (10t) | 自身に **『絶禍』（4秒）** を無条件付与しつつ高速突進し、周囲6mの敵の **吸収と耐性バフを完全剥奪＆盾を破壊** して **`95.0`** 魔法ダメージ。 |
+| **2** | **プレ・アトミック** | `24 MP` | `1.7s` (12t) | 6方向へ防御45%貫通の紫電斬撃（**`82.0 × 6`**）＋周囲8.5mに **`68.0`** ダメージ＆移動速度低下VI（3秒）＆弱体化II（5秒）。 |
+| **3** | **I am Archetype Atomic.** | `260 MP` | `5.0s` (16t) | 3.5秒高速詠唱・**ブロック非破壊・味方誤射なし**。敵に **固定 `3,600` ダメージ**＋吸収剥奪＆弱体化II、術者は **HP 25%回復＋クロノバースト（15秒）＋自動パリィ3チャージ（15秒）＋スライム防壁（7秒）** 獲得。 |
+| **4** | **I am Catastrophe Atomic.** | `420 MP` | `6.0s` (18t) | 3.5秒高速詠唱・**ブロック破壊あり**。半径最大48mに **固定 `6,400` ダメージ**＋吸収剥奪・**『堕落』『業火』『体勢崩し』** 付与。 |
+| **5** | **アポカリプス・ドライブ** | `48 MP` | `2.0s` (14t) | 自身に **『絶禍』（9秒）＋ 攻撃力上昇II（10秒）**＋前方へ防御50%貫通の巨大十文字斬撃（**`145.0 × 2`**）。 |
+
+### ③ 『ジョン・スミスの極細鋼糸』（`micro_threads`）
+- **基本性能**: 攻撃力 **`20.0`** ｜ 攻撃速度 **`2.40`** ｜ 射程 **`+0.75`** ｜ 移動速度 **`+8%`** ｜ 通常攻撃追撃 **`+28.0`（会心 `+48.0`）**
+- **技1（鋼糸・偽りの防御態勢 / `6 MP`）**: 15m立体機動グラップル跳躍（落下ダメ無効36t）。
+- **技2（スーパーエリートエージェント / `24 MP`）**: 1回目で周囲15m（最大10体）を捕縛し、2回目で指パッチン一斉切断 **`135.0`**（『シャドウの暗号メモ』所持で消費MP-15%還元＆**`162.0`＋3秒スタン**）。
+- **技3（鋼糸・魔力撹乱波 / `14 MP`）**: 5連ダート（**`52.0 × 5`**、防御30%貫通）。
+
+### ④ 『シャドウの暗号メモ』（`shadow_encrypted_memo`）
+- ホットバー/オフハンド所持で極細鋼糸を強化。右クリック（`18 MP` / CT `7.0s`）で **スライム防壁（4.5秒）＋『鋼糸』2スタック＋速度I（5秒）**。
+
+### ⑤ 『地味な剣』（`plain_sword`）
+- **基本性能**: 攻撃力 **`20.0`** ｜ 攻撃速度 **`2.15`** ｜ 射程 **`+0.40`** ｜ 移動速度 **`+6%`** ｜ 通常攻撃追撃 **`+8.0`（会心時 `+48.0`！）**
+- **技1（無銘の剣閃 / `10 MP`）**: 防御38%貫通 **`64.0`** ／ **技2（……残像だ / `26 MP`）**: 霧化無敵0.7秒＋背後転移 **`74.0 × 3`**（防御45%貫通）。
+
+### ⑥ 『切り裂きジャックの血染トランプ』（`jack_cards`）
+- **技1（真紅トランプ乱擲 / `10 MP`）**: 5枚連投 **`48.0 × 5`**（防御32%貫通）＋『出血』+1。
+- **技2（血霧の背後執行 / `32 MP`）**: 霧化無敵0.9秒＋背後転移＋『出血』+2＋**`105.0 × (1 + 0.16×出血)`**（出血2以上で半径4.5m血霧爆発追加）。
+
+### ⑦ 『ミスリルの剣（魔力伝導率50%）』（`mithril_sword`）
+- **基本性能**: 攻撃力 **`13.0`** ｜ 攻撃速度 **`1.80`** ｜ 射程 **`+0.25`** ｜ 移動速度 **`+2%`** ｜ 通常攻撃追撃 **`+9.0`（会心 `+16.0`）** ｜ 伝導率最低 **`50%`** 保証。
+- **技1（蒼銀魔力斬 / `12 MP`）**: 威力 **`48.0`** ／ **技2（魔力突進閃 / `20 MP`）**: 突進 **`62.0`**。
+
+### ⑧ 『シャドウの愛用のバール』（`crowbar`） & ⑨ 『モブ式奥義四十八手』（`mob_secret_arts`）
+- **バール**: 攻撃力 **`8.0`** ｜ 攻撃速度 **`1.80`** ｜ 強ノックバック＋盾100%破壊。
+- **モブ式奥義四十八手**: 技1『10分間臨死体験』（`12 MP`: 5秒無敵・透明化・耐性IV＋周囲26mの敵対心完全解除）／ 技2『スピン血飛沫』（`8 MP`: 霧化0.7秒＋後方跳躍）。
 
 ---
 
-## 🔮 8.3 Artifacts & Mitsugoshi Co. Luxury Consumables / 古代アーティファクト＆三越商会アイテム（3種）
+## 2. 七陰（Seven Shadows）専用3D武器（全7種・各5技収録）
 
-| # | Item / アイテム名<br>(`Registry ID`) | Category / 分類 | Effect & Mechanics / 効果・仕様詳細 |
-| :-: | :--- | :---: | :--- |
-| **25** | **Eye of Avarice**<br>強欲の瞳（アーティファクト）<br>`eye_of_avarice` | **Ancient Artifact**<br>(Reusable / `120t = 6.0s` CD) | **Right-Click (`0 Mana Cost`)**: Absorbs ambient and enemy魔力 from all hostile entities within **`14.0 blocks`**! Deals **`18.0` Magic Damage** to each enemy, applies **`[SILENCED]` (`100 ticks / 5.0s` — Seals Boss Skills)**, and **restores `+80 Mana` Base + `+25 Mana` per enemy drained** (up to Full Mana!).<br>**Sneak + Right-Click (Overload Release)**: Consumes **`100 Mana`** to unleash stored energy in a **`14m` Crimson Artifact Blast**, dealing **`55.0` Magic Damage** + **`[EXPOSED]` (`6s`)** to all surrounding enemies! |
-| **26** | **Mitsugoshi Supreme Tuna Burger**<br>三越商会の特製マグロバーガー<br>`mitsugoshi_tuna_burger` | **Consumable Food**<br>(Favorite of **Delta** & **Shadow**) | Restores **`10 Hunger` (`5 Shanks`)** and **`1.2 Saturation`**, immediately restores **`+60 Mana`**, and grants:<br>• **Strength II (`1200 ticks / 60s`)**<br>• **Speed II (`1200 ticks / 60s`)**<br>• **Regeneration II (`400 ticks / 20s`)**<br>*(Also grants **3x Sparring Progress** when gifted to a sworn Shadow Garden companion!)* |
-| **27** | **Mitsugoshi Artisanal Chocolate**<br>三越商会の高級チョコレート<br>`mitsugoshi_chocolate` | **Consumable Treat**<br>(Fast Eat: `16 ticks`) | Restores **`6 Hunger` (`3 Shanks`)** and **`0.8 Saturation`**, immediately restores **`+120 Mana`**, clears **Weakness / Slowness / Mining Fatigue**, and grants:<br>• **Regeneration III (`300 ticks / 15s`)**<br>• **Absorption III (`1200 ticks / 60s` — `+6 Golden Hearts`)**<br>• **Speed II (`600 ticks / 30s`)** |
+### ① 第一席 アルファ：『陰の剣』（`alpha_sword`）
+- **基本性能**: 攻撃力 **`32.0`** ｜ 攻撃速度 **`2.25`** ｜ 射程 **`+1.50`** ｜ 移動速度 **`+14%`** ｜ 通常攻撃追撃 **`+10.0`（会心 `+16.0`）**
+- **パッシブ**: 最大MP `+1,000`＆回復 `+16.0/s` / 3チャージ連閃 / パリィ反撃（`90.0`＋HP `3.0`回復＋黄金斬撃 `90.0`）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **クレセントムーン** | `1` | `0.35s` | 4角度変化する斬撃波 **`100.0`** 連射 |
+| **2** | **霧化・瞬歩** | `15` | `1.3s` | 霧化無敵0.9秒＋14m背後転移 **`120.0`** |
+| **3** | **エンチャントワルツ** | `7` | `1.1s` | 前方扇状7連斬撃 **`80.0 × 7`**（最大 `560.0`） |
+| **4** | **スライム変幻・拘束鞭** | `18` | `1.8s` | 霧化無敵0.6秒＋3連鞭槍 **`105.0 × 3`**＋周囲6.5m引き寄せ **`140.0`** |
+| **5** | **ラストバーンアウト** | `180` | `7.0s` | **【究極奥義】** 霧化無敵1.2秒＋デバフ全浄化＋18m背後転移9連斬 **`115.0 × 9`**＋黄金爆発 **`280.0`** |
+
+### ② 第二席 ベータ：『スナイプボウ』（`beta_bow`）
+- **基本性能**: 耐久 `2,500`（物理矢不要・『無限』付与で消費MP `-35%`）｜ フルチャージ `16t` ｜ パリィ反撃（周囲4.5m `80.0`＋3連矢）
+
+| 技 | モード名 | MP *(無限)* | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **パラライズショット** | 通常 `5`*(3)* / 過充填 `15`*(10)* | `(8t)` | 基礎 `24.0`・貫通2。**1.6s保持で過充填《フェイタリティ》**（基礎 `34.0`・貫通3・半径4.2m爆破） |
+| **2** | **スラッシュ＆ストライク** | `14` *(9)* | `(12t)` | 水平5連斉射（基礎 **`18.0 × 5`**） |
+| **3** | **ヒーリングレイン** | `22` *(14)* | `(14t)` | 術者に再生II(6秒)＋着弾治癒ドームで味方にHP回復＆再生I＆消火（アンデッドに聖ダメ） |
+| **4** | **銀霧離脱・狙撃矢** | `18` *(12)* | `(14t)` | 後方跳躍＋速度II(4秒)＋銀霧狙撃矢（基礎 `24.0`＋魔法 `32.0`＋着弾4.8m銀霧爆破 `90.0`） |
+| **5** | **エンジェリックレイン** | `160` *(104)* | `5.0s` | **【究極奥義】** 貫通Lv3過充填仕様9本扇状斉射（基礎 `26.0`）＋術者＆16m味方に **HP `+16.0`＋再生II（術者9秒/味方8秒）＋術者速度II(9秒)** |
+
+### ③ 第三席 ガンマ：『陰の大太刀』（`gamma_greatsword`）
+- **基本性能**: 攻撃力 **`21.0`** ｜ 攻撃速度 **`1.10`** ｜ 射程 **`+0.50`** ｜ 追撃 **`+8.0`（会心 `+12.0`）** ｜ パッシブ（25%転倒暴走半径3.8m `22.0`/`28.0`・パリィ `85.0`＋斬撃 `75.0`）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **ロックブラスト** | `1` | `0.5s` | 周囲4.5m **`80.0`**＋魔力球 `60.0`（25%転倒で半径5.5m `120.0`＋`90.0`） |
+| **2** | **無軌道魔力斬** | `12` | `1.1s` | 3連不規則巨大波 **`70.0 × 3`** |
+| **3** | **アクティベーション** | `28` | `1.8s` | 自身HP10%＆**MP `+40.0`回復**＋周囲6.5m **`110.0`** |
+| **4** | **アサルトオーダー** | `52` | `3.6s` | **【究極奥義】** 半径12m **`300.0`** 大爆発＋8方向 **`85.0 × 8`**＋耐性III・吸収III |
+| **5** | **過剰魔力防壁** | `20` | `3.5s` | 6m敵弾消去＆周囲12m味方に耐性I＆再生I＋衝撃 **`130.0`** |
+
+### ④ 第四席 デルタ：『陰の爪』（`delta_greatblade`）
+- **基本性能**: 攻撃力 **`38.0`** ｜ 攻撃速度 **`1.75`** ｜ 射程 **`+1.15`** ｜ 移動 **`+12%`** ｜ 追撃 **`+9.0`（会心 `+14.0`＋ウィザーII）＋吸血＆『双牙』+1** ｜ パリィ（`95.0`＋HP `+4.0`＋X斬 `75.0 × 2`）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **シャドウラッシュ** | `1` | `0.35s` | 速度I＋二連交差 **`75.0 × 2`** |
+| **2** | **猛獣跳躍** | `10` | `1.0s` | 耐性II＋大跳躍着地半径5.0m **`120.0`**＋ウィザーII |
+| **3** | **暴天双牙** | `24` | `1.4s` | 攻撃II＆速度II＋X字処刑斬撃 **`115.0 × 2`**（各6体貫通） |
+| **4** | **デストラクション** | `48` | `3.0s` | **【究極奥義】** 6.8m **`320.0`＋『双牙』起爆（最大`+169.0`）**＋HP回復＋双牙斬 **`135.0 × 2`** |
+| **5** | **エンハンスロア** | `16` | `2.75s` | 半径16m透明化強制解除＋周囲9m **`110.0`**＋速度III＆攻撃II |
+
+### ⑤ 第五席 イプシロン：『陰の大鎌』（`epsilon_rapier`）
+- **基本性能**: 攻撃力 **`25.0`** ｜ 攻撃速度 **`2.35`** ｜ 射程 **`+1.25`** ｜ 追撃 **`+7.0`（会心 `+11.0`）** ｜ パッシブ（会心MP `+4.0`回復・パリィ追加MP `+15.0`＋3連ソニック `60.0 × 3`）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **クレス・プレスト** | `1` | `0.3s` | 弾速3.5・6体貫通円盤 **`90.0`** |
+| **2** | **クレス・コンブリオ** | `9` | `0.8s` | 3連蒼銀斬撃波 **`65.0 × 3`** |
+| **3** | **月光魔力斬** | `22` | `1.3s` | 耐性II・吸収I＋7連月光アーク **`72.0 × 7`**（最大 `504.0`） |
+| **4** | **クレス・フィナーレ** | `42` | `2.6s` | **【究極奥義】** 防御65%貫通5連レーザー **`95.0 × 5`**＋ソニック球5.5m **`220.0`**＋**MP `+25.0` 回収** |
+| **5** | **99%緻密制御・空中歩法** | `16` | `1.9s` | 空中飛翔跳躍＋5.2m **`70.0`**＋3連リング撃ち下ろし **`85.0 × 3`** |
+
+### ⑥ 第六席 ゼータ：『影の双剣』（`zeta_dagger`）
+- **基本性能**: 攻撃力 **`28.0`** ｜ 攻撃速度 **`2.60`** ｜ 移動 **`+16%`** ｜ 追撃 **`+7.0`（会心 `+11.0`、背後/透明時 `2.25倍`＋毒II＆暗闇＆『双牙』+1）** ｜ パリィ（透明化3s＆背後転移 `100.0`＋毒II）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **影牙連撃** | `1` | `0.3s` | 4体貫通ファントムダート **`80.0`** |
+| **2** | **隠密奇襲** | `10` | `1.1s` | 透明化5s・速度III 5s＋14m背後転移 **`105.0`**＋毒II |
+| **3** | **暴天双牙・影刃** | `22` | `1.3s` | 黄金＆漆黒クロス斬撃 **`90.0 × 2`** |
+| **4** | **シャドウ・ダンス** | `44` | `2.8s` | **【究極奥義】** 霧化無敵1s・透明6s＋20m死角転移 **`360.0`＋『双牙』起爆（最大`+221.0`）**＋二連斬 **`110.0 × 2`** |
+| **5** | **霧化・毒霧攪乱** | `16` | `2.2s` | 霧化無敵0.7s＋後方離脱＆8方向毒霧ダート **`85.0 × 8`** |
+
+### ⑦ 第七席 イータ：『イータの秘密実験器具』（`eta_artifact`）
+- **基本性能**: 攻撃力 **`19.0`** ｜ 攻撃速度 **`1.80`** ｜ 射程 **`+1.75`** ｜ 追撃 **`+5.0`（会心 `+8.0`＋発光＆弱体化I）** ｜ パッシブ（リアルタイム魔導解析HUD・パリィ `75.0`＋浮遊II＋ビーム `70.0`）
+
+| 技 | スキル名 | MP | CT | 効果 |
+| :-: | :--- | :-: | :-: | :--- |
+| **1** | **じゃま……** | `1` | `0.35s` | 解析パルスビーム **`70.0`**（5体貫通） |
+| **2** | **がんばる……** | `11` | `1.0s` | 自動ロックオン4連レーザー **`60.0 × 4`**＋**魔導スライムドローン2機召喚**（最大4機） |
+| **3** | **フレンジーテスト** | `25` | `1.6s` | 周囲8.0m **`95.0`**＋浮遊I(2.25s)・鈍足IV＋重力球6.5m **`95.0`** |
+| **4** | **きえて……** | `46` | `3.2s` | **【究極奥義】** 12m内の敵有利バフ全消去＋**`190.0`**＋**浮遊I(2.75s)**・弱体III・鈍足III＋6発の直線狙撃重力球（半径4m・貫通5・**`65.0 × 6`**） |
+| **5** | **古代遺物・魔力遮断実験** | `20` | `2.8s` | 14m透明解除＋全ドローン一斉射撃（補充あり）＋2連高出力ビーム **`95.0 × 2`**＋**MP `+18.0` 回収** |
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 04. "I Am Atomic" Magic System](04-I-Am-Atomic.md) | [➡️ Next: 06. Bosses, Mastery Ranks & Companions](06-Bosses-and-Companions.md)
+## 3. 三英雄・伝説・カゲマス・教団幹部武器（全11種）
+
+| 武器名（ID） | 攻撃力 | 速度 | 射程 / 移動 | 通常追撃（会心） | 技1（MP / CT / 効果） | 技2（MP / CT / 効果） |
+| :--- | :---: | :---: | :---: | :---: | :--- | :--- |
+| **『英雄の剣』**<br/>`holy_sword_olivier` | `29.0` | `2.00` | `+0.85` / `+7%` | `+24.0`<br/>(`+40.0`+業火) | **聖剣一閃・オーバードライブ** (`16`/`0.7s`)<br/>『絶禍』(4s)＋3連波(`76.0×3`)＋`56.0`＆『業火』 | **始祖聖騎士・業火解放** (`36`/`1.4s`)<br/>防壁(5s)＋自動パリィ2＋『絶禍』(5s)＋8m`96.0`＆『業火』 |
+| **『我執の楔』**<br/>`freya_wedge_blade` | `31.0` | `1.85` | `+0.95` / `+6%` | `+24.0`<br/>(`+42.0`+絶禍) | **ブレイク強襲** (`16`/`0.7s`)<br/>突進楔斬(`72.0`)＋盾破壊＆`58.0` | **絶禍解放** (`40`/`1.5s`)<br/>**『絶禍』(7s)**＋6方向破砕波(`76.0×6`)＋7m`90.0`＆盾破壊 |
+| **『古の聖杖』**<br/>`lili_holy_staff` | `26.0` | `2.00` | `+0.85` / `+7%` | `+18.0`<br/>(`+32.0`+回復1.5) | **聖女の祈り** (`18`/`0.9s`)<br/>14m味方 **HP22%(最低6)回復＋デバフ最大8浄化＋吸収II(9s)** | **救世の聖光** (`32`/`1.3s`)<br/>4連聖光(`68.0×4`)＋14m味方に **攻撃II＆速度I(8s)** |
+| **『魔女の大鎌』**<br/>`calamity_witch_scythe` | `29.5` | `2.10` | `+0.90` / `+8%` | `+22.0×出血`<br/>(`+40.0×出血`+阻害) | **赤き槍の強襲** (`16`/`0.7s`)<br/>3連血閃(`68.0×3`)＋『出血』+2＆`52.0×出血` | **災厄の一端・暗き大鎌** (`40`/`1.5s`)<br/>8方向(`72.0×8`)＋8.5m『出血』+3＆『魔力阻害』＆`68.0×出血` |
+| **『血の女王の鎌』**<br/>`crimson_queen_blade` | `30.0` | `2.00` | `+0.85` / `+7%` | `+22.0×出血`<br/>(`+38.0×出血`+回復1.5) | **血の驟雨** (`16`/`0.7s`)<br/>3連(`64.0×3`)＋最大4体血槍(`56.0`)＋出血+2＋回復+2 | **血の双影** (`38`/`1.4s`)<br/>霧化(0.9s)＋最大6体『阻害』＆『出血』+2＋血槍(`88.0`)＋回復+4 |
+| **『妖狐の鉄扇』**<br/>`yukime_iron_fan` | `28.0` | `2.15` | `+0.75` / `+9%` | `+20.0`<br/>(`+36.0`+堕落) | **雪狐扇舞** (`14`/`0.6s`)<br/>3連(`66.0×3`)＋速度II(6s) | **金毛九尾・堕落の舞** (`36`/`1.4s`)<br/>9連扇状(`56.0×9`)＋7m`62.0`＆『堕落』(7s) |
+| **『剣聖の大剣』**<br/>`beatrix_greatsword` | `30.5` | `1.95` | `+1.00` / `+8%` | `+23.0` (`+40.0`) | **蒼閃連撃** (`16`/`0.7s`)<br/>3連(`72.0×3`)＋弱体II(6s) | **神速一閃** (`38`/`1.4s`)<br/>14m背後転移＋防御55%貫通3連(`82.0×3`)＋吹き飛ばし |
+| **『アンネローゼの剣』**<br/>`annerose_sword` | `27.5` | `2.20` | `+0.85` / `+9%` | `+20.0` (`+36.0`) | **七武剣・迅雷突き** (`14`/`0.6s`)<br/>速度II(6s)＋防御48%貫通2連(`68.0×2`) | **蒼穹天翔** (`34`/`1.3s`)<br/>飛翔＋**有利バフ最大5個解除**(`64.0`)＋防御60%貫通(`92.0`) |
+| **『妖刀・空蝉』**<br/>`fenrir_katana` | `30.5` | `2.15` | `+0.95` / `+9%` | `+22.0×出血` (`+40.0×出血`) | **血牙斬** (`16`/`0.6s`)<br/>3連(`72.0×3`)＋『出血』+2 | **秘剣・空蝉** (`40`/`1.4s`)<br/>霧化(0.8s)＋5残像収束斬(`74.0×5`)＋『出血』+2 |
+| **『聖域の魔導杖』**<br/>`sanctuary_staff` | `27.0` | `1.90` | `+0.90` / `+5%` | `+19.0`<br/>(`+34.0`+阻害) | **聖域・魔力吸収** (`16`/`0.8s`)<br/>8m`48.0`＋『阻害』＆**MP `30+(15×命中)`［最大`90`］吸収** | **英雄の残滓** (`38`/`1.4s`)<br/>6方向干渉球(`68.0×6`)＋7m`74.0`＆『阻害』 |
+| **『制式スライム剣』**<br/>`numbers_slime_sword` | `28.0` | `2.10` | `+0.85` / `+8%` | `+20.0` (`+36.0`) | **漆黒連斬** (`14`/`0.6s`)<br/>3連漆黒斬(`68.0×3`) | **断罪の剣** (`34`/`1.3s`)<br/>攻撃II(7s)＋5連断罪(`80.0×5`) |
+
+---
+
+## 4. ミツゴシ商会 特製消費アイテム（全2種）
+
+満腹時でも使用可能（`alwaysEdible`）で、即座にMPとバフを補給できます。
+
+| アイテム名（ID） | MP即時回復量 | 満腹度 / 隠し満腹度 | 付与バフ |
+| :--- | :---: | :---: | :--- |
+| **『ミツゴシ特製チョコレート』** (`mitsugoshi_chocolate`) | **`+60.0 MP`** | `5` / `0.8` | 移動速度上昇I（10秒）＋ 再生I（5秒） |
+| **『ミツゴシ焙煎ブレンド珈琲』** (`mitsugoshi_coffee`) | **`+90.0 MP`** | `4` / `0.6` | 採掘速度上昇I（15秒）＋ 暗視（20秒） |
+
+---
+
+[⬅ 前章：04. 究極奥義『I am Atomic.』](04-I-Am-Atomic.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：06. 全26体 ボス攻略＆仲間化 ➔](06-Bosses-and-Companions.md)

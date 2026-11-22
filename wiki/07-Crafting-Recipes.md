@@ -1,94 +1,98 @@
-# 07. Complete Crafting Recipes (All 51 Recipes) / 全51種クラフトレシピ完全一覧
+# 07. 全51種 クラフトレシピ完全一覧（Complete Crafting Recipes）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 06. Bosses, Mastery Ranks & Companions](06-Bosses-and-Companions.md) | [➡️ Next: 08. Advancements, Commands & Config](08-Commands-Config-and-Advancements.md)
-
----
-
-Every single item, armor piece, weapon, artifact, food item, and boss summoning crystal in **The Eminence in Shadow: Shadow Garden & Atomic** is **100% craftable in Survival Mode** (`src/main/resources/data/eminence_shadow/recipe/`).
-本MODの全ての装備・武器・アーティファクト・三越グルメ・全26ボスの召喚結晶（合計51レシピ）は、サバイバルモードの作業台でクラフト可能です。
+[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)
 
 ---
 
-## 🧪 11.1 Core Materials & Slime Bodysuit (5 Recipes) / 基本素材＆スライムボディスーツ（5種）
+すべての51種のレシピは、主要素材（スライムボール・鉄インゴット・アメジストの欠片・ネザライトインゴット・カカオ豆）の入手時にデータ駆動のレシピ解放進捗（`advancements/recipes/*.json`）を通じてバニラのレシピブックへ自動登録され、JEI（Just Enough Items）でも閲覧可能です。
 
-| Output Item / 完成品 | Recipe Pattern (3×3 Crafting Grid) / レシピ配置 | Ingredients Summary / 必要素材合計 |
+---
+
+## 1. スライムスーツ防具（4種）
+
+| 完成品 | クラフト配置（3×3 作業台） | 必要素材合計 |
 | :--- | :--- | :--- |
-| **Shadow's Slime Core × 1**<br>シャドウのスライムコア<br>`shadow_core` | Row 1: `Slime Ball`, `Obsidian`, `Slime Ball`<br>Row 2: `Obsidian`, `Ender Pearl`, `Obsidian`<br>Row 3: `Slime Ball`, `Obsidian`, `Slime Ball` | • **Slime Ball × 4**<br>• **Obsidian × 4**<br>• **Ender Pearl × 1** |
-| **Slime Hood × 1**<br>スライムフード（頭）<br>`slime_hood` | Row 1: `Obsidian`, `Shadow Core`, `Obsidian`<br>Row 2: `Slime Ball`, *(Empty)*, `Slime Ball` | • **Shadow's Slime Core × 1**<br>• **Obsidian × 2**<br>• **Slime Ball × 2** |
-| **Slime Chestplate × 1**<br>スライムチェストプレート（胴）<br>`slime_chestplate` | Row 1: `Slime Ball`, *(Empty)*, `Slime Ball`<br>Row 2: `Obsidian`, `Shadow Core`, `Obsidian`<br>Row 3: `Slime Ball`, `Obsidian`, `Slime Ball` | • **Shadow's Slime Core × 1**<br>• **Obsidian × 3**<br>• **Slime Ball × 4** |
-| **Slime Leggings × 1**<br>スライムレギンス（脚）<br>`slime_leggings` | Row 1: `Obsidian`, `Shadow Core`, `Obsidian`<br>Row 2: `Slime Ball`, *(Empty)*, `Slime Ball`<br>Row 3: `Slime Ball`, *(Empty)*, `Slime Ball` | • **Shadow's Slime Core × 1**<br>• **Obsidian × 2**<br>• **Slime Ball × 4** |
-| **Slime Boots × 1**<br>スライムブーツ（足）<br>`slime_boots` | Row 1: `Slime Ball`, *(Empty)*, `Slime Ball`<br>Row 2: `Obsidian`, `Shadow Core`, `Obsidian` | • **Shadow's Slime Core × 1**<br>• **Obsidian × 2**<br>• **Slime Ball × 2** |
-
-> [!TIP]
-> **Full 4-Piece Slime Bodysuit Total Material Cost / スライムスーツ一式の合計素材数**:
-> To craft the **Slime Hood + Chestplate + Leggings + Boots** (4 Shadow Cores), you only need:
-> **Slime Ball × 28**, **Obsidian × 25**, and **Ender Pearl × 4**!
+| **スライムスーツのフード**<br/>`slime_suit_helmet` | 上段：`[スライムボール][黒色の染料][スライムボール]`<br/>中段：`[スライムボール][　空　][スライムボール]` | スライムボール ×4<br/>黒色の染料 ×1 |
+| **スライムスーツのコート**<br/>`slime_suit_chestplate` | 上段：`[スライムボール][　空　][スライムボール]`<br/>中段：`[スライムボール][黒色の染料][スライムボール]`<br/>下段：`[スライムボール][スライムボール][スライムボール]` | スライムボール ×7<br/>黒色の染料 ×1 |
+| **スライムスーツのタイツ**<br/>`slime_suit_leggings` | 上段：`[スライムボール][黒色の染料][スライムボール]`<br/>中段：`[スライムボール][　空　][スライムボール]`<br/>下段：`[スライムボール][　空　][スライムボール]` | スライムボール ×6<br/>黒色の染料 ×1 |
+| **スライムスーツのブーツ**<br/>`slime_suit_boots` | 中段：`[黒色の染料][　空　][黒色の染料]`<br/>下段：`[スライムボール][　空　][スライムボール]` | スライムボール ×2<br/>黒色の染料 ×2 |
 
 ---
 
-## 🗡️ 11.2 Weapons, Artifacts, Oath & Mitsugoshi Consumables (20 Recipes) / 武器・アーティファクト・三越グルメ（20種）
+## 2. 武器・魔道具・ミツゴシ商会アイテム（21種）
 
-| # | Output Item / 完成品 | Recipe Pattern (3×3 Grid) / レシピ配置 | Ingredients Summary / 必要素材 |
-| :-: | :--- | :--- | :--- |
-| **1** | **Slime Sword**<br>`slime_sword` | Col 2: `Obsidian` (Top), `Shadow Core` (Mid), `Iron Sword` (Bottom) flanked by `Slime Ball` × 2 | • **Shadow's Slime Core × 1**<br>• **Iron Sword × 1**, **Obsidian × 1**, **Slime Ball × 2** |
-| **2** | **Golden Crowbar**<br>`golden_crowbar` | Row 1: `Gold Ingot`, `Gold Ingot`, *(Empty)*<br>Row 2: *(Empty)*, `Shadow Core`, *(Empty)*<br>Row 3: *(Empty)*, `Gold Ingot`, *(Empty)* | • **Shadow's Slime Core × 1**<br>• **Gold Ingot × 3** |
-| **3** | **Alpha's Slime Blade**<br>`alpha_blade` | Row 1: `Gold Ingot`, `Diamond`, `Gold Ingot`<br>Row 2: `Slime Ball`, `Shadow Core`, `Slime Ball`<br>Row 3: *(Empty)*, `Slime Sword`, *(Empty)* | • **Slime Sword × 1**, **Shadow's Slime Core × 1**<br>• **Diamond × 1**, **Gold Ingot × 2**, **Slime Ball × 2** |
-| **4** | **Beta's Magic Bow**<br>`beta_bow` | Row 1: `Gold Ingot`, `Shadow Core`, `String`<br>Row 2: `Feather`, `Bow`, `String`<br>Row 3: `Gold Ingot`, `Lapis Lazuli`, `String` | • **Shadow's Slime Core × 1**, **Bow × 1**<br>• **String × 3**, **Gold Ingot × 2**, **Feather × 1**, **Lapis × 1** |
-| **5** | **Gamma's Slime Sword**<br>`gamma_sword` | Row 1: `Gold Block`, `Diamond`, `Gold Block`<br>Row 2: `Gold Ingot`, `Shadow Core`, `Gold Ingot`<br>Row 3: *(Empty)*, `Iron Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Iron Sword × 1**<br>• **Gold Block × 2**, **Diamond × 1**, **Gold Ingot × 2** |
-| **6** | **Delta's Feral Greatsword**<br>`delta_greatsword` | Row 1: `Iron Block`, `Obsidian`, `Iron Block`<br>Row 2: `Iron Ingot`, `Shadow Core`, `Iron Ingot`<br>Row 3: *(Empty)*, `Iron Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Iron Sword × 1**<br>• **Iron Block × 2**, **Obsidian × 1**, **Iron Ingot × 2** |
-| **7** | **Epsilon's Slime Conductor**<br>`epsilon_blade` | Row 1: `Slime Ball`, `Amethyst Shard`, `Slime Ball`<br>Row 2: `Slime Ball`, `Shadow Core`, `Slime Ball`<br>Row 3: *(Empty)*, `Iron Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Iron Sword × 1**<br>• **Amethyst Shard × 1**, **Slime Ball × 4** |
-| **8** | **Zeta's Beast Claw**<br>`zeta_claw` | Row 1: `Iron Ingot`, *(Empty)*, `Iron Ingot`<br>Row 2: `Feather`, `Shadow Core`, `Feather`<br>Row 3: *(Empty)*, `Leather`, *(Empty)* | • **Shadow's Slime Core × 1**<br>• **Iron Ingot × 2**, **Feather × 2**, **Leather × 1** |
-| **9** | **Eta's Mad Wrench**<br>`eta_wrench` | Row 1: `Iron Ingot`, `Redstone Block`, `Iron Ingot`<br>Row 2: `Copper Ingot`, `Shadow Core`, `Copper Ingot`<br>Row 3: *(Empty)*, `Iron Ingot`, *(Empty)* | • **Shadow's Slime Core × 1**<br>• **Redstone Block × 1**, **Iron Ingot × 3**, **Copper Ingot × 2** |
-| **10** | **John Smith's Gloves**<br>`john_smith_gloves` | Row 1: `String`, `Gold Ingot`, `String`<br>Row 2: `String`, `Shadow Core`, `String`<br>Row 3: `Iron Ingot`, `Leather`, `Iron Ingot` | • **Shadow's Slime Core × 1**<br>• **String × 4**, **Iron Ingot × 2**, **Gold Ingot × 1**, **Leather × 1** |
-| **11** | **Blood Queen's Scythe**<br>`blood_queen_scythe` | Row 1: `Redstone Block`, `Diamond`, `Obsidian`<br>Row 2: *(Empty)*, `Shadow Core`, `Redstone`<br>Row 3: `Blaze Rod`, *(Empty)*, *(Empty)* | • **Shadow's Slime Core × 1**, **Diamond × 1**<br>• **Redstone Block × 1**, **Obsidian × 1**, **Blaze Rod × 1**, **Redstone × 1** |
-| **12** | **Mist Dragon Blade**<br>`mist_dragon_blade` | Row 1: `Amethyst Shard`, `Diamond`, `Amethyst Shard`<br>Row 2: `Ender Pearl`, `Shadow Core`, `Ender Pearl`<br>Row 3: *(Empty)*, `Diamond Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Diamond Sword × 1**<br>• **Diamond × 1**, **Ender Pearl × 2**, **Amethyst Shard × 2** |
-| **13** | **Olivier's Hero Sword**<br>`olivier_sword` | Row 1: `Gold Ingot`, `Diamond`, `Gold Ingot`<br>Row 2: `Quartz`, `Shadow Core`, `Quartz`<br>Row 3: *(Empty)*, `Diamond Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Diamond Sword × 1**<br>• **Diamond × 1**, **Gold Ingot × 2**, **Nether Quartz × 2** |
-| **14** | **Aurora's Violet Spear**<br>`aurora_spear` | Row 1: `Redstone`, `Amethyst Shard`, `Redstone`<br>Row 2: `Redstone Block`, `Shadow Core`, `Redstone Block`<br>Row 3: *(Empty)*, `Blaze Rod`, *(Empty)* | • **Shadow's Slime Core × 1**<br>• **Redstone Block × 2**, **Amethyst Shard × 1**, **Blaze Rod × 1**, **Redstone × 2** |
-| **15** | **Beatrix's Elven Blade**<br>`beatrix_blade` | Row 1: `Emerald`, `Diamond`, `Emerald`<br>Row 2: `Feather`, `Shadow Core`, `Feather`<br>Row 3: *(Empty)*, `Iron Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Iron Sword × 1**<br>• **Diamond × 1**, **Emerald × 2**, **Feather × 2** |
-| **16** | **Iris's Crimson Broadsword**<br>`iris_broadsword` | Row 1: `Blaze Powder`, `Diamond`, `Blaze Powder`<br>Row 2: `Gold Ingot`, `Shadow Core`, `Gold Ingot`<br>Row 3: *(Empty)*, `Iron Sword`, *(Empty)* | • **Shadow's Slime Core × 1**, **Iron Sword × 1**<br>• **Diamond × 1**, **Blaze Powder × 2**, **Gold Ingot × 2** |
-| **17** | **Eye of Avarice**<br>`eye_of_avarice` | Row 1: `Gold Ingot`, `Redstone Block`, `Gold Ingot`<br>Row 2: `Redstone Block`, `Ender Eye`, `Redstone Block`<br>Row 3: `Gold Ingot`, `Shadow Core`, `Gold Ingot` | • **Shadow's Slime Core × 1**, **Eye of Ender × 1**<br>• **Redstone Block × 3**, **Gold Ingot × 4** |
-| **18** | **Shadow Garden Oath**<br>`shadow_garden_oath` | Row 1: `Gold Ingot`, `Amethyst Shard`, `Gold Ingot`<br>Row 2: `Paper`, `Shadow Core`, `Paper`<br>Row 3: `Gold Ingot`, `Ink Sac`, `Gold Ingot` | • **Shadow's Slime Core × 1**<br>• **Gold Ingot × 4**, **Paper × 2**, **Amethyst Shard × 1**, **Ink Sac × 1** |
-| **19** | **Mitsugoshi Tuna Burger × 2**<br>`mitsugoshi_tuna_burger` | Row 1: *(Empty)*, `Bread`, *(Empty)*<br>Row 2: `Gold Nugget`, `Cooked Cod`, `Slime Ball`<br>Row 3: *(Empty)*, `Bread`, *(Empty)* | • **Bread × 2**, **Cooked Cod × 1**<br>• **Gold Nugget × 1**, **Slime Ball × 1** |
-| **20** | **Mitsugoshi Chocolate × 3**<br>`mitsugoshi_chocolate` | Row 1: `Sugar`, `Cocoa Beans`, `Sugar`<br>Row 2: `Gold Nugget`, `Milk Bucket`, `Slime Ball` | • **Cocoa Beans × 1**, **Sugar × 2**, **Milk Bucket × 1**<br>• **Gold Nugget × 1**, **Slime Ball × 1** |
-
-*(Note: The remaining specialized character weapons—`alexia_rapier`, `rose_rapier`, `victoria_blade`, `claire_rapier`, `yukime_fan`, `crimson_claws`, `juggernaut_cleaver`, and `lambda_whip`—are dropped directly by their respective bosses or obtained via Creative/Commands!)*
-
----
-
-## 🔮 11.3 All 26 Boss Resonance Crystals (Summon Spawners) / 全26ボス召喚結晶レシピ一覧
-
-Every Boss Resonance Crystal is crafted with **1× `Shadow's Slime Core`** in the center (`Row 2, Col 2`), surrounded by **`Obsidian` or `Slime Ball`** corners and a **character-signature catalyst**!
-すべてのボス召喚結晶は、中央に **『シャドウのスライムコア (`shadow_core`)』** を置き、各キャラクターを象徴する触媒アイテムを周囲に配置してクラフトします。
-
-| # | Boss Spawner / 召喚結晶 (`Registry ID`) | Signature Catalysts Around `Shadow's Slime Core` / コア周囲の固有素材 |
-| :-: | :--- | :--- |
-| **1** | **Lord Shadow** (`shadow_spawner`) | **Diamond × 2** (Top/Bottom) + **Amethyst Shard × 2** (Left/Right) + **Obsidian × 4** (Corners) |
-| **2** | **Alpha** (`alpha_spawner`) | **Gold Ingot × 4** (Cross) + **Slime Ball × 4** (Corners) |
-| **3** | **Beta** (`beta_spawner`) | **Book × 1** (Top) + **Bow × 1** (Bottom) + **Feather × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **4** | **Gamma** (`gamma_spawner`) | **Gold Block × 1** (Top) + **Cocoa Beans × 1** (Bottom) + **Gold Ingot × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **5** | **Delta** (`delta_spawner`) | **Cooked Beef × 2** (Top/Bottom) + **Bone × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **6** | **Epsilon** (`epsilon_spawner`) | **Amethyst Shard × 2** (Top/Bottom) + **Slime Block × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **7** | **Zeta** (`zeta_spawner`) | **Cooked Cod × 2** (Top/Bottom) + **Feather × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **8** | **Eta** (`eta_spawner`) | **Redstone Block × 1** (Top) + **Clock × 1** (Bottom) + **Copper Ingot × 2** (Sides) + **Slime Ball × 4** (Corners) |
-| **9** | **John Smith** (`john_smith_spawner`) | **String × 4** (Cross) + **Gold Ingot × 4** (Corners) |
-| **10** | **Hero Olivier** (`olivier_spawner`) | **Diamond Sword × 1** (Top) + **Nether Quartz × 3** + **Gold Ingot × 4** (Corners) |
-| **11** | **Calamity Witch Aurora** (`aurora_spawner`) | **Redstone Block × 2** (Top/Bottom) + **Amethyst Shard × 2** (Sides) + **Obsidian × 4** (Corners) |
-| **12** | **Blood Queen Elisabeth** (`elisabeth_spawner`) | **Redstone Block × 2** (Top/Bottom) + **Ghast Tear / Gold Ingot × 2** (Sides) + **Redstone × 4** (Corners) |
-| **13** | **Mist Dragon** (`mist_dragon_spawner`) | **Dragon Breath / Ender Eye × 1** (Top) + **Amethyst Shard × 3** + **Obsidian × 4** (Corners) |
-| **14** | **War Goddess Beatrix** (`beatrix_spawner`) | **Emerald × 2** (Top/Bottom) + **Iron Sword × 1** + **Feather × 1** + **Gold Ingot × 4** (Corners) |
-| **15** | **Princess Iris** (`iris_spawner`) | **Blaze Powder × 2** (Top/Bottom) + **Iron Sword × 1** + **Gold Ingot × 5** |
-| **16** | **Princess Alexia** (`alexia_spawner`) | **Gold Ingot × 2** (Top/Bottom) + **Iron Sword × 1** + **Emerald × 1** + **Quartz × 4** (Corners) |
-| **17** | **Rose Oriana (666)** (`rose_spawner`) | **Rose Bush / Red Dye × 2** + **Gold Ingot × 2** + **Slime Ball × 4** (Corners) |
-| **18** | **Victoria (559)** (`victoria_spawner`) | **Rose Bush / Red Dye × 2** + **Quartz × 2** + **Slime Ball × 4** (Corners) |
-| **19** | **Claire Kagenou** (`claire_spawner`) | **Redstone × 4** (Cross) + **Iron Ingot × 4** (Corners) |
-| **20** | **Spirit Fox Yukime** (`yukime_spawner`) | **Snowball / Snow Block × 2** + **Feather × 2** + **Gold Ingot × 4** (Corners) |
-| **21** | **Crimson** (`crimson_spawner`) | **Blaze Powder × 2** + **Redstone × 2** + **Iron Ingot × 4** (Corners) |
-| **22** | **Tyrant Juggernaut** (`juggernaut_spawner`) | **Iron Block × 1** + **Iron Axe / Sword × 1** + **Iron Ingot × 6** |
-| **23** | **Instructor Lambda** (`lambda_spawner`) | **Lead / String × 2** + **Lightning Rod / Copper × 2** + **Slime Ball × 4** (Corners) |
-| **24** | **Nu (No. 13)** (`nu_spawner`) | **Ink Sac × 2** + **Iron Ingot × 2** + **Slime Ball × 4** (Corners) |
-| **25** | **Chi (No. 22) / Omega (No. 24)** (`chi_spawner` / `omega_spawner`) | **Amethyst Shard / Feather × 2** + **Iron Ingot × 2** + **Slime Ball × 4** (Corners) |
-| **26** | **Cult Knights (Mordred / Fenrir / Zenon)** (`mordred_spawner`, etc.) | **Ender Pearl × 2** + **Redstone × 2** + **Obsidian × 4** (Corners) |
+| 完成品（アイテムID） | クラフト配置（上段 / 中段 / 下段）または不定形素材 | 必要素材合計 |
+| :--- | :--- | :--- |
+| **『開闢の漆黒剣』**<br/>`archetype_slime_blade` | `[ 空 ][ネザースター][ 空 ]`<br/>`[エンダーパール][漆黒の剣][エンダーパール]`<br/>`[ 空 ][スライムブロック][ 空 ]` | 漆黒の剣 ×1、ネザースター ×1、エンダーパール ×2、スライムブロック ×1 |
+| **『ジョン・スミスの極細鋼糸』**<br/>`micro_threads` | `[ 糸 ][鉄インゴット][ 糸 ]`<br/>`[スライムボール][アメジストの欠片][スライムボール]`<br/>`[ 糸 ][鉄インゴット][ 糸 ]` | 糸 ×4、鉄インゴット ×2、スライムボール ×2、アメジストの欠片 ×1 |
+| **『シャドウの暗号メモ』**<br/>`shadow_encrypted_memo` | `[ 空 ][金インゴット][ 空 ]`<br/>`[アメジストの欠片][ 紙 ][アメジストの欠片]`<br/>`[ 空 ][鉄インゴット][ 空 ]` | 金インゴット ×1、アメジストの欠片 ×2、紙 ×1、鉄インゴット ×1 |
+| **『ミスリルの剣』**<br/>`mithril_sword` | `[ラピスラズリ][アメジストの欠片][ラピスラズリ]`<br/>`[アメジストの欠片][鉄インゴット][アメジストの欠片]`<br/>`[ 空 ][ 棒 ][ 空 ]` | アメジストの欠片 ×3、ラピスラズリ ×2、鉄インゴット ×1、棒 ×1 |
+| **『シャドウの愛用のバール』**<br/>`crowbar` | `[ 空 ][赤色の染料][鉄インゴット]`<br/>`[ 空 ][鉄インゴット][ 空 ]`<br/>`[鉄インゴット][ 空 ][ 空 ]` | 鉄インゴット ×3、赤色の染料 ×1 |
+| **『地味な剣』**<br/>`plain_sword` | `[ 空 ][ 空 ][鉄インゴット]`<br/>`[ 空 ][鉄インゴット][ 空 ]`<br/>`[ 棒 ][ 空 ][ 空 ]` | 鉄インゴット ×2、棒 ×1 *(斜め配置でバニラ鉄剣と競合回避)* |
+| **『モブ式奥義四十八手』**<br/>`mob_secret_arts` | `[ 空 ][レッドストーン][ 空 ]`<br/>`[ 羽根 ][ 本 ][ 羽根 ]`<br/>`[ 空 ][レッドストーン][ 空 ]` | 本 ×1、羽根 ×2、レッドストーン ×2 |
+| **『切り裂きジャックの血染トランプ』**<br/>`jack_cards` | `[ 空 ][赤色の染料][ 空 ]`<br/>`[ 紙 ][鉄インゴット][ 紙 ]`<br/>`[ 空 ][赤色の染料][ 空 ]` | 紙 ×2、赤色の染料 ×2、鉄インゴット ×1 |
+| **『英雄の剣（オリヴィエ）』**<br/>`holy_sword_olivier` | `[ 空 ][ダイヤモンド][ 空 ]`<br/>`[金インゴット][アメジストの欠片][金インゴット]`<br/>`[ 空 ][ネザライトインゴット][ 空 ]` | ネザライトインゴット ×1、ダイヤモンド ×1、金インゴット ×2、アメジストの欠片 ×1 |
+| **『我執の楔』（フレイヤ）**<br/>`freya_wedge_blade` | `[ブレイズパウダー][金インゴット][ブレイズパウダー]`<br/>`[レッドストーンブロック][ネザライトインゴット][レッドストーンブロック]`<br/>`[ 空 ][ネザライトインゴット][ 空 ]` | ネザライトインゴット ×2、レッドストーンブロック ×2、ブレイズパウダー ×2、金インゴット ×1 |
+| **『古の聖杖』（リリ）**<br/>`lili_holy_staff` | `[金ブロック][ネザライトインゴット][金ブロック]`<br/>`[ 空 ][アメジストの欠片][ 空 ]`<br/>`[ 空 ][ブレイズロッド][ 空 ]` | ネザライトインゴット ×1、金ブロック ×2、アメジストの欠片 ×1、ブレイズロッド ×1 |
+| **『魔女の大鎌』（アウロラ）**<br/>`calamity_witch_scythe` | `[レッドストーンブロック][アメジストの欠片][レッドストーンブロック]`<br/>`[レッドストーンブロック][ネザライトインゴット][レッドストーンブロック]`<br/>`[ 空 ][ブレイズロッド][ 空 ]` | ネザライトインゴット ×1、レッドストーンブロック ×4、アメジストの欠片 ×1、ブレイズロッド ×1 |
+| **『血の女王の鎌』（エリザベート）**<br/>`crimson_queen_blade` | `[ 空 ][レッドストーンブロック][ 空 ]`<br/>`[レッドストーンブロック][ネザライトインゴット][レッドストーンブロック]`<br/>`[ 空 ][ブレイズロッド][ 空 ]` | ネザライトインゴット ×1、レッドストーンブロック ×3、ブレイズロッド ×1 |
+| **『妖狐の鉄扇』（ユキメ）**<br/>`yukime_iron_fan` | `[ 羽根 ][金インゴット][ 羽根 ]`<br/>`[白色の羊毛][鉄インゴット][白色の羊毛]`<br/>`[ 空 ][金インゴット][ 空 ]` | 金インゴット ×2、鉄インゴット ×1、羽根 ×2、白色の羊毛 ×2 |
+| **『剣聖の大剣』（ベアトリクス）**<br/>`beatrix_greatsword` | `[エメラルド][ダイヤモンド][エメラルド]`<br/>`[ 空 ][ネザライトインゴット][ 空 ]`<br/>`[ 空 ][金インゴット][ 空 ]` | ネザライトインゴット ×1、ダイヤモンド ×1、エメラルド ×2、金インゴット ×1 |
+| **『アンネローゼの剣』**<br/>`annerose_sword` | `[ 空 ][ラピスラズリ][ 空 ]`<br/>`[ラピスラズリ][ネザライトインゴット][ラピスラズリ]`<br/>`[ 空 ][鉄インゴット][ 空 ]` | ネザライトインゴット ×1、ラピスラズリ ×3、鉄インゴット ×1 |
+| **『妖刀・空蝉』（フェンリル）**<br/>`fenrir_katana` | `[ 空 ][ 空 ][ネザライトインゴット]`<br/>`[ 空 ][レッドストーンブロック][ 空 ]`<br/>`[黒曜石][ 空 ][ 空 ]` | ネザライトインゴット ×1、レッドストーンブロック ×1、黒曜石 ×1 |
+| **『聖域の魔導杖』（ネルソン）**<br/>`sanctuary_staff` | `[エンダーパール][アメジストブロック][エンダーパール]`<br/>`[黒曜石][ネザライトインゴット][黒曜石]`<br/>`[ 空 ][ブレイズロッド][ 空 ]` | ネザライトインゴット ×1、アメジストブロック ×1、エンダーパール ×2、黒曜石 ×2、ブレイズロッド ×1 |
+| **『制式スライム剣（ナンバーズ）』**<br/>`numbers_slime_sword` | `[ 空 ][スライムボール][ 空 ]`<br/>`[スライムボール][ネザライトインゴット][スライムボール]`<br/>`[ 空 ][黒曜石][ 空 ]` | ネザライトインゴット ×1、スライムボール ×3、黒曜石 ×1 |
+| **『ミツゴシ特製チョコレート』×2**<br/>`mitsugoshi_chocolate` | **不定形レシピ（Shapeless）** | カカオ豆 ×1、砂糖 ×1、ミルク入りバケツ ×1、金塊 ×1 |
+| **『ミツゴシ焙煎ブレンド珈琲』×2**<br/>`mitsugoshi_coffee` | **不定形レシピ（Shapeless）** | カカオ豆 ×2、砂糖 ×1、ガラス瓶 ×1 |
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 06. Bosses, Mastery Ranks & Companions](06-Bosses-and-Companions.md) | [➡️ Next: 08. Advancements, Commands & Config](08-Commands-Config-and-Advancements.md)
+## 3. ボス召喚用・共鳴核レシピ一覧（全26種）
+
+### A. 正典8ボス（シャドウ ＋ 七陰7名）の共鳴核
+共通フレームとして、**中央に『スライムブロック』、左右に『黒色の染料』** を置き、**上段と下段に各キャラクターの象徴素材** を配置します：
+- 上段：`[ 空 ][ 上段触媒 ][ 空 ]`
+- 中段：`[黒色の染料][スライムブロック][黒色の染料]`
+- 下段：`[ 空 ][ 下段触媒 ][ 空 ]`
+
+| 共鳴核名（アイテムID） | 召喚対象 | 上段触媒 | 下段触媒 |
+| :--- | :--- | :--- | :--- |
+| **紫星魔導の共鳴核** (`eta_resonator`) | 第七席 イータ | アメジストの欠片 | レッドストーン |
+| **青金ミツゴシの共鳴核** (`gamma_resonator`) | 第三席 ガンマ | 金ブロック | ラピスラズリ |
+| **蒼銀魔導の共鳴核** (`beta_resonator`) | 第二席 ベータ | アメジストの欠片 | 本 |
+| **蒼月旋律の共鳴核** (`epsilon_resonator`) | 第五席 イプシロン | アメジストの欠片 | プリズマリンクリスタル |
+| **影猫隠密の共鳴核** (`zeta_resonator`) | 第六席 ゼータ | 金インゴット | エンダーパール |
+| **紅狼狩猟の共鳴核** (`delta_resonator`) | 第四席 デルタ | ブレイズロッド | 骨 |
+| **白銀緑宝の共鳴核** (`alpha_resonator`) | 第一席 アルファ | ダイヤモンド | エメラルド |
+| **漆黒の共鳴核** (`shadow_resonator`) | 陰の実力者 シャドウ | エンダーアイ | ネザライトインゴット |
+
+### B. カゲマス・三英雄・ナンバーズ・教団幹部（18名）の共鳴核
+共通フレームとして、**上段に『エンダーパール』、下段に『アメジストの欠片』、中段左右に『スライムボール』** を置き、**中央（C）に各キャラクターの象徴触媒** を配置します：
+- 上段：`[ 空 ][エンダーパール][ 空 ]`
+- 中段：`[スライムボール][ 中央触媒 (C) ][スライムボール]`
+- 下段：`[ 空 ][アメジストの欠片][ 空 ]`
+
+| 共鳴核名（アイテムID） | 召喚対象 | 中央触媒 (C) |
+| :--- | :--- | :--- |
+| **ジョン・スミスの偽造契約書** (`john_smith_resonator`) | 超精鋭エージェント ジョン・スミス | **糸** (`minecraft:string`) |
+| **ジミナ・セーネンの共鳴器** (`jimina_seinen_resonator`) | ジミナ・セーネン | **木の剣** (`minecraft:wooden_sword`) |
+| **切り裂きジャックの共鳴器** (`jack_ripper_resonator`) | 切り裂きジャック | **紙** (`minecraft:paper`) |
+| **ナンバーズ559 ウィクトーリアの共鳴器** (`victoria_resonator`) | ナンバーズ559 ウィクトーリア | **金インゴット** (`minecraft:gold_ingot`) |
+| **鬼教官 ラムダの共鳴器** (`lambda_resonator`) | 鬼教官 ラムダ（11番） | **レッドストーン** (`minecraft:redstone`) |
+| **ナンバーズ13 ニューの共鳴器** (`nu_resonator`) | ナンバーズ13 ニュー | **鉄インゴット** (`minecraft:iron_ingot`) |
+| **伝説の金毛九尾 ユキメの共鳴器** (`yukime_resonator`) | 伝説の金毛九尾 ユキメ | **金塊** (`minecraft:gold_nugget`) |
+| **始まりの聖騎士 オリヴィエの共鳴器** (`olivier_resonator`) | 始まりの聖騎士 オリヴィエ | **ダイヤモンド** (`minecraft:diamond`) |
+| **不可逆の英雄 フレイヤの共鳴器** (`freya_resonator`) | 不可逆の英雄 フレイヤ | **ブレイズパウダー** (`minecraft:blaze_powder`) |
+| **救世の聖女 リリの共鳴器** (`lili_resonator`) | 救世の聖女 リリ | **金のリンゴ** (`minecraft:golden_apple`) |
+| **災厄の魔女 アウロラの共鳴器** (`aurora_resonator`) | 災厄の魔女 アウロラ | **発酵したクモの目** (`minecraft:fermented_spider_eye`) |
+| **紅き血の女王 エリザベートの共鳴器** (`elisabeth_resonator`) | 紅き血の女王 エリザベート | **レッドストーンブロック** (`minecraft:redstone_block`) |
+| **白銀の剣聖 ベアトリクスの共鳴器** (`beatrix_resonator`) | 白銀の剣聖 ベアトリクス | **プリズマリンの欠片** (`minecraft:prismarine_shard`) |
+| **放浪の魔剣士 アンネローゼの共鳴器** (`annerose_resonator`) | 放浪の魔剣士 アンネローゼ | **ラピスラズリ** (`minecraft:lapis_lazuli`) |
+| **クレア・カゲノーの共鳴器** (`claire_resonator`) | クレア・カゲノー | **真紅のキノコ** (`minecraft:crimson_fungus`) |
+| **ディアボロス教団第5席 フェンリルの共鳴器** (`fenrir_resonator`) | 教団第5席 フェンリル | **ネザーウォート** (`minecraft:nether_wart`) |
+| **第四魔界の王 ラグナロクの共鳴器** (`ragnarok_resonator`) | 第四魔界の王 ラグナロク | **マグマクリーム** (`minecraft:magma_cream`) |
+| **ディアボロス教団第11席 ネルソンの共鳴器** (`nelson_resonator`) | 教団第11席 ネルソン | **黒曜石** (`minecraft:obsidian`) |
+
+---
+
+[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)

@@ -1,81 +1,64 @@
-# 04. "I Am Atomic" Magic System / 『I am Atomic』奥義システム完全解説
+# 04. 究極奥義『I am Atomic.』全形態＆空間消滅エンジン（I am Atomic Engine）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks.md) | [➡️ Next: 05. Weapons & Artifacts Arsenal](05-Weapons-and-Artifacts.md)
-
----
-
-![I Am Atomic Dome & Magic Circles](../docs/images/screenshot_3_atomic_chant.png)
-
-## ⚛️ 6.1 How to Cast "I Am Atomic" / 発動条件と手順
-
-To unleash Lord Shadow's signature annihilation magic:
-シャドウの代名詞である究極奥義『I am Atomic』を発動するための条件は以下の通りです。
-
-1. **Weapon Requirement / 武器条件**: Hold the **Slime Sword (`eminence_shadow:slime_sword`)** in your Main Hand.
-2. **Armor Bonus (Optional) / 装備ボーナス**: Wearing the **Full 4-Piece Slime Bodysuit** unlocks your selected Atomic Variant (`X` key) and applies the **`-20%` Mana Cost reduction**. Without the full set, casting defaults to **Standard Atomic** at base cost (`200 Mana`).
-3. **Activation / 発動キー**: Press **`G`** (`key.eminence_shadow.atomic`) while having sufficient Mana and `0` Atomic Cooldown.
+[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：05. 全29種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)
 
 ---
 
-## 🎬 6.2 Cast Sequence & Anime-Accurate Presentation / 詠唱から爆発までのタイムライン
+## 1. 詠唱・演出タイムライン仕様
+
+『I am Atomic.』を発動すると、術者は空中に浮遊し、**詠唱完了（解放）まで完全無敵状態**（耐性V＋被ダメージ完全キャンセル）になります。なお、詠唱中・解放中の無敵および耐性保護は `mana.isActiveAtomicRunning()` により正確に解放瞬間まで制御され、解放時にMPとクールダウンが確定します（万が一リリース時点でMPが不足していた場合は `PlayerMana.drainUpTo()` により所持MP分のみ消費します）。
 
 ```mermaid
 sequenceDiagram
-    participant P as Player (Shadow)
-    participant S as Server (AtomicSequenceHandler)
-    participant C as Clients (HUD, Camera & Audio)
-    participant W as World / Entities / Terrain
+    participant C as 術者 (Caster)
+    participant E as AtomicBlastEntity
+    participant W as ワールド・周囲エンティティ
 
-    P->>S: Press G Key (Holding Slime Sword)
-    S->>S: Deduct Mana & Set Cooldown (based on Variant & Full Suit)
-    S->>C: Start 70-tick (3.5s) Chant Sequence & Spawn Geometric Magic Circles
-    Note over P,W: Ticks 70 -> 15: Invulnerable, Floating Suspension, Gathering Purple/Cyan Mana Lines<br>Surrounding enemies pulled inward & Frozen with Slowness V
-    Note over P,C: Tick 28: Subtitle "[ I am... ]" + Heartbeat Bass Thump
-    Note over P,C: Tick 14 -> 1: NAKANISHI SILENCE EFFECT (Complete BGM & Sound Cut + White-Out Flash)
-    Note over P,C: Tick 1: Subtitle "[ ...Atomic. ]" + Glass Shatter + Deep Bass Impact
-    S->>W: Tick 0: DETONATION! (Stance-dependent Sphere / Directional Beam / Skyward Pillar)
-    W->>W: Vaporize Enemies (500–850 Magic/Void Bypass Damage) & Queue Async Terrain Crater
+    C->>E: スキル発動 (Age 0)
+    Note over C,E: 【前奏 (Prelude)】術者が浮遊・無敵化<br/>足元と頭上に多重回転魔法陣・二重螺旋展開
+    E->>W: 詠唱タイポグラフィ表示<br/>"I" -> "am" -> "(the all-range / recovery)" -> "atomic."
+    Note over E,W: 【特異点魔力圧縮 (Singularity Compression)】<br/>HUDゲージが100%へ上昇・周囲に紫電収束
+    E->>W: 【中西演出：静寂 (Pre-Blast Silence)】<br/>通常/All-Rangeの解放直前 8〜14 ticks、クライアント側で新規環境音を遮断し静寂を形成
+    E->>W: 💥 解放 (RELEASE_TICK)！<br/>雨・雷雲を吹き飛ばし快晴へ変更 (Ep.20再現)<br/>球体ドームまたは貫通ビームが expandSpeed (1.0 block/tick) で膨張
+    E->>W: 範囲内の敵に防御・無敵貫通の固定ダメージ (3,600〜7,500) & クレーター消滅
+    Note over E,W: 【余波 (Aftermath)】光の柱とキノコ雲が立ち昇り減衰
 ```
 
-### Key Presentation Highlights / 演出のこだわり
-- **Invulnerability During Chant / 詠唱中完全無敵**: Throughout the `70 ticks` (`3.5s`) chant, the caster has `invulnerableTime = 20`, levitates steadily in place, and generates rotating multi-layered purple/cyan geometric magic circles and barrier domes.
-- **Gravitational Convergence / 重力収束**: Enemies within `35 blocks` are pulled toward the epicenter and afflicted with **Slowness V** so they cannot escape judgment.
-- **The "Nakanishi Silence" (`Ticks 14 -> 1`) / 静寂演出（無音空間）**: Just before detonation, all explosion and ambient sounds cut to absolute silence while the screen flashes blinding white/violet—faithfully recreating the anime's sound design before the glass-shattering *"Atomic"* drop.
-
 ---
 
-## 🎯 6.3 Three Casting Stances (Standard Atomic) / 視線・姿勢による3つの撃ち分け（通常アトミック）
+## 2. 発動姿勢による3つの正典空間制御（Normal `I am Atomic.`）
 
-When **Standard Atomic** (`Variant 0`) is selected, your **posture and camera pitch at the moment you press `G`** dynamically changes the execution style to match three iconic anime episodes!
-**通常アトミック（Standard Atomic）** 選択時、**`G`キーを押した瞬間の姿勢（スニーク・視線角度）** によって、アニメの名シーンを再現した3種類の形態に自動変化します！
+『漆黒の剣』で通常の **`I am Atomic.`** を発動する際、プレイヤーの **姿勢（スニーク / 視点ピッチ角）** によって自動的に3つの原作再現モードに分岐します。
 
-| Casting Stance / 発動時の姿勢 | Condition when pressing `G` / 条件 | Anime Reference / 元ネタ | Mechanical & Visual Behavior / 挙動と威力・範囲 |
+| 発動モード | 発動時の操作条件 | 原作再現元 | 空間破壊・ダメージ判定の仕様 |
 | :--- | :--- | :--- | :--- |
-| **1. Omnidirectional Sphere**<br>全方位球状ドーム爆発 | **Default** (Standing, looking normally: Pitch `>= -65°`, Not Crouching) | **Season 1 Ep. 20 / General**<br>標準全方位アトミック | Expands an omnidirectional purple-cyan dome up to **`48 blocks` radius** (`500.0` Damage) and carves a spherical crater (`32 blocks` default radius) around the caster. |
-| **2. Directional Railgun Beam**<br>指向性貫通レーザー（第5話再現） | **Crouching (`Shift`) + Looking Forward** | **Season 1 Ep. 5 (vs. Zenon)**<br>第5話 ゼノン戦・指向性貫通ビーム | Fires a concentrated **`96-block` horizontal beam** (`6.5m` core radius) straight along your crosshair! Deals **`575.0` Damage (`1.15x`)** along the beam and carves a cylindrical tunnel through terrain without destroying the ground behind you! |
-| **3. Skyward Zenith Pillar**<br>天頂貫通・光柱（第20話再現） | **Looking Straight Up (`Pitch < -65°`)** | **Season 1 Ep. 20 (Season Finale)**<br>第20話 雨雲を吹き飛ばす天頂光柱 | Unleashes a colossal vertical pillar of violet light piercing from bedrock level to the sky, dealing **`550.0` Damage (`1.10x`)** within a **`55-block` radius**, carving a `22-block` wide vertical shaft, and **instantly clearing Rain & Thunderstorms into a clear night/day sky!** |
+| **① 通常球体形態**<br/>*(Standard Sphere)* | **直立状態**（スニークせず、真上を向かない）で右クリック | 王都決戦・標準形態 | 術者を中心に半径 `100ブロック`（`Config.blastRadius` 準拠）の真球状に青紫の特異点が膨張し、周囲360°の地形と敵対者をすべて消滅させます。 |
+| **② 指向性貫通ビーム形態**<br/>*(Directional Beam)* | **`Shift`（スニーク）しながら** 右クリック | **アニメ第5話**（アイリス＆アレクシアの前での対ゼノン戦） | 術者の視線方向（前方コーン領域）のみを長さ `100ブロック` にわたって円錐状に抉り抜きます。**術者の背後36m以内の地形・建物・存在およびすべての味方エンティティは一切傷つきません。**（地形破壊は完全に前方コーン内のみ） |
+| **③ 天蓋昇華ピラー形態**<br/>*(Zenith Skyward Pillar)* | **上空（視点ピッチ角 `Pitch <= -45°`）を見上げて** 右クリック | **アニメ第20話**（聖域消滅・王都上空の雨雲一掃） | 敵への `5,000` ダメージおよび悪天候の快晴化はそのままに、**地上のブロックを一切破壊せず** 天を貫く極大の光の柱として昇華させます。拠点付近での戦闘に最適です。 |
 
 ---
 
-## 🌌 6.4 All 5 Atomic Variants (`X` Key Cycle) / 全5種のアトミック派生比較表
+## 3. 全5種のAtomicバリエーション性能比較表
 
-Press **`X`** (`key.eminence_shadow.atomic_variant`) to cycle through the 5 Atomic Variants. Your active variant is shown on the bottom-left Mana HUD (`[ATOMIC: ...]`).
-**`X`キー** を押すことで、5種類のアトミック派生をいつでも切り替えられます（画面左下のHUDに現在選択中のモードが表示されます）。
+すべての破壊系・攻撃系ダメージは `Config.blastDamage`（デフォルト `5000.0` = `1.0倍`）による倍率スケーリングに対応しています。
 
-![Atomic Crater Aftermath](../docs/images/screenshot_4_atomic_crater.png)
-
-| # | Variant Name / 派生名 | Mana Cost<br>(Base / **Full Suit**) | Cooldown<br>(Ticks / Sec) | Damage / 威力 | Effect Radius / 効果範囲 | Crater / 地形破壊 | Unique Mechanics & Secondary Effects / 固有効果・特徴 |
-| :-: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **0** | **Standard Atomic**<br>通常『I am Atomic』 | `200` / **`160`** | `400t`<br>(`20.0s`) | **`500.0`**<br>*(Beam: `575` / Sky: `550`)* | **`48 blocks`**<br>*(Beam: `96m` / Sky: `55m`)* | **Yes** (`32m` sphere / `96m` tunnel / `22m` shaft) | Supports the **3 Casting Stances** (Sphere, Ep.5 Directional Beam, Ep.20 Skyward Pillar + Weather Clear). Deals 50% Bypass/Void + 50% Magic damage. |
-| **1** | **All-Range Atomic**<br>『I am All-Range Atomic』 | `300` / **`240`** | `600t`<br>(`30.0s`) | **`850.0`** | **`80 blocks`** | **Yes** (`48m` massive crater, `1.5x` radius) | Maximum annihilation radius and damage. Vaporizes entire armies and fortresses across 5 chunks (`160m` diameter). |
-| **2** | **Recovery Atomic**<br>『I am Recovery Atomic』 | `150` / **`120`** | `300t`<br>(`15.0s`) | **`350.0`**<br>*(to Undead & Cult Mobs ONLY)* | **`48 blocks`** | **No** (`0` blocks broken — Safe inside bases!) | **100% heals the caster & all non-hostile Players, Villagers, Iron Golems, Tamed Pets, and Sworn Shadow Garden Companions** within `48m`! Clears all negative debuffs, cures Zombie Villagers, grants **Regeneration IV (`20s`) + Absorption IV (`60s`) + Resistance II (`15s`)**, and smites Undead/Cultists for `350` damage! |
-| **3** | **Sword Atomic (Non-Destructive)**<br>『Sword Atomic』（地形保護・一点集中） | `120` / **`96`** | `200t`<br>(`10.0s`) | **`650.0`** | **`18 blocks`** | **No** (`0` blocks broken — Safe for builds!) | High-density combat variant with a short `10s` cooldown and low `96 Mana` cost. Concentrates `650.0` damage into an `18m` strike zone without damaging a single block. Ideal for boss fights inside structures! |
-| **4** | ** Cosmic Atomic**<br>『I am Cosmic Atomic』（宇宙規模・究極奥義） | `300` / **`240`** | `800t`<br>(`40.0s`) | **`1250.0`** | **`110 blocks`** | **Yes** (`60m` abyssal crater) | **Requires Mastery Rank 4+ (`Shadow Sovereign` or higher)** to select! Summons an orbital cosmic railgun array that plunges the region into midnight, rains starlight spears across `110 blocks`, deals **`1,250.0` bypass damage**, and grants the caster **Resistance IV + Regeneration IV (`15s`)**. |
-
-> [!TIP]
-> **Server & Base Protection (`atomicBlockDestruction`)**
-> Server administrators or builders who want to use Standard, All-Range, or Cosmic Atomic without carving craters into the world can set `atomicBlockDestruction = false` in `config/eminence_shadow-common.toml` (or use **Sword Atomic** / **Recovery Atomic**, which never destroy blocks).
+| 奥義名 | 使用武器 | 基礎消費MP<br/>*(99%スーツ時)* | チャージ時間<br/>*(静寂時間)* | クールダウン | 最大半径 | 固定ダメージ / 効果 | ブロック破壊 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- | :---: |
+| **`I am Atomic.`** | 『漆黒の剣』 | `500 MP`<br/>*(`505 MP`)* | `100 ticks` (5.0s)<br/>*(静寂 8t)* | `600 ticks`<br/>(30.0秒) | `100m`<br/>*(Config準拠)* | **固定 `5,000` ダメージ**（防具・エンチャ・盾・ボス硬化・霧化・単発キャップ・`invulnerableTime` 貫通。※クリエイティブ・パリィ無敵は尊重） | **あり**<br/>*(天蓋形態のみなし)* |
+| **`I am the All-Range Atomic.`** | 『漆黒の剣』 | `750 MP`<br/>*(`758 MP`)* | `130 ticks` (6.5s)<br/>*(静寂 14t)* | `600 ticks`<br/>(30.0秒) | **`125m`**<br/>*(通常の125%、上限127m)* | **固定 `7,500` ダメージ**（聖域すら消し飛ばす最大規模の全方位抹消） | **あり** |
+| **`I am Recovery Atomic.`** | 『漆黒の剣』 | `350 MP`<br/>*(`354 MP`)* | `70 ticks` (3.5s)<br/>*(粒子停止 4t)* | `160 ticks`<br/>(8.0秒) | `40m` | **【味方】** HP 100%完全回復＋全デバフ浄化＋満腹度全快＋**MP `+500` 供給**＋再生II（8秒）＆耐性II（6秒）＆移動速度上昇I（6秒）付与。<br/>**【村人ゾンビ】** 即座に通常の村人へ浄化・蘇生（2期3話再現）。<br/>**【敵】** 通常Mobに **`1,800`**（プレイヤー発動時のボス敵には **`180`**）×距離減衰（`0.55〜1.0x`）ダメージ＋弾き飛ばし。 | **なし**<br/>*(完全非破壊)* |
+| **`I am Archetype Atomic.`** | 『開闢の漆黒剣』 | `260 MP`<br/>*(`263 MP`)* | `70 ticks` (3.5s)<br/>*(粒子停止 4t)* | `100 ticks`<br/>(5.0秒) | `24〜48m` | **固定 `3,600` ダメージ**＋敵の吸収障壁剥奪＆弱体化II（8秒）。**味方への誤射ダメージなし**。<br/>**【術者特典】** HP 25%回復＋**クロノバースト（15秒：MP回復1.5倍・CT回復+50%・採掘速度II）**＋**自動パリィ3チャージ（15秒）**＋**スライム防壁（7秒）**＋味方アルファ連動 **【アトミック・ユニゾン】** 発動！ | **なし**<br/>*(完全非破壊)* |
+| **`I am Catastrophe Atomic.`** | 『開闢の漆黒剣』 | `420 MP`<br/>*(`424 MP`)* | `70 ticks` (3.5s)<br/>*(粒子停止 4t)* | `120 ticks`<br/>(6.0秒) | `24〜48m` | **固定 `6,400` ダメージ**＋敵の吸収障壁剥奪・**『堕落』（8秒）・『業火』（5秒）・ボス【体勢崩し】（5秒）** を同時付与。高速詠唱（3.5秒）で地形ごと粉砕する魔人化シャドウの深紅黒紫アトミック。 | **あり** |
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks.md) | [➡️ Next: 05. Weapons & Artifacts Arsenal](05-Weapons-and-Artifacts.md)
+## 4. 非同期空間破壊エンジン＆音響技術メモ
+
+1. **非同期スライス事前計算（`SphereDestroyer` / `DirectionalDestroyer`）**:
+   - 詠唱開始時にバックグラウンドスレッドで座標オフセット配列を生成し、`LevelChunkSection`（16×16×16）単位で空気チャンクを即座にスキップしつつ 1 tick あたり最大 `blocksPerTick`（デフォルト `40,000`）ブロックを滑らかに消去します（最大膨張フレーム `a <= getExpandEnd()` まで正確に完了）。
+2. **プロシージャル音響＆中西演出（静寂ウィンドウ）**:
+   - 著作権保護音源を一切使わず、バニラ音響の位相制御によって「収束の唸り → 爆発直前 `8〜14 ticks` の新規環境音遮断（静寂） → 大気破砕雷鳴」をリアルタイム合成しています。詠唱が中断された場合は `ClientboundStopSoundPacket` で即座に詠唱音が停止します。
+
+---
+
+[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：05. 全29種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)

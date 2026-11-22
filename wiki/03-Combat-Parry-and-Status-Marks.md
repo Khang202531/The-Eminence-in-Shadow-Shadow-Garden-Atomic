@@ -1,100 +1,65 @@
-# 03. Combat, Parry & Status Marks / 戦闘システム・ジャストパリィ・状態異常
+# 03. アクション戦闘・パリィ・体勢崩し・7大刻印（Combat, Parry & Status Marks）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 02. Mana & Slime Bodysuit](02-Mana-and-Slime-Bodysuit.md) | [➡️ Next: 04. "I Am Atomic" Magic System](04-I-Am-Atomic.md)
-
----
-
-## 🛡️ 5.1 Slime Guard (`C` Key Hold) / スライムガード（`C`キー長押し）
-
-Holding the **Slime Guard (`C`)** key weaves a defensive barrier of魔力 (Mana) and liquid slime around your body.
-**スライムガード（`C`キー）**を長押しすると、魔力と液体スライムの防御障壁を展開します。
-
-| Mechanic / 仕様 | Value / 数値 | Description / 詳細 |
-| :--- | :---: | :--- |
-| **Damage Reduction (Full Set)**<br>フルセット時のダメージ軽減 | **`80%` Reduced**<br>（被ダメージ `0.2x`） | Reduces incoming damage by 80% while `C` is held with the 4-piece Slime Bodysuit. |
-| **Damage Reduction (Partial)**<br>一部装備・未装備時の軽減 | **`50%` Reduced**<br>（被ダメージ `0.5x`） | Reduces incoming damage by 50% without the full 4-piece set. |
-| **Knockback Mitigation**<br>ノックバック軽減 | **`70%` Reduced** | Multiplies incoming knockback velocity by `0.3`. |
-| **Guard Mana Drain**<br>ガード被弾時の魔力消費 | **`min(30, Damage × 3)`** | Deducted from Current Mana on block. If Mana hits `0`, **Guard Break** occurs (`40 ticks` cooldown). |
+[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)
 
 ---
 
-## ⚡ 5.2 Just-Guard Parry (`7 ticks` Window) / ジャストパリィ（受付 0.35秒）
+## 1. スライムガード＆ジャストガード・パリィ（Just-Guard Parry）
 
-If you press **`C` (Slime Guard)** within **`7 ticks` (`0.35 seconds`)** before an attack hits you, a **Just-Guard Parry (ジャストパリィ)** triggers!
-攻撃が命中する直前 **`7 tick`（`0.35秒`）以内** に **`C`キー** を押すと、**ジャストパリィ (`[JUST PARRY!]`)** が発動します！
+| 項目 | 数値・仕様 |
+| :--- | :--- |
+| **発動操作** | 本MODのスキル武器を所持、またはスライムスーツを1部位以上着用して **`Shift`（スニーク）** |
+| **通常スライムガード軽減率** | 武器所持時：**`85%` ダメージ軽減** / 素手スーツ時：**`75%` ダメージ軽減**（1ヒットにつき `1.5 MP` 消費。MP枯渇時は `50%` 軽減） |
+| **ジャストガード受付時間** | スニークを開始してから **`7 ticks（0.35秒）`** の間（HUDに `⚡ ジャストガード待機 (パリィ)` と表示） |
+| **パリィ再構えクールダウン** | `14 ticks（0.70秒）` ※パリィ成功時はクールダウンが即座に `0` にリセットされ、連続パリィが可能！ |
+| **自動パリィチャージ** | 『開闢の漆黒剣』の *I am Archetype Atomic.*（3チャージ）や『英雄の剣（オリヴィエ）』の *始祖聖騎士・業火解放*（2チャージ）発動中は、**Shiftを押さなくても被弾時に自動でジャストガード・パリィが発動**します。 |
 
-```mermaid
-flowchart LR
-    ATK["Enemy Attack Incoming<br>敵の攻撃が迫る"] --> PressC["Press C within 7 ticks (0.35s)<br>7 tick (0.35秒) 以内に C キー押下"]
-    PressC --> Parry["⚡ [JUST PARRY!] Triggered!<br>ジャストパリィ成立！"]
-    Parry --> B1["100% Damage Nullified<br>ダメージ 100% 完全無効化"]
-    Parry --> B2["+25 Mana Restored<br>魔力 +25 回復"]
-    Parry --> B3["Attacker Counter-Damage: max(8.0, Dmg × 0.75)<br>攻撃者へカウンターダメージ + ノックバック 1.8"]
-    Parry --> B4["Attacker Staggered: Slowness IV + Weakness II (2.5s)<br>攻撃者に移動速度低下IV + 弱体化II + 30tick硬直"]
-    Parry --> B5["Attacker Posture +35 & EXPOSED (4s)<br>体幹ダメージ +35 ＆ EXPOSED（被ダメ+35%）付与"]
-    Parry --> B6["Player Reset: Dash CD = 0, Resistance II & Speed II (1.5s)<br>ダッシュCT即時リセット ＋ 耐性II・俊敏II"]
-```
-
-### Six Simultaneous Benefits of a Just-Guard Parry / ジャストパリィ成立時の6大恩恵
-
-1. **100% Damage Nullification (完全無傷)**: Incoming attack is completely canceled (`0` HP lost, `0` Mana consumed).
-2. **Mana Recovery (魔力回復)**: Immediately restores **`+25 Mana`**.
-3. **Counter-Slash & Knockback (カウンター斬撃＆弾き飛ばし)**: Deals **`max(8.0, IncomingDamage × 0.75)`** magic damage back to the attacker and launches them away with **`1.8` knockback strength**.
-4. **Enemy Stagger (敵の体勢崩し)**: Inflicts **Slowness IV (`50 ticks` / `2.5s`)** and **Weakness II (`50 ticks` / `2.5s`)**. If the attacker is a Mob, its target AI and navigation are forcibly halted for **`30 ticks` (`1.5s`)**.
-5. **Posture Damage & `[EXPOSED]` Mark (体幹削り＆無防備刻印)**: Adds **`+35 Posture Damage`** to the attacker (which can trigger a **Posture Break** at `100` posture) and applies the **`[EXPOSED]`** mark for **`80 ticks` (`4.0s`)**, increasing all damage they take by **`+35%`**.
-6. **Instant Dash Reset & Counter Buffs (ダッシュCTリセット＆反撃バフ)**: Immediately resets your **Slime Dash (`V`) cooldown to `0`** and grants you **Resistance II (`30 ticks`)** and **Speed II (`30 ticks`)**.
+### ジャストガード・パリィ成功時の6大効果
+1. **被ダメージ100%無効化 ＆ 無敵フレーム付与**（通常攻撃に対し `12 ticks`、敵の *I am Atomic* 波に対しては `24 ticks` の無敵時間を付与）。
+2. **MP即時回復**: **`+25.0 MP`** を即座に回復し、自身に **耐性II（0.7秒）＋ 移動速度上昇II（2.0秒）** を付与。
+3. **飛び道具の超高速跳ね返し**: 敵の矢や魔力弾をパリィした場合、所有権をプレイヤーに書き換え、速度を **1.75倍（最低速度 1.8）** に加速して射手へ跳ね返します（さらに威力 `90.0` の魔力斬撃で追撃）。跳ね返された矢・魔力弾・斬撃は所有権変更後の味方誤爆・副次爆発再発動が抑止されます。
+4. **武器固有のパリィカウンター追撃**: 所持している武器に応じて専用の反撃技（回復・背後瞬間移動・状態異常付与・クロス斬撃など）が自動炸裂します（ベータ弓のオフハンド保持にも対応）。
+5. **敵へのデバフ＆ノックバック**: 近接攻撃者を後方へ弾き飛ばし、移動速度低下III（2.25秒）・弱体化II（3.0秒）・発光（2.0秒）を付与。
+6. **ボスに対する【体勢崩し（Posture Break）】誘発**: 近接攻撃または半径 **24m以内** の飛び道具に対するジャストガード・パリィで、シャドウ・七陰・英雄ボスの体勢を **`60 ticks（3.0秒）`**（第四魔界の王ラグナロクは **`90 ticks（4.5秒）`**）にわたって完全に崩壊させます！
 
 ---
 
-## 💥 5.3 Enemy Posture System & Posture Break / 敵の体幹（Posture）＆ブレイクシステム
+## 2. 【体勢崩し（Posture Break）】の内部仕様
 
-All hostile enemies and bosses have an internal **Posture Gauge (`0` to `100`)** tracked via `CombatMarkHandler`:
-全ての敵およびボスには内部的な **体幹ゲージ（`0`〜`100`）** が存在します。
+ボスに対して **ジャストガード・パリィ** を決めるか、**『絶禍（Zekka）』** バフ状態で攻撃を当てると、ボスは **【体勢崩し】** 状態になります（ボスバーが黄色に変化し `[体勢崩し!]` タグが表示されます）。
 
-- **How to Deal Posture Damage / 体幹の削り方**:
-  - **Just-Guard Parry (`C`)**: **`+35 Posture`**
-  - **Heavy Weapon Skills & Boss Counter-Hits**: **`+15` to `+45 Posture`**
-  - **High-Damage Melee / Magic Attacks**: Scales with damage dealt.
-- **Posture Decay / 自然回復**: Decays after `100 ticks` (`5.0s`) out of combat.
-- **Posture Break (`Posture >= 100`) / 体幹ブレイク発動**:
-  - Resets Posture to `0` and triggers **`[POSTURE BREAK!]`** (`Totem Use` + `Anvil Land` sound + `45` Enchanted Hit & `20` Flash/Soul Fire particles).
-  - Deals **`max(12.0, MaxHP × 0.06)`** bonus magic damage immediately.
-  - Inflicts **Slowness VI (`70 ticks` / `3.5s`)**, **Weakness III (`70 ticks`)**, **Glowing (`70 ticks`)**, and **halts Mob AI for `50 ticks` (`2.5s`)**.
-  - Applies **`[EXPOSED]` (`100 ticks` / `5.0s`, `+35%` damage taken)** and **`[SILENCED]` (`100 ticks` / `5.0s`, Boss Skills Sealed)**.
+- **霧化（Mist Form）および完全隠密（Stealth）の即時強制解除・発動封印**（イプシロンの空中フェザーグライドも即解除・撃墜）
+- **残像回避（Sway Evade）・飛び道具の斬り落とし（Projectile Slicing）・カウンターパリィの完全封印**
+- **自然再生（Slime Coat Regeneration）の停止**
+- **スライム硬化ダメージ軽減率の半減 ＆ 最終被ダメージ `1.45倍`（第四魔界の王ラグナロクは破砕状態で合計 `2.00倍`）**
+- **単発ダメージ上限キャップの緩和**（通常の最大HP `20%` キャップが `28%` まで拡大。シャドウも `bossSingleHitDamageCapRatio` の **`1.4倍`** に緩和）
+- **ボス「シャドウ」に対する追加ペナルティ**: 体勢崩し中はさらに防御力（Armor）が **`-24.0`** 低下し、Phase 2〜3の「黒鉄スライム硬化（ダメージ無効化閾値）」が完全に無効化されます。
 
 ---
 
-## 💨 5.4 Slime High-Speed Dash (`V` Key) / スライム高速ステップ（`V`キー）
+## 3. 高速移動（瞬駆 / 連閃）
 
-Pressing **`V`** channels Mana into your legs to perform a shadow step with invulnerability frames (i-frames).
-**`V`キー** を押すと足元に魔力を集中し、無敵フレーム（i-frame）付きの高速移動を行います。
-
-| Parameter / 項目 | Full 4-Piece Slime Suit / フルセット装備時 | Partial or No Suit / 未揃い時 |
-| :--- | :---: | :---: |
-| **Mana Cost / 消費魔力** | **`15 Mana`** | **`15 Mana`** |
-| **Cooldown / クールダウン** | **`25 ticks` (`1.25s`)** *(Reset to `0` on Just Parry!)* | **`25 ticks` (`1.25s`)** |
-| **Dash Speed / 初速ベクトル** | **`1.85 blocks/tick`** (Directional or Look vector) | **`1.30 blocks/tick`** |
-| **Vertical Boost / 垂直補正** | `max(currentY, 0.25)` (`+0.35` if pitching up) | `max(currentY, 0.25)` |
-| **Invulnerability (i-frames) / 無敵時間** | **`10 ticks` (`0.50s`)** + Fall Distance Reset (`0`) | **`10 ticks` (`0.50s`)** |
-| **Through-Slash Damage / すれ違い斬撃** | **`8.0 + (MasteryRank × 1.5)` Magic Damage** to all enemies within `1.8m` along dash path + **Slowness II (`2.0s`)** | *None (Full Suit Exclusive)* |
+- **発動条件**: 地上・空中で `Space × 2`（2段ジャンプ入力 / `8 ticks` 以内）。
+- **『漆黒の剣』またはフルスライムスーツ素手時**: 回数無制限の **瞬駆（Shadow Dash）**（ベータ弓所持時を除く）。
+- **『陰の剣（アルファ専用）』所持時**: **3チャージ式の連閃（Rapid Dash）** が発動。
+- **落下安全保護**: 発動後 `36 ticks（1.8秒）` は落下ダメージが完全無効になります。
 
 ---
 
-## 🩸 5.5 Combat Marks & Status Effects / 7種の戦闘刻印（状態異常）一覧
+## 4. 7大戦闘刻印・特殊状態異常仕様（Combat Marks & Status Engine）
 
-Weapons, artifacts, and parries apply specialized **Combat Marks** tracked per entity by `CombatMarkHandler`:
-各武器の固有スキルやジャストパリィにより、対象に7種類の固有戦闘刻印（デバフ）が付与されます。
+ターゲットに付与された刻印・状態異常は、画面上のターゲットインジケーター（`双牙:X 出血:Y 鋼糸:Z [火:* 堕:* 阻:*]`、未付与時は `-`）およびイータの魔導解析HUDにリアルタイム同期されます（プレイヤーのログアウト時にはトラッカーが自動クリアされます）。
 
-| Combat Mark / 刻印名 | Trigger Sources / 主な付与手段 | Mechanical Effect / 効果詳細 |
-| :--- | :--- | :--- |
-| **`[BLEED]`**<br>出血（最大5スタック） | Blood Queen's Scythe, Crimson Claws, Delta's Greatsword, Victoria's Rose Blade, etc. | Deals **`1.5 × Stacks` Magic Damage every `20 ticks` (`1.0s`)** with redstone blood particles. Max **5 Stacks** (`7.5 dmg/sec`). At **5 Stacks**, triggers **`[HEMORRHAGE!]` (大量出血爆発)** dealing **`18.0 + (MaxHP × 0.05)`** burst magic damage (capped at `45.0`) and resetting stacks! |
-| **`[EXPOSED]`**<br>無防備・防御崩壊 | Just-Guard Parry (`C`), Posture Break, Eta's Wrench, Omega's Twin Blades, Nina's Dagger | Target takes **`+35%` (`1.35x`) increased damage** from ALL sources while active. |
-| **`[VOIDMARK]`**<br>虚空の刻印 | Mist Dragon Blade, Kai's Sonic Blade | The next heavy hit (`>= 6.0` damage) detonate **`[VOID DETONATION!]`**, dealing **`+40% Bonus Damage` (`+8.0` to `+35.0` cap)** and restoring **`+15 Mana`** to the attacker! |
-| **`[FROSTBITE]`**<br>凍傷・氷結 | Alexia's Rapier, Beatrix's Elven Blade, Borgnine's Greatsword, Yukime's Fan, Olivier's Sword | Inflicts continuous freezing (`TicksFrozen + 40`), **Slowness III**, and causes the target to take **`+20%` (`1.20x`) shatter damage** from all attacks. |
-| **`[SILENCED]`**<br>魔力封鎖・沈黙 | Eye of Avarice, Eta's Wrench, Claire's Rapier, Posture Break, Rose's Royal Rapier | **Completely seals Boss special skills & magic patterns** while active, and reduces the target's outgoing attack damage by **`-25%` (`0.75x`)**. |
-| **`[CONDUCTIVE]`**<br>感電・雷鳴連鎖 | Sherry's Rune Staff, Gamma's Comedy Sword, Lambda's Whip | Every hit triggers **`[CHAIN LIGHTNING!]`**: deals **`+4.0` bonus magic damage** to the target and arcs **`6.0` magic damage** to up to **4 nearby enemies within `6.0 blocks`**. |
-| **`[GOLDEN_DOOM]`**<br>黄金の破滅 | Golden Crowbar (`Right-Click` Overdrive Strike) | After the countdown expires (`60 ticks` / `3.0s`), detonates for **`28.0` Golden Explosion Magic Damage** and launches the target upward (`+0.55 Y`). |
+| 刻印・状態名 | 最大スタック / 効果時間 | 付与手段 | 詳細効果・計算式 |
+| :--- | :---: | :--- | :--- |
+| **双牙の刻印**<br/>*(Twin Fang Stamp)* | 最大 `5` スタック<br/>（`160 ticks / 8.0秒`） | デルタ（陰の爪）、ゼータ（影の双剣）の近接攻撃・スキル | デルタの *デストラクション* やゼータの *シャドウ・ダンス*（またはボス時の3スタック蓄積）で起爆し、**防御45%貫通**の爆発ダメージ $\text{Damage} = \text{Base} \times (1.0 + 0.32 \times \text{Stacks})$（最大 **2.60倍**）＋移動速度低下IV（2秒）を与える。 |
+| **出血**<br/>*(Bleed)* | 最大 `5` スタック<br/>（`120〜180 ticks`） | アウロラ、エリザベート、切り裂きジャック、フェンリルの武器・スキル | ① `25 ticks` 毎に $\min(12.0,\ 1.5 \times \text{Stacks})$ の継続専用ダメージ（`eminence_shadow:combat_mark`：全ボス有効・非致死でHP1残し）。<br/>② 出血共鳴武器（魔女の大鎌・血の女王の鎌・血染トランプ・妖刀空蝉）の通常追撃（および一部近接技）の威力を **$(1.0 + 0.16 \times \text{Stacks})$ 倍（5スタックで 1.80倍）** に増幅！ |
+| **鋼糸**<br/>*(Steel Thread)* | 最大 `3` スタック | 『シャドウの暗号メモ』右クリック、ボス「ジョン・スミス」 | 自身に付与される迎撃スタック。敵から非飛び道具の攻撃を受けた瞬間に1スタック消費し、攻撃を完全無効化すると同時に攻撃者へ **`28.0` ダメージ（防御35%貫通）＋ `60 ticks（3.0秒）` の移動速度低下VI・弱体化III（盲目は `24 ticks / 1.2秒`）** を与える。 |
+| **業火**<br/>*(Hellfire / Gouka)* | `100〜140 ticks`<br/>（5.0〜7.0秒） | 『英雄の剣（オリヴィエ）』の会心攻撃・スキル、ボス「オリヴィエ」「ラグナロク」 | `20 ticks（1.0秒）` 毎に対象の **最大HPの `3.5%`**（最低 `2.0` 〜 上限 `20.0`）の割合ダメージを `eminence_shadow:combat_mark` で与える（火炎・通常魔法耐性を持つ全ボスにも有効・非致死仕様）。 |
+| **絶禍**<br/>*(Calamity Break / Zekka)* | `60〜180 ticks`<br/>（3.0〜9.0秒） | 『開闢の漆黒剣』、『我執の楔（フレイヤ）』、『英雄の剣（オリヴィエ）』 | 自身に付与される破砕バフ。<br/>① 与ダメージ常時 **`1.18倍`**（バニラ盾ガード中のプレイヤーには **`1.45倍` ＋ 盾を強制無力化**）。<br/>② 攻撃命中時、**ボスの【体勢崩し】（45〜90 ticks）をパリィなしで直接誘発**する（ラグナロクのBreak装甲を唯一正面から粉砕可能）。 |
+| **堕落**<br/>*(Depravity / Daraku)* | `80〜140 ticks`<br/>（4.0〜7.0秒） | 『妖狐の鉄扇（ユキメ）』の会心・奥義、ボス「イータ」「ラグナロク」 | 対象に弱体化Iを付与した上で、**対象の与ダメージを `-20%（0.80倍）` に低下**させ、**対象の被ダメージを `+25%（1.25倍）` に増加**させる。 |
+| **魔力阻害**<br/>*(Magic Inhibition)* | `60〜160 ticks`<br/>（3.0〜8.0秒） | 『魔女の大鎌』、『血の女王の鎌』、『聖域の魔導杖』 | 対象が受ける **あらゆるHP回復（自然再生・吸血・ヒールスキル・ポーション）の回復量を `-70%（0.30倍）` に激減**させる。 |
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 02. Mana & Slime Bodysuit](02-Mana-and-Slime-Bodysuit.md) | [➡️ Next: 04. "I Am Atomic" Magic System](04-I-Am-Atomic.md)
+[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)

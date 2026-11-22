@@ -1,100 +1,96 @@
-# 08. Advancements, Commands, Configuration & Architecture / 実績ツリー・コマンド・Config・技術仕様
+# 08. 進捗・コマンド・コンフィグ＆技術仕様（Advancements, Commands & Config）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 07. Complete Crafting Recipes](07-Crafting-Recipes.md)
+[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 Wiki ホーム](Home.md)
 
 ---
 
-## 🏆 12. Advancements Progression Tree (All 13 Advancements) / 全13種の進捗（実績）ツリー
+## 1. 進捗（Advancements）一覧（ゲームプレイ13種 ＋ レシピ解放5種）
 
-The mod includes a dedicated **"The Eminence in Shadow" (`陰の実力者になりたくて！`)** advancement tab tracking your rise from crafting your first Slime Core to mastering all 8 Canon Bosses.
-本MOD専用の進捗（実績）タブが実装されており、最初のスライムコア作成から全ボス制覇までの道のりをガイドします。
+### 1.1 メイン進捗ツリー（13種）
 
 ```mermaid
-flowchart TD
-    Root["🟣 root: The Eminence in Shadow<br>Craft Shadow's Slime Core (shadow_core)"] --> Suit["🛡️ slime_bodysuit: 99% Slime Conductivity<br>Equip Full 4-Piece Slime Bodysuit"]
-    Root --> Sword["🗡️ slime_sword: The Perfect Conductor<br>Craft the Slime Sword"]
-    Root --> Crowbar["🔧 golden_crowbar: Stylish Bandit Slayer<br>Craft the Golden Crowbar"]
-    Root --> Burger["🍔 mitsugoshi_customer: Welcome to Mitsugoshi Co.<br>Obtain Tuna Burger or Artisanal Chocolate"]
-    Root --> Oath["📜 shadow_garden_oath: Sworn to the Shadows<br>Craft the Shadow Garden Oath"]
-    Root --> Eye["👁️ eye_of_avarice: Artifact of Diabolos<br>Obtain the Eye of Avarice"]
-    Sword --> Atomic["⚛️ i_am_atomic: I Am Atomic<br>Ready the Slime Sword & Bodysuit for Atomic"]
-    Suit --> Alpha["🌙 first_seat_alpha: The First Seat<br>Obtain Alpha's Slime Blade"]
-    Alpha --> Seven["👑 seven_shadows_arsenal: Master of the Seven Shadows<br>Collect All 7 Seven Shadows Weapons!"]
-    Sword --> John["🧵 super_elite_agent: Code Name: John Smith<br>Obtain John Smith's Monofilament Gloves"]
-    Seven --> Legends["⚔️ heroes_and_calamity: Ancient Legends Awakened<br>Obtain Olivier, Aurora, Elisabeth or Mist Dragon Weapon"]
-    Atomic --> TrueEminence["🌌 true_eminence: True Eminence in Shadow<br>Defeat Lord Shadow & Claim the Ultimate Title"]
+flowchart LR
+    Root["陰の実力者になりたくて！<br/>(root)"] --> Suit["魔力伝導率 99%<br/>(slime_suit)"]
+    Suit --> Parry["見切った……そこが隙だ<br/>(posture_break)"]
+    Suit --> Eta["第七席の解析突破<br/>(eta_defeat)"]
+    Eta --> Gamma["ミツゴシの暴走を鎮めて<br/>(gamma_defeat)"]
+    Gamma --> Beta["精密魔導狙撃の打破<br/>(beta_defeat)"]
+    Beta --> Epsilon["蒼月の旋律を断ち切る<br/>(epsilon_defeat)"]
+    Epsilon --> Zeta["影猫の闇を見破る者<br/>(zeta_defeat)"]
+    Zeta --> Delta["狂乱の紅狼を制す力<br/>(delta_defeat)"]
+    Delta --> Alpha["七陰第一席を超えし者<br/>(alpha_defeat)"]
+    Alpha --> Complete["七陰全席制覇<br/>(seven_shadows_complete)"]
+    Complete --> Shadow["陰の頂き――さらなる深淵へ<br/>(shadow_defeat)"]
+    Shadow --> Atomic["I am Atomic.<br/>(i_am_atomic)"]
 ```
 
-| # | Advancement ID | Title (EN / JA) | Trigger Requirement / 達成条件 | Frame Type |
-| :-: | :--- | :--- | :--- | :---: |
-| **1** | `eminence_shadow:root` | **The Eminence in Shadow**<br>陰の実力者になりたくて！ | Obtain **Shadow's Slime Core (`shadow_core`)** | `task` |
-| **2** | `eminence_shadow:slime_bodysuit` | **99% Slime Conductivity**<br>魔力伝導率99%・漆黒の装束 | Obtain all 4 pieces of the **Slime Bodysuit** (`slime_hood`, `slime_chestplate`, `slime_leggings`, `slime_boots`) | `goal` |
-| **3** | `eminence_shadow:slime_sword` | **The Perfect Conductor**<br>最強の魔力伝導剣 | Craft or obtain the **Slime Sword (`slime_sword`)** | `task` |
-| **4** | `eminence_shadow:golden_crowbar` | **Stylish Bandit Slayer**<br>バールのようなもの（黄金） | Craft or obtain the **Golden Crowbar (`golden_crowbar`)** | `task` |
-| **5** | `eminence_shadow:i_am_atomic` | **I Am Atomic**<br>『I am Atomic』 | Hold the **Slime Sword** with the **Slime Chestplate** equipped | `challenge` |
-| **6** | `eminence_shadow:first_seat_alpha` | **The First Seat of Seven Shadows**<br>七陰第一席の黒刃 | Obtain **Alpha's Slime Blade (`alpha_blade`)** | `goal` |
-| **7** | `eminence_shadow:seven_shadows_arsenal` | **Master of the Seven Shadows**<br>七陰集結・全ての神器 | Obtain all 7 weapons of the Seven Shadows (`alpha_blade`, `beta_bow`, `gamma_sword`, `delta_greatsword`, `epsilon_blade`, `zeta_claw`, `eta_wrench`) | `challenge` |
-| **8** | `eminence_shadow:super_elite_agent` | **Code Name: John Smith**<br>超エリート工作員ジョン・スミス | Obtain **John Smith's Monofilament Gloves (`john_smith_gloves`)** | `goal` |
-| **9** | `eminence_shadow:eye_of_avarice` | **Artifact of Diabolos**<br>暴走する古代アーティファクト | Obtain the **Eye of Avarice (`eye_of_avarice`)** | `goal` |
-| **10** | `eminence_shadow:shadow_garden_oath` | **Sworn to the Shadows**<br>シャドウガーデンの盟約 | Craft or obtain the **Shadow Garden Oath (`shadow_garden_oath`)** | `task` |
-| **11** | `eminence_shadow:mitsugoshi_customer` | **Welcome to Mitsugoshi Co.**<br>三越商会へようこそ | Obtain a **Mitsugoshi Supreme Tuna Burger** or **Mitsugoshi Artisanal Chocolate** | `task` |
-| **12** | `eminence_shadow:heroes_and_calamity` | **Ancient Legends Awakened**<br>英雄と厄災の記憶 | Obtain **Olivier's Hero Sword**, **Aurora's Violet Spear**, **Blood Queen's Scythe**, or **Mist Dragon Blade** | `challenge` |
-| **13** | `eminence_shadow:true_eminence` | **True Eminence in Shadow**<br>真・陰の実力者 | Defeat **Lord Shadow (`shadow_boss`)** | `challenge` |
+| 進捗ID | タイトル（日 / 英） | 達成条件 | フレーム種別 |
+| :--- | :--- | :--- | :---: |
+| `root` | **陰の実力者になりたくて！** / *The Eminence in Shadow* | スライムスーツを1部位以上着用する | Task |
+| `slime_suit` | **魔力伝導率 99%** / *99% Mana Conductivity* | スライムスーツ4部位をフル装備する | Goal |
+| `posture_break` | **見切った……そこが隙だ** / *Read Like an Open Book* | ジャストガード・パリィでボスの体勢を崩す | Goal |
+| `eta_defeat` | **第七席の解析突破** / *Deconstruction Denied* | 第七席「イータ」を撃破する | Task |
+| `gamma_defeat` | **ミツゴシの暴走を鎮めて** / *Mitsugoshi Implosion* | 第三席「ガンマ」を撃破する | Task |
+| `beta_defeat` | **精密魔導狙撃の打破** / *Counter-Snipe Mastery* | 第二席「ベータ」を撃破する | Task |
+| `epsilon_defeat` | **蒼月の旋律を断ち切る** / *Silencing the Moonlight* | 第五席「イプシロン」を撃破する | Task |
+| `zeta_defeat` | **影猫の闇を見破る者** / *Catching the Phantom* | 第六席「ゼータ」を撃破する | Task |
+| `delta_defeat` | **狂乱の紅狼を制す力** / *Taming the Red Wolf* | 第四席「デルタ」を撃破する | Task |
+| `alpha_defeat` | **七陰第一席を超えし者** / *Surpassing the First Seat* | 第一席「アルファ」を撃破する | Challenge |
+| `seven_shadows_complete` | **七陰全席制覇** / *Conqueror of the Seven Shadows* | 七陰7名全員をすべて撃破する | Challenge |
+| `shadow_defeat` | **陰の頂き――さらなる深淵へ** / *The Pinnacle of Shadow* | 陰の実力者「シャドウ」を撃破する | Challenge |
+| `i_am_atomic` | **I am Atomic.** / *I am Atomic.* | 自らの手で究極奥義『I am Atomic.』系を発動・解放する | Challenge |
+
+### 1.2 レシピブック自動解放進捗（5種 / 全51レシピ網羅）
+`data/eminence_shadow/advancements/recipes/` に格納され、対応素材の入手時にバニラのレシピブックへ自動解放されます：
+- `slime_core_recipes`: スライムボール入手でスライムスーツ4部位＋正典8ボス共鳴核（計12種）を解放
+- `starter_weapons`: 鉄インゴット入手で序盤武器・道具（ミスリルの剣、バール、地味な剣等 7種）を解放
+- `amethyst_and_kagemasu_resonators`: アメジストの欠片入手で暗号メモ・開闢剣・カゲマス＆教団共鳴核18種等（計19種）を解放
+- `netherite_relic_weapons`: ネザライトインゴット入手で三英雄・教団幹部等の上位武器（11種）を解放
+- `mitsugoshi_treats`: カカオ豆入手でミツゴシ特製チョコレート＆ブレンド珈琲（2種）を解放
 
 ---
 
-## 💻 13. Commands Reference (`/mana`) / コマンドリファレンス
+## 2. `/mana` コマンド一覧
 
-Implemented in `ManaCommand.java`, the `/mana` command suite allows players to inspect their Mana & Mastery Rank and lets operators (`Permission Level 2`) test or adjust player states.
-`/mana` コマンドを使用することで、魔力や熟練度ランクの確認・変更（OP権限）が可能です。
-
-| Command Syntax / コマンド構文 | Permission / 権限 | Description / 実行効果 |
+| コマンド構文 | 必要OP権限 | 機能・出力内容 |
 | :--- | :---: | :--- |
-| **`/mana info`** | **All Players (`Level 0`)** | Displays your current **Mana (`Current / EffectiveMax`)**, **Effective Regen Rate (`/s`)**, **Selected Atomic Variant**, **Atomic Cooldown**, and **Shadow Mastery Rank (`0–8`)**. |
-| **`/mana full`** | Operator (`Level 2`) | Immediately refills your **Current Mana to `100%` of Effective Max** and resets your **Atomic Cooldown to `0`**. |
-| **`/mana set <amount>`** | Operator (`Level 2`) | Sets your **Current Mana** to `<amount>` (`0` to `10000`, clamped to Effective Max). |
-| **`/mana max <amount>`** | Operator (`Level 2`) | Sets your **Base Max Mana** to `<amount>` (`10` to `10000`, default `100`). |
-| **`/mana rank <0..8>`** | Operator (`Level 2`) | Sets your **Shadow Mastery Rank** directly to `<0..8>` (unlocking the corresponding `+25/rank` Max Mana, `+0.5/s` Regen, Slime Sword ATK bonus, and **Cosmic Atomic** at Rank 4+). |
+| `/mana get` | レベル `0`（全員可） | 現在のMP / 最大MP、現在の魔力伝導率（`%`）、実効自然回復速度（`MP/s`）を表示します。 |
+| `/mana fill` | レベル `2`（OP） | 実行プレイヤーの現在MPを最大値まで即座に100%全回復します。 |
+| `/mana set <amount>` | レベル `2`（OP） | 実行プレイヤーの現在MPを指定値（`0.0 〜 MaxMP`）に設定します。 |
+| `/mana max <amount>` | レベル `2`（OP） | 実行プレイヤーの基礎最大MPを指定値（`>= 10.0`）に変更します（その上にスーツ・武器・Rankボーナスが加算されます）。 |
+| `/mana regen <rate>` | レベル `2`（OP） | 実行プレイヤーの基礎MP自然回復速度（`MP/秒`、`>= 0.0`）を変更します。 |
 
 ---
 
-## ⚙️ 14. Configuration File (`eminence_shadow-common.toml`) / コンフィグ設定項目一覧
+## 3. コンフィグ設定（`config/eminence_shadow-common.toml`）
 
-Located at `config/eminence_shadow-common.toml`, all 13 server/common gameplay parameters can be customized without restarting the game world:
-ワールドやサーバーのルールに合わせて、`config/eminence_shadow-common.toml` の全13項目を自由に調整できます。
-
-| Section | Config Key / 設定キー | Default / 初期値 | Valid Range / 範囲 | Description / 設定内容の詳細 |
-| :---: | :--- | :---: | :---: | :--- |
-| **`[mana]`** | `defaultMaxMana` | **`100`** | `10` – `10000` | Base Maximum Mana for a fresh player before armor and Mastery Rank bonuses. |
-| **`[mana]`** | `defaultManaRegen` | **`2`** | `0` – `1000` | Base passive Mana regeneration per second (`20 ticks`) before armor and Rank bonuses. |
-| **`[mana]`** | `slimeSuitMaxManaBonus` | **`150`** | `0` – `10000` | Bonus Maximum Mana granted while wearing the full 4-piece Slime Bodysuit (`+150` default). |
-| **`[mana]`** | `slimeSuitRegenMultiplier` | **`2.0`** | `1.0` – `20.0` | Multiplier applied to passive Mana regeneration while wearing the full 4-piece Slime Bodysuit (`2.0x` default). |
-| **`[atomic]`** | `atomicManaCost` | **`200`** | `0` – `10000` | Base Mana cost for **Standard Atomic** (`160` with full suit `-20%` discount). |
-| **`[atomic]`** | `atomicCooldownTicks` | **`400`** | `0` – `72000` | Cooldown in ticks for **Standard Atomic** (`400 ticks = 20.0 seconds`). |
-| **`[atomic]`** | `atomicDamage` | **`500.0`** | `1.0` – `100000.0` | Base damage dealt by **Standard Atomic** (`500.0` default). |
-| **`[atomic]`** | `atomicEntityRadius` | **`48.0`** | `4.0` – `256.0` | Entity damage radius in blocks for **Standard Atomic** (`48.0m` default). |
-| **`[atomic]`** | `atomicCraterRadius` | **`32`** | `0` – `128` | Terrain crater radius in blocks for **Standard Atomic** (`32m` default; All-Range uses `1.5x = 48m`). |
-| **`[atomic]`** | `atomicBlockDestruction` | **`true`** | `true` / `false` | Whether Standard, All-Range, and Cosmic Atomic carve terrain craters. Set to **`false`** to disable all terrain block destruction server-wide! |
-| **`[atomic]`** | `allRangeManaCost` | **`300`** | `0` – `10000` | Base Mana cost for **All-Range Atomic** & **Cosmic Atomic** (`240` with full suit `-20%` discount). |
-| **`[atomic]`** | `allRangeEntityRadius` | **`80.0`** | `8.0` – `256.0` | Entity damage radius in blocks for **All-Range Atomic** (`80.0m` default). |
-| **`[atomic]`** | `allRangeDamage` | **`850.0`** | `1.0` – `100000.0` | Base damage dealt by **All-Range Atomic** (`850.0` default). |
+| 設定キー | 型 | デフォルト値 | 許容範囲 | 詳細説明 |
+| :--- | :---: | :---: | :---: | :--- |
+| `blastRadius` | Int | `100` | `8 〜 100` | 通常『I am Atomic.』の爆発・消滅半径（ブロック数）。*All-Range Atomic* はこの値の125%（最大 `125`、ハードキャップ `127`）になります。 |
+| `expandSpeed` | Double | `1.0` | `0.1 〜 4.0` | 『I am Atomic.』の球体ドームが1 tickあたりに膨張するブロック数（`1.0` = 1 tickに1層ずつ消去）。 |
+| `blastDamage` | Double | `5000.0` | `0.0 〜 1000000.0` | 基準アトミックダメージ倍率の基準値（`config / 5000.0` 倍が Normal=`5,000` / All-Range=`7,500` / Catastrophe=`6,400` / Archetype=`3,600` に掛かる。デフォルト `5000.0` で 1.0倍）。 |
+| `destroyBlocks` | Boolean | `true` | `true / false` | 『I am Atomic.』でブロックを消去するかどうか（`false` で全形態非破壊。ゲームルール `mobGriefing` が `false` の場合も破壊されません）。 |
+| `blocksPerTick` | Int | `40000` | `100 〜 500000` | クレーター生成時に **1 tickあたりに消去する最大ブロック数**。低スペックサーバーでMSPT負荷を抑えたい場合は `10000〜20000` へ調整可能。 |
+| `cooldownTicks` | Int | `600` | `0 〜 72000` | 『I am Atomic.』発動後のクールダウン時間（`600 ticks = 30.0秒`。サーバー保護のため実効下限 `40 ticks` が適用されます）。 |
+| `casterImmune` | Boolean | `true` | `true / false` | 術者自身が自分の放った『I am Atomic.』のダメージを受けないかどうか（Recoveryは常に術者無敵・詠唱中の耐性V保護中は無敵優先）。 |
+| `fastCraterMode` | Boolean | `true` | `true / false` | `true` 時はブロック消去時にドロップ生成を抑制（`UPDATE_SUPPRESS_DROPS`）。隣接更新（`UPDATE_NEIGHBORS`）は負荷暴走防止のため常時省略され、ライティング整合性は維持されます。 |
+| `crossModNonPlayerScale` | Double | `3.0` | `1.0 〜 20.0` | シャドウ、七陰、スライムドローンが **非プレイヤー（ウォーデン、ウィザー、他MODボス等）** を攻撃する際のダメージ倍率。 |
+| `bossPowerMultiplier` | Double | `1.0` | `0.5 〜 10.0` | 敵対時のシャドウ・七陰・各ボスの最大HPおよび攻撃力に掛かるグローバル倍率。 |
+| `bossSingleHitDamageCapRatio` | Double | `0.20` | `0.0 〜 1.0` | 『I am Atomic.』以外の単発攻撃が1ヒットでボスに与えられる最大HP割合キャップ（デフォルト `0.20 = 最大HPの20%`、体勢崩し時は1.4倍まで緩和、`0.0` で上限解除）。 |
+| `challengeModdedBosses` | Boolean | `true` | `true / false` | 敵対状態のシャドウや七陰が、周囲にいる高HPの他MODボスや敵対モンスターへ自ら戦いを挑むかどうか。 |
+| `clientAuraDensity` | Double | `1.0` | `0.0 〜 2.0` | クライアント側で描画されるシャドウ・七陰の常時オーラパーティクルの密度倍率（`0.0` で無効化）。 |
 
 ---
 
-## 🛠️ 15. Technical Architecture & Server Optimization / 技術仕様・マルチプレイ負荷対策
+## 4. マルチプレイ最適化＆技術アーキテクチャ
 
-To ensure **zero server TPS lag** even when unleashing `48m` to `60m` Atomic craters in multiplayer, **The Eminence in Shadow: Shadow Garden & Atomic** uses a custom asynchronous block-carving and network-batching pipeline (`AtomicSequenceHandler.java`):
-巨大なクレーターを生成する『I am Atomic』をマルチプレイサーバーで使用しても **TPS低下（ラグ）が発生しない** よう、以下の独自最適化エンジンを実装しています。
-
-1. **Asynchronous Multi-Tick Crater Carving (`PendingCrater` Queue)**:
-   - Instead of removing 100,000+ blocks in a single server tick (which freezes vanilla Minecraft), craters are queued into a per-dimension `PendingCrater` iterator and carved outward shell-by-shell at a budgeted **`5,500 blocks per tick`**.
-   - Low-level `LevelChunkSection.setBlockState(..., false)` writes directly to the palette without triggering cascading neighbor updates, physics checks, or lighting recalculations per block.
-2. **Batched S2C Chunk Delta Packets (`ClientboundSectionBlocksUpdatePacket`)**:
-   - Instead of sending thousands of individual `ClientboundBlockUpdatePacket` messages, modified blocks are grouped by `SectionPos` and broadcast as a single compressed `ClientboundSectionBlocksUpdatePacket` per 16×16×16 chunk section to nearby players.
-3. **Full Dual-Loader Parity (NeoForge 1.21.1 & Forge 1.20.1)**:
-   - **NeoForge 1.21.1 (`21.1.219`)**: Uses the modern `RegisterPayloadHandlersEvent` (`CustomPacketPayload` / `StreamCodec`), `AttachmentType<ManaCapability>`, and Data Component item attributes.
-   - **Forge 1.20.1 (`47.3.0`)**: Uses `SimpleChannel` packet registration, `ICapabilitySerializable<CompoundTag>` (`CapabilityManager`), and `Multimap<Attribute, AttributeModifier>` item attributes with 100% identical gameplay behavior.
+1. **非同期スライス事前計算＆16×16チャンクセクション局所化クレーター生成（`SphereDestroyer` & `DirectionalDestroyer`）**:
+   - 詠唱開始時に `CompletableFuture` バックグラウンドスレッドで座標オフセット配列を事前計算・キャッシュし、消去実行時は空気セクション（`LevelChunkSection`）を即スキップしてTPS低下を防止します。
+2. **マルチプレイS2Cバッチパケット通信（`ParticleFxPayload` & `SyncEntityMarksPayload`）**:
+   - 円環・爆風・レーザーラインを数十バイトの軽量ペイロードへ集約してクライアント展開し、7大戦闘刻印も `int` ビットマスクへパッキングして変化時のみ同期します。
+3. **プロシージャル合成音響＆著作権クリーン設計**:
+   - 抽出音声を一切含まず、バニラ効果音のピッチ・位相制御による波形合成のみで構成されています。
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 07. Complete Crafting Recipes](07-Crafting-Recipes.md)
+[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 Wiki ホーム](Home.md)

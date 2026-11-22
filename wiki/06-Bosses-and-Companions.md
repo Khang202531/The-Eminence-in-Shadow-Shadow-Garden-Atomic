@@ -1,127 +1,120 @@
-# 06. Bosses, Mastery Ranks & Companions (All 26 Bosses) / 全26体ボス攻略・熟練度ランク・七陰仲間システム
+# 06. 全26体 ボスエンティティ＆シャドウガーデンの盟約（Bosses & Companions）
 
-[🏠 Home](Home.md) | [⬅️ Previous: 05. Weapons & Artifacts Arsenal](05-Weapons-and-Artifacts.md) | [➡️ Next: 07. Complete Crafting Recipes](07-Crafting-Recipes.md)
-
----
-
-![Lord Shadow Boss Fight](../docs/images/screenshot_5_shadow_boss.png)
-
-## 👑 7.1 Shadow Mastery Rank Progression (Ranks 0–8) / 陰の実力者ランク（熟練度）システム
-
-Defeating the **8 Canon Bosses** (Lord Shadow, Alpha, Beta, Gamma, Delta, Epsilon, Zeta, Eta) permanently records a unique victory flag in your `ManaCapability`. Each unique boss defeated increases your **Shadow Mastery Rank (陰の実力者ランク)** from **Rank 0** up to **Rank 8**, unlocking permanent stat bonuses and **Cosmic Atomic**!
-**8体のメインボス（シャドウ＋七陰7名）** をそれぞれ討伐するごとに、プレイヤー固有の討伐フラグが記録され、**熟練度ランク（Rank 0 〜 Rank 8）** が永続的に上昇します。
-
-| Mastery Rank<br>ランク | Unique Bosses Defeated<br>討伐ボス種類数 | Title / 称号 | Permanent Max Mana Bonus<br>最大魔力ボーナス | Permanent Regen Bonus<br>自然回復ボーナス | Slime Sword Base ATK Bonus<br>スライムソード攻撃力上昇 | Special Unlocks / 特別解放要素 |
-| :-: | :-: | :--- | :---: | :---: | :---: | :--- |
-| **Rank 0** | `0 / 8` | **Novice in the Shadows** (見習い工作員) | `+0` (`100` Base) | `+0.0/s` | `+0.0` (`12.0` ATK) | Standard, All-Range, Recovery & Sword Atomic |
-| **Rank 1** | `1 / 8` | **Shadow Initiate** (シャドウガーデン新入隊員) | **`+25`** | **`+0.5/s`** | **`+1.5`** (`13.5` ATK) | Enhanced Slime Dash Through-Slash (`9.5` dmg) |
-| **Rank 2** | `2 / 8` | **Numbers Operative** (ナンバーズ級戦闘員) | **`+50`** | **`+1.0/s`** | **`+3.0`** (`15.0` ATK) | Enhanced Slime Wave (`21.0` dmg) |
-| **Rank 3** | `3 / 8` | **Named Numbers** (上級ナンバーズ) | **`+75`** | **`+1.5/s`** | **`+4.5`** (`16.5` ATK) | — |
-| **Rank 4** | `4 / 8` | **Shadow Sovereign** (七陰級幹部) | **`+100`** | **`+2.0/s`** | **`+6.0`** (`18.0` ATK) | 🌌 **Unlocks Variant 4: `I Am Cosmic Atomic` (`1,250` Damage, `110m` Radius)!** |
-| **Rank 5** | `5 / 8` | **Master of Shadows** (闇の支配者) | **`+125`** | **`+2.5/s`** | **`+7.5`** (`19.5` ATK) | — |
-| **Rank 6** | `6 / 8` | **Apostle of the Eclipse** (蝕の使徒) | **`+150`** | **`+3.0/s`** | **`+9.0`** (`21.0` ATK) | — |
-| **Rank 7** | `7 / 8` | **Eminence Candidate** (陰の実力者候補) | **`+175`** | **`+3.5/s`** | **`+10.5`** (`22.5` ATK) | All Seven Shadows Defeated! |
-| **Rank 8** | **`8 / 8`** | **The Eminence in Shadow** (陰の実力者) | **`+200`**<br>*(Total `450` w/ Full Suit!)* | **`+4.0/s`** | **`+12.0`**<br>*(`24.0` Base ATK!)* | Maximum Mastery! Slime Wave deals `36.0` dmg; Overdrive Thrust deals `54.0` dmg! |
+[⬅ 前章：05. 全29種 3D武器・アイテム図鑑](05-Weapons-and-Artifacts.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：07. 全51種 クラフトレシピ一覧 ➔](07-Crafting-Recipes.md)
 
 ---
 
-## 🌑 9.1 The Ultimate Boss: Lord Shadow (`eminence_shadow:shadow_boss`) / 最高難度ボス：シャドウ
+## 1. 全26体ボス共通仕様＆耐性
 
-Summoned with the **Shadow Resonance Crystal (`shadow_spawner`)**, **Lord Shadow** is a 4-phase raid boss featuring custom animations, dynamic dialogue, teleportation combos, and his own **"I Am Atomic"** chant that you must interrupt or escape!
-**シャドウ共鳴結晶 (`shadow_spawner`)** で召喚される本作最強の4フェーズ制レイドボスです。
+すべてのボスは対応する **『共鳴核（Resonator）』** を右クリックするとプレイヤーの前方6ブロックに召喚されます（クリエイティブ用のスポーンエッグも全26種完備）。
+全ボス共通の特性として以下の耐性を持ちます：
 
-### Base Stats / 基本ステータス
-- **Max HP**: **`600.0 HP`** (`300 Hearts`) | **Armor**: **`16.0`** (`+8.0 Toughness`)
-- **Base Attack Damage**: **`18.0`** | **Movement Speed**: **`0.38`** | **Knockback Resistance**: **`0.85`**
-- **Guaranteed Drops / 確定ドロップ**:
-  - **Shadow's Slime Core (`shadow_core`) × 2–3**
-  - **Shadow Garden Oath (`shadow_garden_oath`) × 1**
-  - **Eye of Avarice (`eye_of_avarice`) × 1** (35% chance)
-  - **Mitsugoshi Supreme Tuna Burger × 2**
-
-### 4-Phase Progression & Combat Guide / 全4フェーズの行動パターンと攻略法
-
-| Phase / フェーズ | HP Threshold / 移行HP | Aura & Buffs / 状態変化 | Signature Attacks & Counterplay / 使用スキルと対策（カウンター法） |
-| :---: | :---: | :--- | :--- |
-| **Phase 1**<br>*The Unseen Blade*<br>静かなる闇の刃 | **`100%` – `75%`**<br>(`600` – `450 HP`) | Standard Purple Mana Aura | • **Shadow Step Slash**: Teleports behind you (`45t` CD) and slashes for `18.0` damage. **Counter**: Watch for purple flash particles and press **`C` (Just Parry)** for `+35 Posture`!<br>• **Slime Crescent Wave**: Fires a ranged mana wave (`16.0` dmg). Dodge sideways with **`V` (Slime Dash)**. |
-| **Phase 2**<br>*Overdrive Awakening*<br>魔力解放・加速 | **`75%` – `45%`**<br>(`450` – `270 HP`) | **Speed II + Strength I**<br>Restores `30 HP` on transition | • **Triple Phantom Blitz**: Chains 3 consecutive teleport slashes around you (`14.0` dmg each). Hold **`C` (Slime Guard)** or dash outside his `8m` lock-on ring.<br>• **Crowbar Overdrive Slam**: Leaps high and slams the ground (`6m` AoE, `22.0` dmg + `[EXPOSED]`). Jump or dash away as he ascends! |
-| **Phase 3**<br>*The Atomic Chant*<br>『I am Atomic』詠唱開始 | **`45%` – `20%`**<br>(`270` – `120 HP`) | **Resistance II + Speed II**<br>Summons Geometric Magic Dome | • ⚠️ **BOSS ATOMIC CHANT (`100 ticks / 5.0 seconds`)**: Shadow floats into the air, surrounds the arena with purple magic circles, and chants *"I am... Atomic."* If completed, it deals **`120.0` AoE Damage** within `28 blocks`!<br>• **HOW TO INTERRUPT (詠唱阻止ギミック)**: Deal **`>= 45.0` total damage** to Shadow during the `5.0s` chant OR trigger a **Posture Break / `[SILENCED]` (Eta's Wrench / Eye of Avarice)**! Interrupting the chant shatters his dome, deals **`35.0` backlash damage** to Shadow, and stuns him with **`[EXPOSED]` for `100 ticks` (`5.0s`)**! |
-| **Phase 4**<br>*True Eminence in Shadow*<br>真・陰の実力者（最終形態） | **`< 20%`**<br>(`120` – `0 HP`) | **Strength II + Speed III + Resistance II**<br>Continuous Lightning & Soul Fire Aura | • **All-Range Sword Rain**: Periodically rains mana blades around the arena while chaining rapid teleport slashes. Save your own **`G` ("I Am Atomic" — Sword Atomic or Standard Atomic)** or **Eye of Avarice Overload** to finish him during a Parry/Posture Break window! |
+- **環境ハメ完全耐性**: 窒息・溺水・落下・火炎・溶岩・凍結・サボテン・スイートベリー・壁激突ダメージ無効。高所ブロック積み上げ（ピラー）や水流・蜘蛛の巣ハメを検知すると **シャドウステップ（戦術転移）** で死角へ回り込みます。
+- **戦闘印DoT（`eminence_shadow:combat_mark`）の有効化**: 通常の火炎・魔力耐性に阻まれない専用ダメージ種別により、『業火』や『出血』の割合DoTがすべてのボスに安定して通ります（非致死仕様のため止めはプレイヤーまたは味方の攻撃で行います）。
+- **ワンパン防止ダメージキャップ**: `I am Atomic.` 以外の単発攻撃は、1ヒットあたり **ボスの最大HPの `20%`（体勢崩し中は `28%`）** が上限となります（`eminence_shadow-common.toml` の `bossSingleHitDamageCapRatio` で変更・`0.0` で解除可能）。
 
 ---
 
-## 🌙 9.2 The Seven Shadows & John Smith (8 Canon Bosses) / 七陰＆ジョン・スミス（8体）ステータス・報酬一覧
+## 2. 最終決戦ボス：陰の実力者「シャドウ」（Lord Shadow）
 
-All 7 members of the Seven Shadows and Super Elite Agent **John Smith** have their own **Resonance Crystals**, custom AI combat cycles, signature phase transitions at `50% HP`, and unique weapon drops.
-さらに、**七陰の7名（アルファ〜イータ）は討伐時に必ず『シャドウガーデンの誓約書 (`shadow_garden_oath`)』をドロップし、討伐後または召喚時に右クリックで味方コンパニオンとして勧誘することも可能です！**
+- **エンティティID**: `eminence_shadow:shadow` ｜ **召喚アイテム**: 『漆黒の共鳴核』（`shadow_resonator`）
+- **最大HP**: **`1,000.0`**（ハート500個分） ｜ **ノックバック耐性**: `100%` ｜ **経験値**: `5,000 XP`
+- **確定ドロップ**: **『漆黒の剣』×1**、**『スライムスーツのコート』×1**、ネザライトインゴット×2、エメラルドブロック×2、エンチャントされた金のリンゴ×1 ＋ **「漆黒の剣の具現化」マスタリー永続解放**
 
-| Boss Name / ボス名<br>(`Entity ID`) | Summon Item / 召喚アイテム | Max HP / 体力<br>(Armor) | Base ATK<br>(Speed) | Signature Skills & Mechanics / 固有スキルと特徴 | Guaranteed Drops / 確定ドロップ報酬 |
-| :--- | :--- | :---: | :---: | :--- | :--- |
-| **Alpha (First Seat)**<br>七陰第一席 アルファ<br>`alpha_boss` | `alpha_spawner` | **`450 HP`**<br>(`14 Armor`) | **`16.0`**<br>(`0.37`) | **Mist Flash Teleport**, **Golden Crescent Wave (`22.0` dmg)**, and **Commander's Aura** (`50% HP`: Speed II + Strength II + `[EXPOSED]` counter-slashes). | • **Alpha's Slime Blade (`alpha_blade`)**<br>• **Shadow Garden Oath × 1**<br>• **Shadow's Slime Core × 1–2** |
-| **Beta (Second Seat)**<br>七陰第二席 ベータ<br>`beta_boss` | `beta_spawner` | **`380 HP`**<br>(`10 Armor`) | **`14.0`**<br>(`0.35`) | **Evasive Backstep Shot**, **5-Arrow Starlight Fan Barrage**, and **Chronicle Arrow Rain** (`8m` AoE zone + Slowness III). Keeps optimal distance (`10–18m`). | • **Beta's Magic Bow (`beta_bow`)**<br>• **Shadow Garden Oath × 1**<br>• **Shadow's Slime Core × 1** |
-| **Gamma (Third Seat)**<br>七陰第三席 ガンマ<br>`gamma_boss` | `gamma_spawner` | **`420 HP`**<br>(`12 Armor`) | **`15.0`**<br>(`0.33`) | **Catastrophic Trip Slam**: Sprints toward you and trips into a massive **`32.0` Damage AoE explosion** + **`[CONDUCTIVE]`**! Also throws explosive Mitsugoshi gold coins. | • **Gamma's Slime Sword (`gamma_sword`)**<br>• **Shadow Garden Oath × 1**<br>• **Mitsugoshi Chocolate × 2** |
-| **Delta (Fourth Seat)**<br>七陰第四席 デルタ<br>`delta_boss` | `delta_spawner` | **`480 HP`**<br>(`12 Armor`) | **`19.0`**<br>(`0.39`) | **Relentless Beast Leap** (`6m` ground slam + **`[BLEED]`**), **Feral Roar (Strength II + Speed III at `50% HP`)**, and life-steal on bleeding targets. *Tip: Use Just Parry (`C`) against her telegraph leap!* | • **Delta's Feral Greatsword (`delta_greatsword`)**<br>• **Shadow Garden Oath × 1**<br>• **Mitsugoshi Tuna Burger × 2** |
-| **Epsilon (Fifth Seat)**<br>七陰第五席 イプシロン<br>`epsilon_boss` | `epsilon_spawner` | **`390 HP`**<br>(`13 Armor`) | **`14.5`**<br>(`0.36`) | **Triple Converging Mana Waves**, **99% Slime Barrier** (gains `Absorption IV` at `60%` & `30%` HP), and precision ranged/melee stance switching. | • **Epsilon's Slime Conductor (`epsilon_blade`)**<br>• **Shadow Garden Oath × 1**<br>• **Shadow's Slime Core × 1** |
-| **Zeta (Sixth Seat)**<br>七陰第六席 ゼータ<br>`zeta_boss` | `zeta_spawner` | **`370 HP`**<br>(`10 Armor`) | **`15.5`**<br>(`0.41`) | **Stealth Invisibility Ambush**, **Backstab Critical (`1.8x` dmg + `[BLEED]`)**, and **Blindness Smoke Bomb**. *Tip: Inflict `[FROSTBITE]` or Glowing (Beta's Bow) to track her through stealth!* | • **Zeta's Beast Claw (`zeta_claw`)**<br>• **Shadow Garden Oath × 1**<br>• **Shadow's Slime Core × 1** |
-| **Eta (Seventh Seat)**<br>七陰第七席 イータ<br>`eta_boss` | `eta_spawner` | **`360 HP`**<br>(`12 Armor`) | **`13.5`**<br>(`0.32`) | **EMP Silence Pulse** (temporarily increases player skill cooldowns & applies **`[SILENCED]`**), **Gravity Pull Singularity**, and self-repair regeneration drone phase. | • **Eta's Mad Wrench (`eta_wrench`)**<br>• **Shadow Garden Oath × 1**<br>• **Eye of Avarice (25% chance)** |
-| **John Smith**<br>超エリート工作員 ジョン・スミス<br>`john_smith_boss` | `john_smith_spawner` | **`500 HP`**<br>(`15 Armor`) | **`17.0`**<br>(`0.38`) | **Monofilament Steel Thread Web** (`10m` AoE pull + Slowness IV + **`[BLEED]`**), **Wire Counter-Trap**, and **Banknote Hurricane Slash**. | • **John Smith's Monofilament Gloves (`john_smith_gloves`)**<br>• **Shadow's Slime Core × 2** |
+### 2.1 全4段階覚醒（Phase 0 〜 Phase 3）ステータステーブル
 
----
+| フェーズ（ボスバー表記） | 移行HP閾値 | 装備武器 | 防御力 (強度) | 近接攻撃力 | 移動速度 | 魔力斬撃威力 | 物理 / 魔法ダメージ減衰 | 無効化閾値 (黒鉄硬化) | 残像回避 / 矢斬り率 |
+| :--- | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Phase 0: `[手加減]`**<br/>*(Holding Back)* | `100% 〜 80%` | 愛用のバール | `12.0`<br/>(`4.0`) | `16.0` | `0.39` | `18.0` | 物理 `1.00x`<br/>魔法 `1.00x` | `0.0` (なし) | 回避 `18%`<br/>矢斬り `35%` |
+| **Phase 1: `[本気]`**<br/>*(Serious)* | `<= 80%`<br/>(800 HP) | 漆黒の剣 | `40.0`<br/>(`20.0`) | `40.0` | `0.44` | `40.0` | 物理 `0.80x`<br/>魔法 `0.50x` | `4.0` 未満無効 | 回避 `22%`<br/>矢斬り `65%` |
+| **Phase 2: `[硬化・黒鉄]`**<br/>*(Hardened)* | `<= 55%`<br/>(550 HP) | 漆黒の剣<br/>**（二刀流）** | `64.0`<br/>(`30.0`) | `76.0` | `0.49` | `72.0` | 物理 `0.65x`<br/>魔法 `0.35x` | **`8.0` 未満完全無効** | 回避 `26%`<br/>矢斬り `72%` |
+| **Phase 3: `[深淵覚醒]`**<br/>*(Abyssal Awakening)* | `<= 25%`<br/>(250 HP) | 漆黒の剣<br/>**（二刀流）** | **`80.0`**<br/>(`40.0`) | **`115.0`** | **`0.54`** | **`100.0`** | 物理 `0.55x`<br/>魔法 `0.28x` | **`12.0` 未満完全無効** | 回避 `30%`<br/>矢斬り `78%` |
 
-## ⚔️ 9.3 Kagemasu, Heroes, Blood Queen & Cult of Diabolos Bosses (17 Bosses) / カゲマス・英雄・魔人・教団ボス一覧（全17体）
-
-All 17 additional bosses are implemented via `KagemasuBossEntity` with unique **Fighting Archetypes**, **Elemental/Mark Weaknesses (`+35%` Weakness Damage & `+25` Bonus Posture Damage when hit with their weakness!)**, and dedicated weapon or core drops.
-
-| # | Boss Name / ボス名 | Entity / Spawner ID | Max HP<br>(Armor) | Base ATK | Combat Archetype / 戦闘AI型 | Weakness (Deals `+35%` Dmg & `+25` Posture) | Signature Drop / 固有ドロップ |
-| :-: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **1** | **Hero Olivier**<br>英雄オリヴィエ | `olivier_boss`<br>`olivier_spawner` | **`520 HP`**<br>(`16 Armor`) | **`18.0`** | **Vanguard Sword Saint** (High-speed dash slashes & holy azure waves) | **`[VOIDMARK]` / `[BLEED]`** | **Olivier's Hero Sword (`olivier_sword`)** + Core × 2 |
-| **2** | **Calamity Witch Aurora**<br>厄災の魔女アウロラ | `aurora_boss`<br>`aurora_spawner` | **`540 HP`**<br>(`14 Armor`) | **`18.5`** | **Blood Calamity Caster** (Erupting blood spears, `[BLEED]` stacks & life drain) | **`[FROSTBITE]` / `[SILENCED]`** | **Aurora's Violet Spear (`aurora_spear`)** + Core × 2 |
-| **3** | **Blood Queen Elisabeth**<br>血の女王エリザベート | `elisabeth_boss`<br>`elisabeth_spawner` | **`500 HP`**<br>(`13 Armor`) | **`17.5`** | **Crimson Reaper** (Wide scythe sweeps, bat swarm teleport & vampiric heal) | **`[CONDUCTIVE]` / `[SILENCED]`** | **Blood Queen's Scythe (`blood_queen_scythe`)** + Core × 2 |
-| **4** | **Mist Dragon**<br>霧の竜（ミストドラゴン） | `mist_dragon_boss`<br>`mist_dragon_spawner` | **`580 HP`**<br>(`18 Armor`) | **`19.5`** | **Immortal Elder Dragon** (`16m` poison mist breath, `[VOIDMARK]` & high toughness) | **`[EXPOSED]` / Atomic Magic** | **Mist Dragon Blade (`mist_dragon_blade`)** + Core × 2 |
-| **5** | **War Goddess Beatrix**<br>武神ベアトリクス | `beatrix_boss`<br>`beatrix_spawner` | **`460 HP`**<br>(`14 Armor`) | **`17.0`** | **Speed Blade Master** (4-hit gale combos, parry counter-stance & `[FROSTBITE]`) | **`[BLEED]` / `[CONDUCTIVE]`** | **Beatrix's Elven Blade (`beatrix_blade`)** + Burger × 2 |
-| **6** | **Princess Iris Midgar**<br>アイリス・ミドガル王女 | `iris_boss`<br>`iris_spawner` | **`440 HP`**<br>(`15 Armor`) | **`16.5`** | **Flame Berserker** (8m inferno eruption slams, fire aura & high posture pressure) | **`[FROSTBITE]` / Just Parry** | **Iris's Crimson Broadsword (`iris_broadsword`)** + Core × 1 |
-| **7** | **Princess Alexia Midgar**<br>アレクシア・ミドガル王女 | `alexia_boss`<br>`alexia_spawner` | **`380 HP`**<br>(`12 Armor`) | **`14.5`** | **Royal Duelist** (Precision thrusts, counter-parry window & `[FROSTBITE]`) | **`[EXPOSED]` / `[VOIDMARK]`** | **Alexia's Royal Rapier (`alexia_rapier`)** + Chocolate × 2 |
-| **8** | **Rose Oriana (No. 666)**<br>ローズ・オリアナ（666番） | `rose_boss`<br>`rose_spawner` | **`400 HP`**<br>(`13 Armor`) | **`15.0`** | **Golden Fencer** (Petal flurry thrusts, `[SILENCED]` & Royal Resolve shield) | **`[BLEED]` / `[EXPOSED]`** | **Rose's Royal Rapier (`rose_rapier`)** + Oath × 1 |
-| **9** | **Victoria (No. 559)**<br>ヴィクトリア（559番） | `victoria_boss`<br>`victoria_spawner` | **`440 HP`**<br>(`14 Armor`) | **`16.5`** | **Fanatic Saint** (Cross-wave projectiles, `[BLEED]` & self-healing devotion) | **`[SILENCED]` / `[VOIDMARK]`** | **Victoria's Rose Blade (`victoria_blade`)** + Oath × 1 |
-| **10** | **Claire Kagenou**<br>クレア・カゲノー | `claire_boss`<br>`claire_spawner` | **`390 HP`**<br>(`12 Armor`) | **`15.0`** | **Crimson Binder** (Magic chain bind AoE, `[SILENCED]` & Aurora resonance) | **`[FROSTBITE]` / `[EXPOSED]`** | **Claire's Crimson Rapier (`claire_rapier`)** + Core × 1 |
-| **11** | **Spirit Fox Yukime**<br>白狐ユキメ | `yukime_boss`<br>`yukime_spawner` | **`410 HP`**<br>(`11 Armor`) | **`15.0`** | **Illusion Frost Caster** (Blizzard cyclone, `[FROSTBITE]` & mirage blink) | **`[CONDUCTIVE]` / Fire** | **Yukime's Nine-Tailed Fan (`yukime_fan`)** + Core × 1 |
-| **12** | **Crimson (Red Tower)**<br>紅蓮の獅子クリムゾン | `crimson_boss`<br>`crimson_spawner` | **`420 HP`**<br>(`13 Armor`) | **`16.0`** | **Savage Claw Brawler** (Rapid flame claw combos & `[BLEED]`) | **`[FROSTBITE]` / `[EXPOSED]`** | **Crimson's Lion Claws (`crimson_claws`)** + Core × 1 |
-| **13** | **Tyrant Juggernaut**<br>暴君ジャガーノート | `juggernaut_boss`<br>`juggernaut_spawner` | **`450 HP`**<br>(`15 Armor`) | **`17.5`** | **Heavy Cleaver Brute** (Earthshatter AoE slam & massive posture damage) | **`[CONDUCTIVE]` / `[VOIDMARK]`** | **Juggernaut's Tyrant Cleaver (`juggernaut_cleaver`)** + Core × 1 |
-| **14** | **Instructor Lambda**<br>鬼教官ラムダ | `lambda_boss`<br>`lambda_spawner` | **`410 HP`**<br>(`13 Armor`) | **`15.5`** | **Tactical Whip Master** (Wide 8.5m lightning whip sweeps, `[CONDUCTIVE]` & `[EXPOSED]`) | **`[SILENCED]` / `[FROSTBITE]`** | **Lambda's Tactical Whip-Blade (`lambda_whip`)** + Oath × 1 |
-| **15** | **Nu (No. 13)**<br>ニュー（13番） | `nu_boss`<br>`nu_spawner` | **`380 HP`**<br>(`12 Armor`) | **`14.5`** | **Disguise Assassin** (Shadow step ambushes, throwing daggers & `[BLEED]`) | **`[CONDUCTIVE]` / `[EXPOSED]`** | **Shadow's Slime Core × 2** + **Shadow Garden Oath × 1** |
-| **16** | **Chi (No. 22) & Omega (No. 24)**<br>カイ＆オメガ（またはシェリー／アンネローゼ等） | `chi_boss` / `omega_boss`<br>`chi_spawner` / `omega_spawner` | **`390 HP`**<br>(`12 Armor`) | **`15.0`** | **Numbers Striker** (Sonic blade dashes / Twin-blade `[EXPOSED]` flurries) | **`[SILENCED]` / `[FROSTBITE]`** | **Shadow's Slime Core × 2** + **Mitsugoshi Treats** |
-| **17** | **Cult Knights & Rounds (Mordred / Nelson / Fenrir / Zenon / Rex / Lutheran)**<br>ディアボロス教団幹部・ラウンズ | `mordred_boss`, `fenrir_boss`, `zenon_boss`, etc. | **`400`–`520 HP`**<br>(`13`–`16 Armor`) | **`15.0`–`18.5`** | **Cult of Diabolos Executives** (Artifact barriers, magic waves & berserk phases) | **`[VOIDMARK]` / `[EXPOSED]` / Recovery Atomic** | **Eye of Avarice (`eye_of_avarice`)** + **Shadow's Slime Core × 2–3** |
+### 2.2 シャドウの固有ギミックと攻略法
+1. **Phase 0（手加減・バール体術）**: 近接攻撃に対して42 ticksごとに **バールによるジャストパリィ反撃（`26.0` ダメージ＋暗闇2秒＋強ノックバック）** を繰り出します。3連撃目にはバール衝撃波（`28.0`）を放ちます。
+2. **Phase 1（漆黒の剣抜刀）**: 落雷と共に『漆黒の剣』を具現化。背後への縮地閃光ステップから **3体の残像による同時三日月斬撃（`38.0 × 3`）** や、プレイヤーを引き寄せる **漆黒スライム触手槍＋4連スライム針** を放ちます。
+3. **Phase 2（二刀流・黒鉄硬化・空中メテオ・Normal / Recovery Atomic）**:
+   - 天候が雷雨へ変化し、二刀流へ移行。上空を旋回しながら斬撃を降らせた後、急降下してクレーター爆発＋6方向衝撃波を放つ **「スカイコマンド・メテオダイブ（威力 `82.0〜115.0`）」** を使用します。
+   - **『I am Atomic.』（威力 5,000）** を詠唱するほか、HPが `42%` 以下になると一度だけ **『I am Recovery Atomic.』** を詠唱し、**自身のHPを最大値の30%（`+300 HP`）回復** します。
+4. **Phase 3（深淵覚醒・半径44m結界ドーム監禁・All-Range Atomic）**:
+   - 戦場を中心に **半径44mの脱出不能な紫黒結界ドーム** を展開！ ドーム外へ出ようとすると安全着地座標を探索して内側へ強制転移させられ、**エンダーパールによる脱出も空中で撃ち落とされ、エリトラ飛行も強制解除**されます。
+   - この結界内で **『I am the All-Range Atomic.』（威力 7,500 ＋ プレイヤーの盾強制解除＆MP `-320` 衝撃）** を詠唱します。
+5. **🎯 対シャドウ必勝攻略法**:
+   - **シャドウの近接攻撃や触手・斬撃に対して『ジャストガード・パリィ』を決めると【体勢崩し（3秒間）】が発生し、防御力 `-24` ＆ 硬化軽減半減 ＆ 被ダメ `1.45倍` ＆ 残像回避封印 ＆ 単発上限 `28%` 緩和** の大チャンスが生まれます。
+   - シャドウの *I am Atomic* 解放の瞬間は、**① 解放の瞬間にジャストガード・パリィ（24 ticks無敵）**、**② 霧化無敵スキル**、または **③ スライム防壁（75%軽減）＋フルスライムスーツのMP変換シールド** で凌ぎましょう！
 
 ---
 
-## 🤝 10. Shadow Garden Companion System (`ShadowGardenOathItem`) / 七陰コンパニオン（仲間・共闘）システム
+## 3. 七陰（The Seven Shadows）全7名ステータス＆攻略データ
 
-You can recruit **any of the Seven Shadows (Alpha, Beta, Gamma, Delta, Epsilon, Zeta, Eta)** as a permanent, immortal-capable AI companion!
-**『シャドウガーデンの誓約書 (`shadow_garden_oath`)』** を使用することで、**七陰の7名（アルファ〜イータ）** をあなたの忠実な味方コンパニオンとして勧誘し、共に戦わせることができます！
+七陰は撃破時に **それぞれの専用3D武器×1**、ネザライトの欠片×1、ダイヤモンド×2、アメジストの欠片×6、金のリンゴ×1 を確定ドロップし、**シャドウガーデン格付けランク（Rank）** を上昇させます。
 
-```mermaid
-flowchart TD
-    Oath["Hold Shadow Garden Oath<br>シャドウガーデンの誓約書を手に持つ"] --> Click["Right-Click a Seven Shadows Boss (Alpha–Eta)<br>七陰（アルファ〜イータ）を右クリック"]
-    Click --> Sworn["🟣 Sworn Companion! (+150 Max HP, Full Heal, Resistance II & Strength I)<br>契約完了！最大HP+150・全回復・耐性II＆攻撃力上昇I"]
-    Sworn --> Mode1["Empty-Hand Right-Click:<br>FOLLOW Mode (追従・共闘)"]
-    Sworn --> Mode2["Empty-Hand Right-Click:<br>HOLD POSITION Mode (待機・防衛)"]
-    Sworn --> Mode3["Sneak + Right-Click (Holding Weapon):<br>AGGRESSIVE HUNT Mode (積極討伐)"]
-    Sworn --> Heal["Sneak + Right-Click (Empty Hand):<br>Spend 25 Mana -> Heal Companion +80 HP + Regen III"]
-    Sworn --> Gift["Right-Click with Tuna Burger / Chocolate:<br>Full Heal + Strength II + Sparring Bond Level Up!"]
-```
-
-### Companion Controls & Features / 仲間操作と絆システム一覧
-
-| Interaction / 操作方法 | Effect / 機能詳細 |
-| :--- | :--- |
-| **1. Recruiting a Companion**<br>勧誘（契約）する | Hold **Shadow Garden Oath (`shadow_garden_oath`)** and **Right-Click** any Seven Shadows entity (**Alpha, Beta, Gamma, Delta, Epsilon, Zeta, or Eta**). Consumes 1 Oath (unless in Creative), permanently binds them to you, increases their **Max HP by `+150.0`**, heals them to 100%, and switches their AI from Boss to **Sworn Companion**! |
-| **2. Cycle AI Orders (`FOLLOW` ⇄ `HOLD`)**<br>追従／待機モード切替 | **Right-Click** your companion with an **Empty Hand** (Not Crouching) to toggle between:<br>• **`[FOLLOWING LORD SHADOW]` (追従・護衛モード)**: Teleports to you if `> 20 blocks` away and attacks anything you attack or anything that attacks you.<br>• **`[HOLDING POSITION]` (拠点待機モード)**: Guards their current spot without following. |
-| **3. Toggle `AGGRESSIVE HUNT` Mode**<br>積極討伐モード | **Sneak + Right-Click** your companion while holding any **Weapon** to order **`[AGGRESSIVE HUNT]`**: they actively scan and eliminate all hostile mobs and non-allied bosses within **`24 blocks`**. |
-| **4. Mana Infusion Heal (`25 Mana`)**<br>魔力譲渡による回復 | **Sneak + Right-Click** your companion with an **Empty Hand**: consumes **`25 Mana`** to immediately restore **`+80.0 HP`** to your companion and grant them **Regeneration III (`5s`) + Resistance II (`10s`)**. |
-| **5. Friendly Fire Protection & Recovery Atomic**<br>同士討ち完全無効＆リカバリー対応 | Your attacks, weapon skills, and **Standard / All-Range / Sword / Cosmic Atomic NEVER harm your sworn companions**! Casting **Recovery Atomic** heals all sworn companions within `48m` to **100% HP** and buffs them with **Absorption IV + Regeneration IV**! |
-| **6. Gifting Mitsugoshi Food & Sparring Bond**<br>三越グルメのプレゼント＆手合わせ絆強化 | **Right-Click** your companion with a **Mitsugoshi Supreme Tuna Burger** or **Mitsugoshi Artisanal Chocolate**: restores **`+120 HP`**, triggers unique voiced/chat gratitude lines (especially **Delta** with burgers and **Gamma/Epsilon** with chocolate!), grants **Strength II + Speed II (`60s`)**, and permanently increases their **Companion Bond Level** (`+2.0 Base ATK` and `+40 Max HP` per Bond rank!). |
-| **7. Multi-Member Party Banter**<br>七陰同士の掛け合い会話 | When 2 or more sworn Seven Shadows are near you (e.g., **Alpha & Delta**, **Beta & Epsilon**, **Gamma & Eta**, **Delta & Zeta**), they periodically exchange lore-accurate dialogue lines in chat! |
+| 席次・名前（ID） | 推奨攻略順 | 最大HP | 攻撃力<br/>*(覚醒時)* | 防御力 (強度) | 移動速度 | 矢反射率 | スライム軽減率 | 覚醒移行HP | 固有ギミック・タッグ連携・弱点（攻略法） |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **第七席 イータ**<br/>`eta` | **Step 1**<br/>(Rank 0+) | `600` | `26.0` | `16.0`<br/>(`4.0`) | `0.27` | `15%` | `25%` | `<= 60%`<br/>(360 HP) | **【重力解析＆自律ドローン】** 最大4機の破壊可能な『魔導スライムドローン（HP 28）』を展開し、重力浮遊球と **魔力遮断領域（プレイヤーのMP `-80` 吸収＋堕落＋魔力阻害＋覚醒時は全バフ消去）** を放つ。<br/>💡 **攻略**: ドローンを範囲斬撃で巻き込んで破壊しつつ接近戦で押し切ろう。 |
+| **第三席 ガンマ**<br/>`gamma` | **Step 2**<br/>(Rank 1+) | `950` | `20.0` | `24.0`<br/>(`10.0`) | `0.25` | **`0%`** | `45%`<br/>*(転倒中15%)* | `<= 55%`<br/>(522 HP) | **【魔力暴走＆転倒隙】** 定期的に吸収障壁と飛び道具消去防壁を展開。通常攻撃の **55%が空振り転倒** し、**半径8.5〜9.5mに威力 `72〜96` の特大魔力爆発** を起こす！<br/>💡 **攻略**: **転倒爆発直後に `36 ticks（1.8秒間）` の `[体勢転倒!]` 状態（軽減率が45%→15%へ激減＆転倒突進・防壁が封印）** になるため、爆発をガードして直後に全力コンボを叩き込もう！ |
+| **第二席 ベータ**<br/>`beta` | **Step 3**<br/>(Rank 2+) | `720` | `34.0` | `20.0`<br/>(`6.0`) | `0.38` | `25%` | `28%` | `<= 60%`<br/>(432 HP) | **【戦術狙撃＆観測ロック】** 接近すると銀霧バックステップ障壁で距離を取り、ヒーリングレインで回復を行う。射撃3回ごとに `[観測ロック完了]` となり連射速度上昇。<br/>💡 **攻略**: 狙撃の `10 ticks（0.5秒）` 前に **赤いレーザー照準線と予告音** が出るため、`Shift` パリィで矢をそのまま跳ね返そう。<br/>🤝 **連携**: イプシロンと **【阿吽の好敵手】コンチェルト** が発動。 |
+| **第五席 イプシロン**<br/>`epsilon` | **Step 4**<br/>(Rank 3+) | `800` | `42.0` | `24.0`<br/>(`8.0`) | `0.40` | `40%` | `35%` | `<= 58%`<br/>(464 HP) | **【空中歩法＆99%圧縮音波刃】** 空中に浮遊滑空（`[空中制御]`）しながら円軌道で距離を保ち、防御45%貫通の音波弾や7連月光交響曲を放つ。<br/>💡 **攻略**: パリィで体勢を崩すと **即座にフェザーグライド（無重力浮遊）が解除され、固有セリフと共にスライムが飛び散って地上へ撃墜** できる！ |
+| **第六席 ゼータ**<br/>`zeta` | **Step 5**<br/>(Rank 4+) | `880` | `50.0` | `26.0`<br/>(`10.0`) | `0.50` | `35%` | `32%` | `<= 55%`<br/>(484 HP) | **【完全隠密＆死角奇襲】** 霧化と透明化でパーティクル・足音を消去し、背後から **2.6倍威力のバックスタブ（`130.0`）＋暗闇＆ウィザーII** を狙う。<br/>💡 **攻略**: 奇襲斬撃の **`8 ticks（0.4秒）` 前に背後でチャイム音と赤い眼光パーティクル** が発生するため、音を聴いた瞬間に `Shift` で完封パリィが可能。 |
+| **第四席 デルタ**<br/>`delta` | **Step 6**<br/>(Rank 5+) | `1,050` | `62.0`<br/>*(`82.0`)* | `28.0`<br/>(`12.0`) | **`0.52`**<br/>*(`0.62`)* | `18%` | `30%` | `<= 60%`<br/>(630 HP) | **【紅狼狂乱＆MP破砕＆吸血】** 透明化を嗅覚で常時強制解除し、命中時に自己回復＋**プレイヤーのMPを `-45〜-65` 削り取る**！<br/>🤝 **連携**: ゼータと **【暴天双牙】刻印** を共有。<br/>💡 **攻略**: 直線的な猛獣跳躍と連撃に対してパリィを狙い、体勢を崩して一気に削ろう。 |
+| **第一席 アルファ**<br/>`alpha` | **Step 7**<br/>(Rank 6+) | **`1,350`** | `58.0`<br/>*(`78.0`)* | **`34.0`**<br/>(`16.0`) | `0.45` | **`50%`** | **`40%`** | `<= 55%`<br/>(742 HP) | **【七陰筆頭・三形態変幻・模倣Atomic】** 3つのスライム武器形態を毎撃切り替え、覚醒後は **HP 35%以下で模倣奥義『I am Atomic!』（28 ticks圧縮＋半径7.5m雷光爆発）** を行使！<br/>💡 **攻略**: 攻撃に転じる瞬間にジャストガード・パリィを決めて霧化を強制解除させるのが鍵。 |
 
 ---
 
-[🏠 Home](Home.md) | [⬅️ Previous: 05. Weapons & Artifacts Arsenal](05-Weapons-and-Artifacts.md) | [➡️ Next: 07. Complete Crafting Recipes](07-Crafting-Recipes.md)
+## 4. 超精鋭エージェント「ジョン・スミス」（John Smith）
+
+- **エンティティID**: `eminence_shadow:john_smith` ｜ **召喚アイテム**: 『ジョン・スミスの偽造契約書』（`john_smith_resonator`）
+- **ステータス**: 最大HP **`1,150.0`** ｜ 攻撃力 **`38.0`** ｜ 防御力 **`32.0`**（強度 `16.0`） ｜ 移動速度 **`0.45`**
+- **射撃反射率**: `45%`（仮面破壊後 **`65%`**） ｜ **スライム軽減率**: `40%`（仮面破壊後 **`55%`**）
+- **確定ドロップ**: **『ジョン・スミスの極細鋼糸』×1** ＋ **『シャドウの暗号メモ（SS+魔道具）』×1**
+- **固有ギミック＆原作再現シナジー**:
+  1. **【鋼糸カウンター展開】**: 偽りの防御態勢で『鋼糸』スタック（最大3）を纏い、近接攻撃してきた相手を **3秒間（60 ticks）完全スタン拘束＋`28.0` ダメージ** で迎撃（霧化中のアルファは無効化）。
+  2. **【魔力撹乱波（MP回復85%阻害）】**: 8方向鋼糸波で周囲10mに **`6.0秒間（120 ticks）` のMP自然回復 `-85%` 阻害** を付与。
+  3. **【時限ワイヤーケージ（十本の鋼糸）】**: 収束時に **`58.0`** ダメージ＋鈍足（**獣人系［デルタ・リリ・ユキメ・フェンリル］には特効 `1.35倍`＋重度拘束**。デルタには専用セリフあり）。
+  4. **【仮面破壊（Mask Shattered）】**: HP `50%` 以下または **アルファの攻撃** で仮面が割れ、3Dモデルから仮面が消えて本気回避モードへ移行。
+  5. **【ユキメ共闘シナジー】**: 半径18m以内に同陣営の「ユキメ」がいると、互いに **攻撃力上昇I ＆ 移動速度上昇I** が常時付与されます。
+
+---
+
+## 5. カゲマス・三英雄・ナンバーズ・ディアボロス教団幹部（全17体）完全データ
+
+| カテゴリ | ボス名（ID） | 最大HP | 攻撃力 | 防御力 | 移動速度 | 矢反射 / 軽減率 | ドロップ武器 | 仲間化 | 固有ギミック・覚醒・特効仕様 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- | :---: | :--- |
+| **シド別名義** | **ジミナ・セーネン**<br/>`jimina_seinen` | `900` | `24.0`<br/>*(覚醒 `60.0`)* | `22.0` | `0.30`<br/>*(覚醒 `0.48`)* | 反射 `35%`<br/>軽減 `25%` | 『地味な剣』 | **可能** | Phase 1はモブ演技を行い、**HP 50%以下で【リミッター解除】し攻撃力 `2.5倍 (60.0)`・速度 `0.48` へ激増**！ |
+| **シド別名義** | **切り裂きジャック**<br/>`jack_ripper` | `1,050` | `46.0` | `26.0` | `0.48` | 反射 `48%`<br/>軽減 `50%` | 『血染トランプ』 | **可能** | 霧化背後奇襲＋`出血`＋**`18 ticks` 後炸裂の処刑トランプ爆弾（`64.0 × 出血倍率`）**。 |
+| **ナンバーズ** | **559番 ウィクトーリア**<br/>`victoria` | `950` | `44.0`<br/>*(狂信時 `59.4`)* | `26.0` | `0.44` | 反射 `45%`<br/>軽減 `48%` | 『制式スライム剣』 | **可能** | **【狂信の闘気】** シャドウ・ジョン・スミス・フルスーツプレイヤー近接で **攻撃力 `1.35倍`＋移動速度上昇II**！ |
+| **ナンバーズ** | **鬼教官 ラムダ（11番）**<br/>`lambda` | `880` | `34.0` | `28.0` | `0.40` | 反射 `42%`<br/>軽減 `44%` | 『制式スライム剣』 | **可能** | **【鬼教官の号令】** 周囲12〜14mの味方に **常時 攻撃力上昇I〜II＆速度I** を付与する指揮官バッファー。 |
+| **ナンバーズ** | **13番 ニュー**<br/>`nu` | `840` | `32.0` | `22.0` | `0.42` | 反射 `40%`<br/>軽減 `42%` | 『制式スライム剣』 | **可能** | **【変装の達人】** 奥義で **敵の全有利バフを100%剥奪** しつつ、味方のデバフを解除。 |
+| **無法都市** | **伝説の金毛九尾 ユキメ**<br/>`yukime` | `1,020` | `42.0` | `24.0` | `0.46` | 反射 `40%`<br/>軽減 `45%` | 『妖狐の鉄扇』 | **可能** | 9連黄金扇舞と共に **『堕落』** を付与。ジョン・スミス近接で攻撃力上昇I＋移動速度上昇I。 |
+| **無法都市** | **紅き血の女王 エリザベート**<br/>`elisabeth` | `1,450` | `54.0` | `32.0` | `0.44` | 反射 `55%`<br/>軽減 `55%` | 『血の女王の鎌』 | **可能** | 霧化無敵＋『魔力阻害』＆『出血』＋血の槍豪雨。 |
+| **古の伝説** | **災厄の魔女 アウロラ**<br/>`aurora` | `1,300` | `48.0` | `28.0` | `0.41` | 反射 `50%`<br/>軽減 `50%` | 『魔女の大鎌』 | **可能** | 血の拘束と猛毒II・『出血』累積乗算の3連血閃。 |
+| **三英雄** | **始まりの聖騎士 オリヴィエ**<br/>`olivier` | `1,250` | `50.0` | **`34.0`** | `0.44` | 反射 `58%`<br/>軽減 `52%` | 『英雄の剣』 | **可能** | 聖騎士パリィ構えカウンター（`52.0`）＆覚醒後は『業火』と7連聖剣波を放つ。 |
+| **三英雄** | **不可逆の英雄 フレイヤ**<br/>`freya` | `1,180` | **`56.0`** | `30.0` | `0.44` | 反射 `45%`<br/>軽減 `48%` | 『我執の楔』 | **可能** | 自身に **『絶禍』** を付与して突進する防御45%貫通のガードクラッシャー。 |
+| **三英雄** | **救世の聖女 リリ**<br/>`lili` | `980` | `36.0` | `26.0` | `0.45` | 反射 `42%`<br/>軽減 `46%` | 『古の聖杖』 | **可能** | 周囲14mの味方に **最大HP18%回復＋デバフ浄化＋衝撃吸収II**。 |
+| **剣聖・強者** | **白銀の剣聖 ベアトリクス**<br/>`beatrix` | `1,220` | `52.0` | `30.0` | `0.47` | 反射 **`62%`**<br/>軽減 `48%` | 『剣聖の大剣』 | **可能** | トップクラスの矢反射率（62%）と背後神速転移3連蒼閃。 |
+| **剣聖・強者** | **放浪の魔剣士 アンネローゼ**<br/>`annerose` | `960` | `40.0` | `24.0` | `0.46` | 反射 `50%`<br/>軽減 `40%` | 『アンネローゼの剣』 | **可能** | 「蒼穹天翔」で **標的の有利なバフを最大5個一気に解除**。 |
+| **メインヒロイン** | **クレア・カゲノー**<br/>`claire` | `940` | `38.0` | `24.0` | `0.42` | 反射 `35%`<br/>軽減 `42%` | Phase 1:ミスリルの剣<br/>覚醒後:魔女の大鎌 | **可能** | HP 55%以下で『……アイ・アム・アトミック』（`88.0`）暴発、HP 50%以下で左手のアウロラが覚醒！ |
+| **教団円卓第5席** | **フェンリル**<br/>`fenrir` | `1,500` | `58.0` | `34.0` | `0.50` | 反射 `45%`<br/>軽減 `52%` | 『妖刀・空蝉』 | **不可** | **【秘剣・空蝉】** 展開中に **範囲スキル・斬撃・爆発を2発以上当てると空蝉が破れ、`100 ticks（5.0秒）` の特大【体勢崩し】に陥る！** |
+| **第四魔界の王** | **ラグナロク**<br/>`ragnarok` | **`2,200`**<br/>*(最大)* | **`72.0`** | **`46.0`** | `0.36` | 反射 `20%`<br/>軽減 `62%` | *(素材＆大量XP)* | **不可** | **【魔界殲滅戦争ブレイク装甲】** 通常時は `I am Atomic.` を完全無効化しつつ他の全攻撃も `0.35倍`（65%カット）するが、**パリィまたは『絶禍』スキルで一撃ブレイクすると `90 ticks（4.5秒）` の間、被ダメージ `2.00倍`（通常の約5.7倍！）へ激増！** |
+| **教団円卓第11席** | **ネルソン（聖域）**<br/>`nelson` | `1,350` | `38.0` | `32.0` | `0.34` | 反射 `35%`<br/>軽減 `50%` | 『聖域の魔導杖』 | **不可** | **【聖域の魔力吸収＆複製体召喚】** 伝導率99%未満（非フルスーツ）から2秒毎に `35 MP` 吸収＋被ダメ `0.25倍` 軽減。**『英雄オリヴィエ複製体』（HP上限687）**を最大2体召喚。**99%フルスーツ（味方七陰含む）で等倍貫通し、`I am Atomic.` で聖域粉砕時にMP吸収も停止！** |
+
+---
+
+## 6. シャドウガーデンの盟約（仲間化・AI戦術・模擬戦・連携）
+
+教団幹部3体（フェンリル・ラグナロク・ネルソン）と「シャドウ」本人を除く **全22名** は仲間化可能です。
+
+1. **勧誘方法**:
+   - 一度撃破した相手、または戦闘中 **HP `15%` 以下** にした相手を、**フルスライムスーツ着用で `右クリック`** すると仲間化。
+   - 撃破済みボスの『共鳴核』をフルスーツ着用で **`Shift + 右クリック`** すると最初から仲間として召喚。
+2. **戦術AIモード切替**（HP `92%` 以上で右クリック）:
+   - 🟢 **護衛追従（Follow & Guard）**: 6.5m以遠で追従、26m以上で安全ワープ。
+   - 🔴 **積極索敵（Aggressive Hunt）**: 半径28m以内の敵対Mob・他MODボスへ積極交戦。
+   - 🟡 **その場待機・防衛（Hold Position）**: 切替時の座標（アンカー）をNBT保存し、ワープ追従せず半径12〜14m圏内で迎撃・帰還防衛。
+3. **魔力供給ヒール**（HP `92%` 未満で右クリック）: 本MODアイテム所持で `20 MP` を消費し、仲間の最大HPの `25%`（最低 `40 HP`）を即時回復。
+4. **模擬戦（`Shift + 右クリック`）**: 仲間化中は `1.0x` 基礎HPへ正規化されており、模擬戦開始時に `bossPowerMultiplier` 設定を再適用していつでも本気の手合わせが可能です。
+5. **共鳴オーラ＆ペア会話**: 半径20m以内の仲間1体につき毎秒 **`+2.5 MP`** 供給。非戦闘時には原作・カゲマス再現のペア会話が発生します。
+
+---
+
+[⬅ 前章：05. 全29種 3D武器・アイテム図鑑](05-Weapons-and-Artifacts.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：07. 全51種 クラフトレシピ一覧 ➔](07-Crafting-Recipes.md)
