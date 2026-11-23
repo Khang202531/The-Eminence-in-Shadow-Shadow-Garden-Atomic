@@ -1,6 +1,8 @@
 # 07. 全51種 クラフトレシピ完全一覧（Complete Crafting Recipes）
 
-[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)
+🌐 **言語切替 / Language**: **🇯🇵 日本語 (現在)** ｜ **[🇺🇸 Read in English](07-Crafting-Recipes-EN.md)**
+
+[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)
 
 ---
 
@@ -95,4 +97,4 @@
 
 ---
 
-[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)
+[⬅ 前章：06. 全26体 ボス攻略＆仲間化](06-Bosses-and-Companions.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](07-Crafting-Recipes-EN.md) ｜ [次章：08. 進捗・コマンド・Config ➔](08-Commands-Config-and-Advancements.md)

@@ -1,6 +1,8 @@
 # 08. 進捗・コマンド・コンフィグ＆技術仕様（Advancements, Commands & Config）
 
-[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 Wiki ホーム](Home.md)
+🌐 **言語切替 / Language**: **🇯🇵 日本語 (現在)** ｜ **[🇺🇸 Read in English](08-Commands-Config-and-Advancements-EN.md)**
+
+[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md)
 
 ---
 
@@ -82,15 +84,19 @@ flowchart LR
 
 ---
 
-## 4. マルチプレイ最適化＆技術アーキテクチャ
+## 4. `v1.0.6` マルチプレイ最適化＆技術アーキテクチャ
 
-1. **非同期スライス事前計算＆16×16チャンクセクション局所化クレーター生成（`SphereDestroyer` & `DirectionalDestroyer`）**:
+1. **非同期スライス事前計算＆ロックフリー高速パス（`SphereDestroyer` & `DirectionalDestroyer`）**:
    - 詠唱開始時に `CompletableFuture` バックグラウンドスレッドで座標オフセット配列を事前計算・キャッシュし、消去実行時は空気セクション（`LevelChunkSection`）を即スキップしてTPS低下を防止します。
-2. **マルチプレイS2Cバッチパケット通信（`ParticleFxPayload` & `SyncEntityMarksPayload`）**:
+   - `v1.0.6` ではクレーター完了後の `volatile` ロックフリー高速パス（`allDone` / `finished`）を導入し、余波フェーズ中のサーバースレッドにおける `synchronized` ロック競合をゼロにしました。
+2. **100%描画精度維持の三角関数LUT＆ゼロアロケーション3D物理演算（`v1.0.6`）**:
+   - `AtomicBlastRenderer`: `32×48` 単位球頂点テーブル、`16×40` 測地線ドーム子午線リブテーブル、`48` 分割リングテーブル、`16` パイロン座標を静的LUT化し、フレームあたり約10,000回以上の `Math.sin` / `Math.cos` 呼び出しを削減。
+   - `ShadowCoatModel` (`PanelRippleScratch`) & `YukimeAttireModel` (`KitsuneTailScratch`): 3段×9パネルのコート裾および36パーツ（9尾×4関節）の九尾アニメーション計算を再利用スクラッチ構造体で処理し、フレームごとのヒープ割り当てとGCスパイクを完全排除。
+3. **マルチプレイS2Cバッチパケット通信（`ParticleFxPayload` & `SyncEntityMarksPayload`）**:
    - 円環・爆風・レーザーラインを数十バイトの軽量ペイロードへ集約してクライアント展開し、7大戦闘刻印も `int` ビットマスクへパッキングして変化時のみ同期します。
-3. **プロシージャル合成音響＆著作権クリーン設計**:
+4. **プロシージャル合成音響＆著作権クリーン設計**:
    - 抽出音声を一切含まず、バニラ効果音のピッチ・位相制御による波形合成のみで構成されています。
 
 ---
 
-[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 Wiki ホーム](Home.md)
+[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](08-Commands-Config-and-Advancements-EN.md)

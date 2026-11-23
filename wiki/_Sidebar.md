@@ -1,51 +1,31 @@
-### 🌑 Shadow Garden Wiki
+### 🌑 Shadow Garden Wiki (`v1.0.6`)
 
-* 🏠 **[Wiki ホーム (Home)](Home.md)**
-* 📄 **[全仕様書 (1ファイル統合版)](../WIKI_SPECIFICATION.md)**
-
----
-
-### 📖 攻略＆システム仕様
-
-1. **[導入・操作方法・攻略チャート](01-Getting-Started-and-Controls.md)**
-   * キーバインド一覧
-   * 序盤〜シャドウ撃破の8段階ルート
-2. **[魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md)**
-   * 伝導率（10%→50%→99%）計算式
-   * 最大MP 7,000 共鳴スケーリング
-   * 魔力変換シールド＆落下緩衝
-   * 3Dシャドウ変身・偽装・剣具現化
-3. **[戦闘・パリィ・体勢崩し・7大刻印](03-Combat-Parry-and-Status-Marks.md)**
-   * ジャストガード・パリィ（7 ticks）
-   * 【体勢崩し】内部計算式
-   * 瞬駆（無制限）/ 連閃（3チャージ）
-   * 双牙・出血・鋼糸・業火・絶禍・堕落・魔力阻害
-4. **[究極奥義『I am Atomic.』](04-I-Am-Atomic.md)**
-   * 3つの姿勢制御（球体/第5話ビーム/第20話ピラー）
-   * 全5種Atomicバリエーション比較
-   * 詠唱タイムライン＆中西静寂演出
+* 🇯🇵 **[日本語 Wiki ホーム](Home.md)**
+* 🇺🇸 **[English Wiki Home](Home-EN.md)**
+* 📄 **[全仕様書 (Master Spec)](../WIKI_SPECIFICATION.md)**
 
 ---
 
-### 🗡️ データベース＆図鑑
+### 🇯🇵 日本語 Wiki (Japanese)
 
-5. **[全29種 3D武器・魔道具・消費アイテム図鑑](05-Weapons-and-Artifacts.md)**
-   * シャドウ / シド・カゲノー系（9種）
-   * 七陰専用3D武器（7種×各5技）
-   * 三英雄・魔女・血の女王・教団武器（11種）
-   * ミツゴシ商会レーション（2種）
-6. **[全26体 ボス攻略＆盟約（仲間化）](06-Bosses-and-Companions.md)**
-   * 最終決戦：4段階覚醒「シャドウ」
-   * 七陰（第一席アルファ〜第七席イータ）
-   * 超精鋭エージェント「ジョン・スミス」
-   * カゲマス英雄・ナンバーズ・教団幹部（17体）
-   * 盟約（仲間化）・AI戦術・模擬戦・連携
-7. **[全51種 クラフトレシピ一覧](07-Crafting-Recipes.md)**
-   * スライムスーツ防具（4種）
-   * 武器・魔道具・食品（21種）
-   * 正典＆カゲマス共鳴核（26種）
-8. **[進捗・コマンド・Config・技術仕様](08-Commands-Config-and-Advancements.md)**
-   * 全13種 進捗ツリー
-   * `/mana` コマンドリファレンス
-   * `eminence_shadow-common.toml` 設定
-   * 非同期クレーター＆S2Cバッチ通信
+1. **[01. 導入・操作・攻略チャート](01-Getting-Started-and-Controls.md)**
+2. **[02. 魔力・伝導率99%・3Dスーツ](02-Mana-and-Slime-Bodysuit.md)**
+3. **[03. 戦闘・パリィ・体勢崩し・刻印](03-Combat-Parry-and-Status-Marks.md)**
+4. **[04. 究極奥義『I am Atomic.』](04-I-Am-Atomic.md)**
+5. **[05. 全29種 3D武器・魔道具図鑑](05-Weapons-and-Artifacts.md)**
+6. **[06. 全26体 ボス攻略＆盟約(仲間化)](06-Bosses-and-Companions.md)**
+7. **[07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md)**
+8. **[08. 進捗・コマンド・Config・最適化](08-Commands-Config-and-Advancements.md)**
+
+---
+
+### 🇺🇸 English Wiki (English)
+
+1. **[01. Getting Started & Controls](01-Getting-Started-and-Controls-EN.md)**
+2. **[02. Mana, 99% Conductivity & 3D Suit](02-Mana-and-Slime-Bodysuit-EN.md)**
+3. **[03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks-EN.md)**
+4. **[04. I am Atomic Engine & Modes](04-I-Am-Atomic-EN.md)**
+5. **[05. All 29 3D Weapons & Artifacts](05-Weapons-and-Artifacts-EN.md)**
+6. **[06. All 26 Bosses & Companions](06-Bosses-and-Companions-EN.md)**
+7. **[07. All 51 Crafting Recipes](07-Crafting-Recipes-EN.md)**
+8. **[08. Advancements, Commands & Config](08-Commands-Config-and-Advancements-EN.md)**

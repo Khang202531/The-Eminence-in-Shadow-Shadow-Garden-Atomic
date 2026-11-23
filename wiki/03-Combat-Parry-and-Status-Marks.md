@@ -1,6 +1,8 @@
 # 03. アクション戦闘・パリィ・体勢崩し・7大刻印（Combat, Parry & Status Marks）
 
-[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)
+🌐 **言語切替 / Language**: **🇯🇵 日本語 (現在)** ｜ **[🇺🇸 Read in English](03-Combat-Parry-and-Status-Marks-EN.md)**
+
+[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)
 
 ---
 
@@ -62,4 +64,4 @@
 
 ---
 
-[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 Wiki ホーム](Home.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)
+[⬅ 前章：02. 魔力・伝導率99%・スライムスーツ](02-Mana-and-Slime-Bodysuit.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](03-Combat-Parry-and-Status-Marks-EN.md) ｜ [次章：04. 究極奥義『I am Atomic.』 ➔](04-I-Am-Atomic.md)
