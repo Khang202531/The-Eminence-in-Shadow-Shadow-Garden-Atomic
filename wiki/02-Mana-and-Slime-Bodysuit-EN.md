@@ -105,7 +105,7 @@ Every piece of the Slime Bodysuit is **fireproof (cannot burn in lava or fire)**
    - **3-Joint 9-Panel Billowing Skirt Physics & 2-Stage Slime Glider Wings**: Driven by zero-allocation travelling sine-wave physics that react to sprinting, strafing, falling, sneaking, sword swings, and Atomic chanting, all 9 lower-coat panels (including front sweeps `skirt_front_left/right`, each articulated across `_top -> _bot -> _tip` joints) and the 2-stage dorsal slime glider wings (`slime_wing -> slime_wing_outer`) billow smoothly in 3D. Also includes a 3D chevron slime chestplate, X-crossed golden waist belts, 2-stage flared bell cuffs, diamond-filigree thigh plates, and 3D V-winged knee boots.
    - Pressing **`V` (Toggle Slime Suit Exterior / Disguise)** while wearing the full suit switches your visual appearance back to your normal player skin (**Civilian Disguise**) while keeping **99% Mana Conductivity and all shield protections 100% active**.
 5. **Empty-Hand Sneak Right-Click "Jet-Black Sword" Materialization**:
-   - Once you defeat Lord Shadow (or obtain the *Jet-Black Sword*) to unlock mastery, wearing the full suit and pressing **`Shift + Right-Click` with an empty main hand** spends `10 MP` to materialize the *Jet-Black Sword* directly from your suit at any time. Use Skill 8 (*Absorb into Suit*) to absorb it back into the suit and recover `+150 MP`.
+   - Once you defeat Lord Shadow (or obtain the *Jet-Black Sword*) to unlock mastery, wearing the full suit and pressing **`Shift + Right-Click` with an empty main hand** spends `10 MP` to materialize the *Jet-Black Sword* directly from your suit at any time. Use Skill 9 (*Absorb into Suit*) to absorb it back into the suit and recover `+150 MP`.
 
 ---
 

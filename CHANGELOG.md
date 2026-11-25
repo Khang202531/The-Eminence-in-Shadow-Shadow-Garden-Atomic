@@ -1,4 +1,45 @@
-# Changelog — v1.0.6 (Forge 1.20.1)
+# Changelog — v1.0.7 (Forge 1.20.1)
+
+## [1.0.7] - Zenith Atomic Overhaul, Utsusemi Homing Blades & Dragon, Aurora Blood Magic & Balance (Forge 1.20.1)
+
+### English
+- **Skyward "I am Atomic" (`CAST_MODE_ZENITH`) Overhaul**:
+  - Changed skyward Zenith Atomic to deal zero entity damage (`doesCastModeDealDamage`).
+  - Added rapid pre-release dome collapse (`computeZenithCollapseScale`) followed immediately by sustained purple-white light emission (`computeZenithLightEmissionIntensity`).
+  - Emphasized deep purple dome hues and added digital/geometric shell effects evoking an atomic nucleus, orbiting electron orbitals, and stepped PCB electronic circuit traces (`AtomicBlastRenderer`), alongside a dome-sized ground magic circle matching the dome radius while keeping the effects around the caster identical to Normal Atomic.
+  - Reduced interior screen overlay & fog tinting inside the dome to a subtle light-purple wash (`AtomicClientEffects.computeZenithInteriorTintAlpha`).
+- **Utsusemi Blood Fang (`空蝉の血牙`) & Utsusemi Atomic (`空蝉の亜斗美吊苦`) Overhaul**:
+  - Implemented `UtsusemiSwordEntity` & `UtsusemiSwordRenderer`:
+    - *Utsusemi Blood Fang* summons 5 swords around the caster, points their blade tips toward the target, and launches them in homing arcs.
+    - *Utsusemi Atomic* (Fenrir's Katana & Jet-Black Sword) summons 9 swords with all tips pointing straight upward (`+90°`), then transforms them sequentially one by one into 9 `UtsusemiDragonEntity` (`UtsusemiDragonRenderer`) dragons that swarm, chase targets, and execute two-stage jaw crunch attacks.
+- **Witch's Scythe (`魔女の大鎌`) & Blood Queen's Scythe (`血の女王の鎌`) Overhaul (`AuroraMagicAttackEntity` & `AuroraMagicAttackRenderer`)**:
+  - *Witch's Scythe — Crimson Lance Assault (`赤き槍の強襲`)*: Spawns a pulsing crimson mana orb that shoots fluid, water-like magic jets curving in mid-air to track targets.
+  - *Witch's Scythe — Fragment of Calamity: Dark Scythe (`災厄の一端・暗き大鎌`)*: Unleashes dark crimson-violet scythe waves, Bleed + Magic Inhibition, and blood-lightning bursts.
+  - *Blood Queen's Scythe — Blood Downpour (`血の驟雨`)*: Manifests airborne undulating blood pools that extend curved blood lances bending through mid-air to track and impale targets.
+  - *Blood Queen's Scythe — Blood Twin Shadows (`血の双影`)*: Enriched with abundant blood effects—erupting 6 airborne blood pools with curving lances alongside two crossing slashes and a central slash, deep Bleed (`+3`), Magic Inhibition, dual blood rings, and vampiric healing.
+- **Game Balance Adjustments**:
+  - Tuned Aurora (boss stats & *Witch's Scythe*) to be strictly stronger than Utsusemi/Fenrir (*Demon Katana: Utsusemi* & *Jet-Black Sword* Utsusemi Atomic).
+  - Scaled Zeta's (`ZetaEntity` and `ZetaDaggerItem`) overall attack damage, melee magic bonuses, and skill/parry damage to `0.8x`.
+
+### 日本語
+- **空に向かって放つ「I AM ATOMIC」(`CAST_MODE_ZENITH`) の改修**:
+  - ダメージを与えない仕様へ変更しました。
+  - 発動時にドームが一瞬で収縮し、直後に瞬時発光して一定時間維持する演出へ刷新しました。
+  - ドームの紫色を強調し、原子核・電子軌道・電子回路を連想させるデジタル＆幾何学エフェクトでドームを包むとともに、ドーム展開と同じ円の大きさの魔法陣を地面に展開し、プレイヤー周囲の演出は通常のアトミックと共通化しました。
+  - ドーム内部の画面・霧の着色を、視界を妨げない薄紫程度に抑えました。
+- **空蝉の血牙の改修 (`UtsusemiSwordEntity`)**:
+  - 使用者周囲に5本の剣を召喚し、剣先が攻撃対象の方向を向いたうえで、各剣が対象を追尾しながら飛翔して攻撃するよう刷新しました。
+- **空蝉の亜斗美吊苦の改修 (`UtsusemiSwordEntity` / `UtsusemiDragonEntity`)**:
+  - 使用者の周囲に9本の剣をすべて剣先上向きで召喚し、発動時に剣が1本ずつ順番に9体のドラゴンへと変化して、9体それぞれが対象を追尾し噛み砕くように攻撃する仕様へ刷新しました（『妖刀・空蝉』および『漆黒の剣』へ実装）。
+- **魔女の大鎌＆血の女王の鎌の改修 (`AuroraMagicAttackEntity`)**:
+  - **魔女の大鎌『赤き槍の強襲』**: 赤い魔力の球を生成し、水を噴射するような流動的エフェクトの魔力を放出して空中で曲がりながら対象を追尾します。第2スキルは **『災厄の一端・暗き大鎌』** として暗紅紫の大鎌連撃＆紫電血魔力バーストを放ちます。
+  - **血の女王の鎌『血の驟雨』**: 空中に血液の溜まりを生成し、そこから伸びた血液の槍が空中で軌道を曲げながら対象を追尾して突き刺さります。
+  - **血の女王の鎌『血の双影』**: 血液演出を大幅強化し、空中の血液溜まり6基からの曲折追尾槍・深紅の交差斬撃2発と中央斬撃1発・出血3スタック・血霧＆吸血回復を放ちます。
+- **ゲームバランス調整**:
+  - 空蝉の技のオリジナルであるアウロラ（ボス性能・『魔女の大鎌』）が、フェンリル／『妖刀・空蝉』／空蝉の亜斗美吊苦より強くなるよう性能を調整しました。
+  - ゼータ（ボス『ゼータ』および『影の双剣』）の全体の攻撃力・スキル火力を `0.8倍` に調整しました。
+
+---
 
 ## [1.0.6] - Visual Overhaul, Ep. 20 Dome Atomic & Dedicated 3D Models (Forge 1.20.1)
 

@@ -1,4 +1,4 @@
-### 🌑 Shadow Garden Wiki (`v1.0.6`)
+### 🌑 Shadow Garden Wiki (`v1.0.7`)
 
 * 🇯🇵 **[日本語 Wiki ホーム](Home.md)**
 * 🇺🇸 **[English Wiki Home](Home-EN.md)**

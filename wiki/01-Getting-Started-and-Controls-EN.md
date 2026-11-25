@@ -8,14 +8,15 @@
 
 ## 1. System Requirements & Installation
 
-| Requirement | Forge 1.20.1 Edition (`v1.0.6`) |
-| :--- | :--- |
-| **Minecraft Version** | `1.20.1` |
-| **Mod Loader** | `Minecraft Forge 47.2.0` or higher (`47.4.28` recommended) |
-| **Required Java Version** | **Java 17** |
-| **Environment** | Client & Server (Must be installed on both client and dedicated server) |
-| **Required Dependencies** | **None (100% standalone — zero external library mods required)** |
-| **Recommended Companion Mod** | `Just Enough Items (JEI)` (for browsing all 51 crafting recipes in-game) |
+| Requirement | Forge edition | NeoForge edition |
+| --- | --- | --- |
+| Mod version | `1.0.7` | `1.0.7` |
+| Minecraft | `1.20.1` | `1.21.1` |
+| Loader | Forge `47.2.0` or later (built with `47.4.28`) | NeoForge `21.1.252` or later |
+| Java | **17** | **21** |
+| Required mods | None | None |
+
+Put the JAR that matches your Minecraft version and loader in the `mods` folder. Use the same build on both sides in multiplayer. A compatible version of JEI can display recipes in-game.
 
 ---
 
@@ -31,7 +32,7 @@ All custom keybindings can be rebound freely in Minecraft under **Options → Co
 | **Slime Guard** | Hold `Shift` (Sneak) | Active while holding any mod skill weapon or wearing at least 1 Slime Bodysuit piece. Mitigates incoming damage by **`85%` (with weapon)** or **`75%` (unarmed in suit)** at a cost of `1.5 MP` per hit. |
 | **Just-Guard Parry Counter** | Press `Shift` right before impact | Triggered when hit within **`7 ticks (0.35 seconds)`** of starting a guard. Completely nullifies damage (**100% immunity**), restores **`+25 MP`**, reflects projectiles at **1.75× speed**, fires a weapon-specific counter slash, and inflicts **[Posture Break]** on bosses! |
 | **High-Speed Movement (Shadow Dash / Rapid Dash)** | `Space × 2` (Ground or Air) | Double-tap jump within `8 ticks`. Triggers **unlimited Shadow Dash** while holding the *Jet-Black Sword* or unarmed in a full Slime Bodysuit, or **3-charge Rapid Dash** while holding Alpha's *Blade of Shadow*. Grants `36 ticks (1.8s)` of complete fall damage immunity. |
-| **Materialize / Absorb "Jet-Black Sword"** | Full Suit + **Empty-Hand `Shift + Right-Click`** (Skill 8 to absorb) | Once you have defeated Lord Shadow at least once to unlock mastery, wearing all 4 Slime Bodysuit pieces and pressing **`Shift + Right-Click` with an empty main hand** spends `10 MP` to materialize the *Jet-Black Sword* directly out of your suit. Use Skill 8 (*Absorb into Suit*) to re-absorb it for `+150 MP`. |
+| **Materialize / Absorb "Jet-Black Sword"** | Full Suit + **Empty-Hand `Shift + Right-Click`** (Skill 9 to absorb) | Once you have defeated Lord Shadow at least once to unlock mastery, wearing all 4 Slime Bodysuit pieces and pressing **`Shift + Right-Click` with an empty main hand** spends `10 MP` to materialize the *Jet-Black Sword* directly out of your suit. Use Skill 9 (*Absorb into Suit*) to re-absorb it for `+150 MP`. |
 | **Toggle Slime Suit Exterior / Civilian Disguise** | `V` Key | While wearing the full 4-piece Slime Bodysuit, toggles between the **`v1.0.6` 3D sculpted & glowing Shadow Coat exterior** and your normal player skin (**Civilian Disguise**). **99% Mana Conductivity and all defensive shields remain 100% active while disguised.** |
 | **Cycle Companion AI Mode / Mana Heal** | `Right-Click` Companion | If an allied companion's HP is below 92%, transfers `20 MP` to **heal 25% of their Max HP (minimum 40 HP)**. When at full HP, cycles their tactical AI mode (**Follow & Guard → Aggressive Hunt → Hold Position**). |
 | **Friendly Sparring (Mock Battle)** | `Shift + Right-Click` Companion | Fully heals the allied companion and temporarily restores their full boss stats to begin a **friendly sparring match**. |

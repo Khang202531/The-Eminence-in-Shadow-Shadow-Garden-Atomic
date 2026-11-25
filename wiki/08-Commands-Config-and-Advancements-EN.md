@@ -70,7 +70,7 @@ Stored under `data/eminence_shadow/advancements/recipes/`, automatically unlocki
 | :--- | :---: | :---: | :---: | :--- |
 | `blastRadius` | Int | `100` | `8 – 100` | Explosion and crater radius (in blocks) of standard `I am Atomic.`. *All-Range Atomic* scales to 125% of this value (up to `125`, hard-capped at `127`). |
 | `expandSpeed` | Double | `1.0` | `0.1 – 4.0` | Number of blocks the `I am Atomic.` singularity dome expands per tick (`1.0` = 1 radial shell per tick). |
-| `blastDamage` | Double | `5000.0` | `0.0 – 1000000.0` | Baseline Atomic damage scaling anchor (`config / 5000.0` scales Normal=`5,000`, All-Range=`7,500`, Catastrophe=`6,400`, and Archetype=`3,600`; default `5000.0` = `1.0×`). |
+| `blastDamage` | Double | `5000.0` | `0.0 – 1000000.0` | Baseline Atomic damage scaling anchor (`config / 5000.0` scales Normal=`5,000`, All-Range=`7,500`, Catastrophe=`6,400`, and Archetype=`3,600`; default `5000.0` = `1.0×`). Zenith deals zero damage at any setting. |
 | `destroyBlocks` | Boolean | `true` | `true / false` | Whether destructive `I am Atomic.` modes vaporize terrain blocks (`false` makes all modes non-destructive; also respects gamerule `mobGriefing = false`). |
 | `blocksPerTick` | Int | `40000` | `100 – 500000` | **Maximum blocks removed per tick** during crater generation. Lower to `10000–20000` on low-spec servers to cap per-tick MSPT. |
 | `cooldownTicks` | Int | `600` | `0 – 72000` | Cooldown after casting `I am Atomic.` (`600 ticks = 30.0s`; enforces a `40-tick` safety floor to protect servers). |

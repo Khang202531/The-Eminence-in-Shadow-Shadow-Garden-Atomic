@@ -70,7 +70,7 @@ flowchart LR
 | :--- | :---: | :---: | :---: | :--- |
 | `blastRadius` | Int | `100` | `8 〜 100` | 通常『I am Atomic.』の爆発・消滅半径（ブロック数）。*All-Range Atomic* はこの値の125%（最大 `125`、ハードキャップ `127`）になります。 |
 | `expandSpeed` | Double | `1.0` | `0.1 〜 4.0` | 『I am Atomic.』の球体ドームが1 tickあたりに膨張するブロック数（`1.0` = 1 tickに1層ずつ消去）。 |
-| `blastDamage` | Double | `5000.0` | `0.0 〜 1000000.0` | 基準アトミックダメージ倍率の基準値（`config / 5000.0` 倍が Normal=`5,000` / All-Range=`7,500` / Catastrophe=`6,400` / Archetype=`3,600` に掛かる。デフォルト `5000.0` で 1.0倍）。 |
+| `blastDamage` | Double | `5000.0` | `0.0 〜 1000000.0` | 基準アトミックダメージ倍率の基準値（`config / 5000.0` 倍が Normal=`5,000` / All-Range=`7,500` / Catastrophe=`6,400` / Archetype=`3,600` に掛かる。デフォルト `5000.0` で 1.0倍）。 天頂形態のダメージは設定値によらず0です。 |
 | `destroyBlocks` | Boolean | `true` | `true / false` | 『I am Atomic.』でブロックを消去するかどうか（`false` で全形態非破壊。ゲームルール `mobGriefing` が `false` の場合も破壊されません）。 |
 | `blocksPerTick` | Int | `40000` | `100 〜 500000` | クレーター生成時に **1 tickあたりに消去する最大ブロック数**。低スペックサーバーでMSPT負荷を抑えたい場合は `10000〜20000` へ調整可能。 |
 | `cooldownTicks` | Int | `600` | `0 〜 72000` | 『I am Atomic.』発動後のクールダウン時間（`600 ticks = 30.0秒`。サーバー保護のため実効下限 `40 ticks` が適用されます）。 |
