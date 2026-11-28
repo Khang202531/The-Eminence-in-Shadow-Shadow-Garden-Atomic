@@ -30,7 +30,7 @@ $$\text{Actual MP Cost} = \frac{\text{Base Skill MP Cost}}{\max(0.05,\ \text{Man
 
 ## 2. Dynamic Max MP & Mana Regeneration Scaling
 
-Your Maximum MP and natural regeneration rate (`MP/s`) scale dynamically in real time based on: **① Base Stats (`1,000 MP` / `20.0 MP/s`)**, **② Equipped Slime Bodysuit Pieces ($N_{\text{slime}}$)**, **③ Held Weapon Resonance**, and **④ Shadow Garden Ranking ($\text{Rank} \in [0, 8]$)**. When swapping gear or hotbar slots, your current MP fill percentage (`%`) is preserved seamlessly.
+Your Maximum MP and natural regeneration rate (`MP/s`) scale dynamically in real time based on: **① Base Stats (`1,000 MP` / `20.0 MP/s`)**, **② Equipped Slime Bodysuit Pieces ($N_{\text{slime}}$)**, **③ Held Weapon Resonance**, and **④ Shadow Garden Ranking ($\text{Rank} \in [0, 8]$)**. Equipment resonance and your current MP fill percentage (`%`) persist cleanly across hotbar swaps, dimension transitions, and respawn.
 
 $$\text{Max MP} = 1,000 + 500 \times N_{\text{slime}} + \text{WeaponBonus} + 250 \times \text{Rank}$$
 
@@ -103,7 +103,7 @@ Every piece of the Slime Bodysuit is **fireproof (cannot burn in lava or fire)**
    - **Clear Hood Face Opening & Glowing Crimson Eyes**: The sculpted hood features a transparent front arch cutout (`x=10..17, y=11..17`) and sloped golden brow trim so your character's face and Shadow's glowing crimson eyes remain clearly visible beneath the hood's shadow, crowned by a 45°-rotated 3D golden forehead diamond (`hood_crest_diamond`) and a 2-stage tapered hood tail (`hood_tail_tip` / `hood_tail_point`).
    - **3-Stage Giant Flared Wing Collar, Glowing Amethyst Brooch & 3-Joint Ribbons**: Features a 45°-rotated gold-bezel amethyst throat brooch (`throat_brooch_bezel` / `throat_brooch_gem`) that glows in the dark, 3-joint articulated hood ribbons with gold aglet tips (`hood_ribbon_top -> bot -> aglet`), and a 3-stage purple-lined wing collar swept wide to frame the face.
    - **3-Joint 9-Panel Billowing Skirt Physics & 2-Stage Slime Glider Wings**: Driven by zero-allocation travelling sine-wave physics that react to sprinting, strafing, falling, sneaking, sword swings, and Atomic chanting, all 9 lower-coat panels (including front sweeps `skirt_front_left/right`, each articulated across `_top -> _bot -> _tip` joints) and the 2-stage dorsal slime glider wings (`slime_wing -> slime_wing_outer`) billow smoothly in 3D. Also includes a 3D chevron slime chestplate, X-crossed golden waist belts, 2-stage flared bell cuffs, diamond-filigree thigh plates, and 3D V-winged knee boots.
-   - Pressing **`V` (Toggle Slime Suit Exterior / Disguise)** while wearing the full suit switches your visual appearance back to your normal player skin (**Civilian Disguise**) while keeping **99% Mana Conductivity and all shield protections 100% active**.
+   - Pressing **`V` (Toggle Slime Suit Exterior / Disguise)** while wearing the full suit switches your visual appearance back to your normal player skin (**Civilian Disguise**) while keeping **99% Mana Conductivity and all shield protections 100% active** (and persists across dimension travel and respawn).
 5. **Empty-Hand Sneak Right-Click "Jet-Black Sword" Materialization**:
    - Once you defeat Lord Shadow (or obtain the *Jet-Black Sword*) to unlock mastery, wearing the full suit and pressing **`Shift + Right-Click` with an empty main hand** spends `10 MP` to materialize the *Jet-Black Sword* directly from your suit at any time. Use Skill 9 (*Absorb into Suit*) to absorb it back into the suit and recover `+150 MP`.
 

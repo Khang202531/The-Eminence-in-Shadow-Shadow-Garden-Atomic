@@ -1,4 +1,4 @@
-# 07. Complete 51 Crafting Recipes Reference
+# 07. Complete 52 Crafting Recipes Reference
 
 🌐 **Language / 言語切替**: **[🇯🇵 日本語版はこちら](07-Crafting-Recipes.md)** ｜ **🇺🇸 English (Current)**
 
@@ -6,7 +6,7 @@
 
 ---
 
-All 51 survival crafting recipes automatically unlock in the vanilla Recipe Book via data-driven recipe advancements (`advancements/recipes/*.json`) as soon as you pick up their core materials (`Slimeball`, `Iron Ingot`, `Amethyst Shard`, `Netherite Ingot`, or `Cocoa Beans`), and are fully viewable in **JEI (Just Enough Items)**.
+All 52 survival crafting recipes automatically unlock in the vanilla Recipe Book via data-driven recipe advancements (`advancements/recipes/*.json`) as soon as you pick up their core materials (`Slimeball`, `Iron Ingot`, `Amethyst Shard`, `Netherite Ingot`, or `Cocoa Beans`), and are fully viewable in **JEI (Just Enough Items)**.
 
 ---
 
@@ -21,7 +21,7 @@ All 51 survival crafting recipes automatically unlock in the vanilla Recipe Book
 
 ---
 
-## 2. Weapons, Artifacts & Mitsugoshi Consumables (21 Recipes)
+## 2. Weapons, Artifacts & Mitsugoshi Consumables (22 Recipes)
 
 | Output Item & ID | 3×3 Crafting Grid (Top / Mid / Bot) or Shapeless Ingredients | Total Materials Required |
 | :--- | :--- | :--- |
@@ -39,11 +39,12 @@ All 51 survival crafting recipes automatically unlock in the vanilla Recipe Book
 | **Calamity Witch's Scythe (Aurora)**<br/>`calamity_witch_scythe` | `[Redstone Block][Amethyst Shard][Redstone Block]`<br/>`[Redstone Block][Netherite Ingot][Redstone Block]`<br/>`[ Empty ][Blaze Rod][ Empty ]` | 1× Netherite Ingot, 4× Redstone Block, 1× Amethyst Shard, 1× Blaze Rod |
 | **Crimson Queen's Scythe (Elisabeth)**<br/>`crimson_queen_blade` | `[ Empty ][Redstone Block][ Empty ]`<br/>`[Redstone Block][Netherite Ingot][Redstone Block]`<br/>`[ Empty ][Blaze Rod][ Empty ]` | 1× Netherite Ingot, 3× Redstone Block, 1× Blaze Rod |
 | **Spirit Fox Iron Fan (Yukime)**<br/>`yukime_iron_fan` | `[Feather][Gold Ingot][Feather]`<br/>`[White Wool][Iron Ingot][White Wool]`<br/>`[ Empty ][Gold Ingot][ Empty ]` | 2× Gold Ingot, 1× Iron Ingot, 2× Feather, 2× White Wool |
-| **Sword Saint's Greatsword (Beatrix)**<br/>`beatrix_greatsword` | `[Emerald][Diamond][Emerald]`<br/>`[ Empty ][Netherite Ingot][ Empty ]`<br/>`[ Empty ][Gold Ingot][ Empty ]` | 1× Netherite Ingot, 1× Diamond, 2× Emerald, 1× Gold Ingot |
+| **War Goddess's Greatsword (Beatrix)**<br/>`beatrix_greatsword` | `[Emerald][Diamond][Emerald]`<br/>`[ Empty ][Netherite Ingot][ Empty ]`<br/>`[ Empty ][Gold Ingot][ Empty ]` | 1× Netherite Ingot, 1× Diamond, 2× Emerald, 1× Gold Ingot |
 | **Annerose's Sword**<br/>`annerose_sword` | `[ Empty ][Lapis Lazuli][ Empty ]`<br/>`[Lapis Lazuli][Netherite Ingot][Lapis Lazuli]`<br/>`[ Empty ][Iron Ingot][ Empty ]` | 1× Netherite Ingot, 3× Lapis Lazuli, 1× Iron Ingot |
-| **Cursed Katana: Utsusemi (Fenrir)**<br/>`fenrir_katana` | `[ Empty ][ Empty ][Netherite Ingot]`<br/>`[ Empty ][Redstone Block][ Empty ]`<br/>`[Obsidian][ Empty ][ Empty ]` | 1× Netherite Ingot, 1× Redstone Block, 1× Obsidian |
+| **Demon Sword: Bloodfang (Fenrir)**<br/>`fenrir_katana` | `[ Empty ][ Empty ][Netherite Ingot]`<br/>`[ Empty ][Redstone Block][ Empty ]`<br/>`[Obsidian][ Empty ][ Empty ]` | 1× Netherite Ingot, 1× Redstone Block, 1× Obsidian |
 | **Sanctuary Magic Staff (Nelson)**<br/>`sanctuary_staff` | `[Ender Pearl][Amethyst Block][Ender Pearl]`<br/>`[Obsidian][Netherite Ingot][Obsidian]`<br/>`[ Empty ][Blaze Rod][ Empty ]` | 1× Netherite Ingot, 1× Amethyst Block, 2× Ender Pearl, 2× Obsidian, 1× Blaze Rod |
 | **Numbers Standard Slime Sword**<br/>`numbers_slime_sword` | `[ Empty ][Slimeball][ Empty ]`<br/>`[Slimeball][Netherite Ingot][Slimeball]`<br/>`[ Empty ][Obsidian][ Empty ]` | 1× Netherite Ingot, 3× Slimeball, 1× Obsidian |
+| **Lambda's Black Whip (Lambda)**<br/>`lambda_whip` | `[ Empty ][Slimeball][Slimeball]`<br/>`[ Empty ][Netherite Ingot][ Empty ]`<br/>`[ Lead ][ Empty ][ Empty ]` | 1× Netherite Ingot, 2× Slimeball, 1× Lead |
 | **Mitsugoshi Special Chocolate ×2**<br/>`mitsugoshi_chocolate` | **Shapeless Recipe** | 1× Cocoa Beans, 1× Sugar, 1× Milk Bucket, 1× Gold Nugget |
 | **Mitsugoshi Roasted Blend Coffee ×2**<br/>`mitsugoshi_coffee` | **Shapeless Recipe** | 2× Cocoa Beans, 1× Sugar, 1× Glass Bottle |
 

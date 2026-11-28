@@ -7,23 +7,25 @@ Copyright (c) 2024-2026 Khang202531. All Rights Reserved.
 ## 🇬🇧 English Terms
 
 1. **All Rights Reserved**:
-   - Unauthorized re-uploading, mirroring, or redistribution of this mod (in whole or in part) on third-party websites, as well as any commercial use or monetization, are strictly prohibited.
-2. **Modpack Permissions**:
-   - You may freely include this mod in non-commercial modpacks hosted on **CurseForge** or **Modrinth**, provided that proper credit is given and a link back to the official project page is included.
+   - This mod is distributed free of charge. Unauthorized re-uploading, mirroring, or redistribution of this mod (in whole or in part) is prohibited. Commercial sale of the mod is prohibited.
+2. **Modpack, Video, and Livestream Permissions**:
+   - You may include this mod in modpacks hosted on **CurseForge** or **Modrinth** and use it in videos or livestreams, provided that you credit the project and link to its download page.
 3. **Fan-Work & Copyright Disclaimer**:
    - This mod is an unofficial, non-commercial fan-made derivative work inspired by *The Eminence in Shadow* (*Kage no Jitsuryokusha ni Naritakute!*), written by Daisuke Aizawa and illustrated by Touzai (published by KADOKAWA).
    - This project is not affiliated with, endorsed, sponsored, or approved by Daisuke Aizawa, Touzai, KADOKAWA, Aiming Inc., the Shadow Garden Production Committee, or any original copyright holders. All rights to the original characters, names, and world belong to their respective owners.
-   - No copyrighted anime audio files are bundled in this mod; all sound effects are procedurally synthesized in real time using vanilla Minecraft sound events.
+   - No official anime or game assets (audio, textures, or 3D models) are included. Some character textures are based on an existing Minecraft skin pack. The mod code is original, and all sound effects are synthesized using vanilla Minecraft sound events.
+   - The mod will be removed immediately upon request from rights holders.
 
 ---
 
 ## 🇯🇵 日本語規約・二次創作免責事項
 
 1. **All Rights Reserved（全権利留保）**:
-   - 外部サイトへの無断転載・再配布、および本MODを用いた一切の商用利用・有償販売を固く禁じます。
-2. **Modpack（モッドパック）への同梱について**:
-   - **CurseForge** または **Modrinth** 上で公開される非商用 Modpack への同梱は、本プロジェクトページへのクレジットおよびリンク記載を条件に許可します。
+   - 本MODは完全無料で配布します。無断転載・再配布および商用販売を禁止します。
+2. **MODパックへの収録・動画・ライブ配信での利用**:
+   - クレジット表記と配布元リンクの明記を条件に、**CurseForge** または **Modrinth** のMODパックへの収録および動画投稿・ライブ配信での利用を許可します。
 3. **二次創作に関する免責・権利表記**:
    - 本MODは逢沢大介先生・東西先生・KADOKAWA・株式会社Aimingおよび『陰の実力者になりたくて！』製作委員会とは一切関係のない、ファンによる非公式・非営利の二次創作MODです。
-   - 原作のキャラクター・名称・世界観に関する著作権・商標権その他の知的財産権はすべて原著作者および各権利者様に帰属します。版権元各社様からの要請があった場合は速やかに公開停止等の措置を講じます。
-   - また、本MODにはアニメ本編からの抽出音声等の著作権保護音源は一切含まれておらず、すべての効果音はMinecraftバニラ音源およびプログラムによるリアルタイム波形合成（Procedural Audio Synthesis）で実装されています。
+   - 原作のキャラクター・名称・世界観に関する著作権・商標権その他の知的財産権はすべて原著作者および各権利者様に帰属します。
+   - アニメやゲームの公式素材（音声・テクスチャ・3Dモデル等）は同梱していません。一部のキャラクターテクスチャには既存のMinecraft用スキンパックを使用しています。MODのコードは独自制作で、効果音はすべてバニラ音源の合成で実装しています。
+   - 権利者様からの削除・修正要請があった場合は速やかに対応いたします。

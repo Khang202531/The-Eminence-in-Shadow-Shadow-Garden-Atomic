@@ -2,7 +2,7 @@
 
 🌐 **Language / 言語切替**: **[🇯🇵 日本語版はこちら](04-I-Am-Atomic.md)** ｜ **🇺🇸 English (Current)**
 
-[⬅ Prev: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [Next: 05. All 29 3D Weapons & Artifacts ➔](05-Weapons-and-Artifacts-EN.md)
+[⬅ Prev: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [Next: 05. All 30 3D Weapons & Artifacts ➔](05-Weapons-and-Artifacts-EN.md)
 
 ---
 
@@ -69,4 +69,4 @@ All offensive Atomic damage values scale dynamically with `Config.blastDamage` (
 
 ---
 
-[⬅ Prev: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [🇯🇵 日本語版はこちら](04-I-Am-Atomic.md) ｜ [Next: 05. All 29 3D Weapons & Artifacts ➔](05-Weapons-and-Artifacts-EN.md)
+[⬅ Prev: 03. Combat, Parry & Status Marks](03-Combat-Parry-and-Status-Marks-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [🇯🇵 日本語版はこちら](04-I-Am-Atomic.md) ｜ [Next: 05. All 30 3D Weapons & Artifacts ➔](05-Weapons-and-Artifacts-EN.md)

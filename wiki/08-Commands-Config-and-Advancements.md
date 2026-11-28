@@ -2,7 +2,7 @@
 
 🌐 **言語切替 / Language**: **🇯🇵 日本語 (現在)** ｜ **[🇺🇸 Read in English](08-Commands-Config-and-Advancements-EN.md)**
 
-[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md)
+[⬅ 前章：07. 全52種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md)
 
 ---
 
@@ -42,12 +42,12 @@ flowchart LR
 | `shadow_defeat` | **陰の頂き――さらなる深淵へ** / *The Pinnacle of Shadow* | 陰の実力者「シャドウ」を撃破する | Challenge |
 | `i_am_atomic` | **I am Atomic.** / *I am Atomic.* | 自らの手で究極奥義『I am Atomic.』系を発動・解放する | Challenge |
 
-### 1.2 レシピブック自動解放進捗（5種 / 全51レシピ網羅）
+### 1.2 レシピブック自動解放進捗（5種 / 全52レシピ網羅）
 `data/eminence_shadow/advancements/recipes/` に格納され、対応素材の入手時にバニラのレシピブックへ自動解放されます：
 - `slime_core_recipes`: スライムボール入手でスライムスーツ4部位＋正典8ボス共鳴核（計12種）を解放
 - `starter_weapons`: 鉄インゴット入手で序盤武器・道具（ミスリルの剣、バール、地味な剣等 7種）を解放
 - `amethyst_and_kagemasu_resonators`: アメジストの欠片入手で暗号メモ・開闢剣・カゲマス＆教団共鳴核18種等（計19種）を解放
-- `netherite_relic_weapons`: ネザライトインゴット入手で三英雄・教団幹部等の上位武器（11種）を解放
+- `netherite_relic_weapons`: ネザライトインゴット入手で三英雄・教団幹部・ラムダの黒鞭等の上位武器（12種）を解放
 - `mitsugoshi_treats`: カカオ豆入手でミツゴシ特製チョコレート＆ブレンド珈琲（2種）を解放
 
 ---
@@ -99,4 +99,4 @@ flowchart LR
 
 ---
 
-[⬅ 前章：07. 全51種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](08-Commands-Config-and-Advancements-EN.md)
+[⬅ 前章：07. 全52種 クラフトレシピ一覧](07-Crafting-Recipes.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](08-Commands-Config-and-Advancements-EN.md)

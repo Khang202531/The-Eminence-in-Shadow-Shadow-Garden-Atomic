@@ -10,7 +10,7 @@
 
 | Requirement | Forge edition | NeoForge edition |
 | --- | --- | --- |
-| Mod version | `1.0.7` | `1.0.7` |
+| Mod version | `1.0.8` | `1.0.8` |
 | Minecraft | `1.20.1` | `1.21.1` |
 | Loader | Forge `47.2.0` or later (built with `47.4.28`) | NeoForge `21.1.252` or later |
 | Java | **17** | **21** |

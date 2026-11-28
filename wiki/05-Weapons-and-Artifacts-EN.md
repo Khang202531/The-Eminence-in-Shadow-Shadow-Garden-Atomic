@@ -1,4 +1,4 @@
-# 05. All 29 3D Weapons, Artifacts & Consumables Catalog
+# 05. All 30 3D Weapons, Artifacts & Consumables Catalog
 
 🌐 **Language / 言語切替**: **[🇯🇵 日本語版はこちら](05-Weapons-and-Artifacts.md)** ｜ **🇺🇸 English (Current)**
 
@@ -26,7 +26,7 @@
 | **2** | **Overload Barrage**<br/>*(オーバーロード連斬)* | `3 MP` | `0.8s` (16t) | Unleashes a wide fan of 7 simultaneous jet-black mana blades (**`84.0 × 7` = up to `588.0` damage**). |
 | **3** | **Shadow Lurker Blitz**<br/>*(陰に潜む閃撃)* | `45 MP` | `1.2s` (14t) | Grants **Mist Form invulnerability (0.9s / 18t)**, teleports behind an enemy within 18m, and delivers a point-blank **`180.0`** magic strike + 3-blade fan (**`120.0 × 3`**). |
 | **4** | **Slime Barrier**<br/>*(スライム防壁展開)* | `90 MP` | `3.0s` (10t) | Deploys a Slime Barrier and Resistance II for **`10.0s (200 ticks)`**, **reducing all incoming damage (and suit MP drain) by 75%** and **completely blocking all incoming projectiles**. |
-| **5** | **Utsusemi Atomic**<br/>*(空蝉の亜斗美吊苦)* | `65 MP` (at 99%) | `1.8s` (14t) | Nine upward blades become nine dragons in sequence from tick 15 to tick 39. Each tracks a target and bites twice. The cast splits 260.0 base damage among the nine dragons and uses 45% armor penetration. |
+| **5** | **Atomic Locust Shell**<br/>*(空蝉の亜斗美吊苦)* | `65 MP` (at 99%) | `1.8s` (14t) | Nine upward blades become nine dragons in sequence from tick 15 to tick 39. Each tracks a target and bites twice. The cast splits 260.0 base damage among the nine dragons and uses 45% armor penetration. |
 | **6** | **I am Recovery Atomic.** | `350 MP` | `8.0s` (20t) | 40m sanctuary wave. Fully restores 100% HP & hunger, purges all debuffs, supplies **`+500 MP`** to allies, grants Regen II/Resist II/Speed I, cures Zombie Villagers, and deals **`1,800`** (`180` to bosses) × distance falloff damage to enemies. Non-destructive. |
 | **7** | **I am Atomic.** | `500 MP` | `30.0s` (10t) | A five-second chant with sphere, beam (sneak) and Zenith (look up) modes. Sphere and beam deal 5,000 base damage. Zenith deals zero damage and clears the weather. |
 | **8** | **I am the All-Range Atomic.** | `750 MP` | `30.0s` (10t) | 6.5s chant omnidirectional annihilation art. Vaporizes a 125m radius (125% scale) and deals **fixed `7,500` true damage** to all hostiles. |
@@ -72,7 +72,7 @@
 
 ---
 
-## 2. Seven Shadows Exclusive 3D Weapons (7 Weapons × 5 Skills Each)
+## 2. Seven Shadows Exclusive 3D Weapons (7 Weapons × 5–6 Skills Each)
 
 ### ① 1st Seat Alpha: Blade of Shadow (`alpha_sword`)
 - **Base Stats**: Attack **`32.0`** ｜ Speed **`2.25`** ｜ Reach **`+1.50`** ｜ Move **`+14%`** ｜ Bonus Hit **`+10.0` (Crit `+16.0`)**
@@ -138,7 +138,7 @@
 | **1** | **Shadow Fang Flurry** | `1` | `0.3s` | 4-target piercing phantom dart (**`64.0`**) |
 | **2** | **Stealth Ambush** | `10` | `1.1s` | Invisibility (5s) & Speed III (5s) + 14m behind-the-back ambush (**`84.0`**) + Poison II |
 | **3** | **Twin Fang Shadow Blade** | `22` | `1.3s` | Golden & jet-black cross slash (**`72.0 × 2`**) |
-| **4** | **Shadow Dance** | `44` | `2.8s` | **[Ultimate]** 1s Mist invulnerability & 6s Invisibility + 20m blind-spot execution (**`288.0` + `[Twin Fang]` detonation up to `+176.8`**) + **`88.0 × 2`** slashes |
+| **4** | **Shadow Dance Slash** | `44` | `2.8s` | **[Ultimate]** 1s Mist invulnerability & 6s Invisibility + 20m blind-spot execution (**`288.0` + `[Twin Fang]` detonation up to `+176.8`**) + **`88.0 × 2`** slashes |
 | **5** | **Mist Poison Dispersal** | `16` | `2.2s` | 0.7s Mist invulnerability + backflip disengagement & 8-way poison-mist darts (**`68.0 × 8`**) |
 
 ### ⑦ 7th Seat Eta: Eta's Secret Experimental Apparatus (`eta_artifact`)
@@ -150,11 +150,12 @@
 | **2** | **"I'll try..."** | `11` | `1.0s` | Auto-targeting 4-laser burst (**`60.0 × 4`**) + **summons 2 Autonomous Magic Slime Drones** (up to 4 active) |
 | **3** | **Frenzy Test** | `25` | `1.6s` | 8.0m gravity field (**`95.0`** + Levitation I 2.25s & Slowness IV) + 6.5m gravity orb (**`95.0`**) |
 | **4** | **"Disappear..."** | `46` | `3.2s` | **[Ultimate]** Strips all beneficial enemy buffs within 12m + **`190.0`** + Levitation I (2.75s) + fires 6 linear gravity orbs (**`65.0 × 6`**, 4m AoE, pierces 5) |
-| **5** | **Ancient Relic Jamming** | `20` | `2.8s` | Strips invisibility within 14m + commands all drones to fire synchronized lasers + 2 high-output beams (**`95.0 × 2`**) + **`+18.0 MP` recovery** |
+| **5** | **Ancient Artifact: Mana Seal** | `20` | `2.8s` | Strips invisibility within 14m + commands all drones to fire synchronized lasers + 2 high-output beams (**`95.0 × 2`**) + **`+18.0 MP` recovery** |
+| **6** | **Slime Eruption: Falling Blades** | `28` | `1.7s` | 0.9s Mist invulnerability + spreads a ground slime pool beneath the target, erupts **6 rising slime swords (`70.0` + upward launch)**, then drops **6 falling blades from overhead (`80.0`, 35% armor-piercing)** |
 
 ---
 
-## 3. Three Heroes, Legends, Kagemasu & Cult Executive Weapons (11 Weapons)
+## 3. Three Heroes, Legends, Kagemasu, Numbers & Cult Executive Weapons (12 Weapons)
 
 | Weapon Name & ID | Attack | Speed | Reach / Move | Bonus Hit (Crit) | Skill 1 (MP / CT / Effect) | Skill 2 (MP / CT / Effect) |
 | :--- | :---: | :---: | :---: | :---: | :--- | :--- |
@@ -164,11 +165,12 @@
 | **Calamity Witch's Scythe (Aurora)**<br/>`calamity_witch_scythe` | `33.0` | `2.15` | `+1.00` / `+9%` | `+28.0×Bleed` (crit `+48.0×Bleed` and Magic Inhibition) | **Crimson Lance Assault** (16 MP / 0.7s)<br/>A crimson orb fires three curving homing jets. Each has 62.0 base damage and 44% armor penetration. | **Fragment of Calamity: Dark Scythe** (40 MP / 1.5s)<br/>Three shadow slashes at 88.0 base damage and two blood cross-slashes at 92.4. A 6.5-block pulse adds 96.0 base damage, +2 Bleed and Magic Inhibition. |
 | **Crimson Queen's Scythe (Elisabeth)**<br/>`crimson_queen_blade` | `30.0` | `2.00` | `+0.85` / `+7%` | `+22.0×Bleed` (crit `+38.0×Bleed` and 1.5 HP heal) | **Blood Downpour** (16 MP / 0.7s)<br/>Five airborne blood pools launch homing lances. Each has 72.0 base damage and 45% armor penetration. Applies +2 Bleed and heals the caster for 3 HP when targets are found. | **Blood Twin Shadows** (38 MP / 1.4s)<br/>Six airborne blood pools and three blood slashes. Each lance has 64.0 base damage and 48% armor penetration. Grants 0.9s of mist form, applies +3 Bleed and Magic Inhibition, and heals the caster for 6 HP when targets are found. |
 | **Spirit Fox Iron Fan (Yukime)**<br/>`yukime_iron_fan` | `28.0` | `2.15` | `+0.75` / `+9%` | `+20.0`<br/>(`+36.0` + Depravity) | **Snow Fox Fan Dance** (`14`/`0.6s`)<br/>3 golden winds (`66.0×3`) + Speed II (6s) | **Golden Nine-Tails: Dance of Depravity** (`36`/`1.4s`)<br/>9-fan barrage (`56.0×9`) + 7m `62.0` & **`[Depravity]` (7s)** |
-| **Sword Saint's Greatsword (Beatrix)**<br/>`beatrix_greatsword` | `30.5` | `1.95` | `+1.00` / `+8%` | `+23.0` (`+40.0`) | **Azure Flash Combo** (`16`/`0.7s`)<br/>3 slashes (`72.0×3`) + Weakness II (6s) | **Godspeed Flash** (`38`/`1.4s`)<br/>14m back-teleport + 55% armor-piercing 3-slash combo (`82.0×3`) + knockback |
+| **War Goddess's Greatsword (Beatrix)**<br/>`beatrix_greatsword` | `30.5` | `1.95` | `+1.00` / `+8%` | `+23.0` (`+40.0`) | **Weeping Heavens** (`16`/`0.7s`)<br/>3 slashes (`72.0×3`) + Weakness II (6s) | **Godspeed Flash** (`38`/`1.4s`)<br/>14m back-teleport + 55% armor-piercing 3-slash combo (`82.0×3`) + knockback |
 | **Annerose's Sword**<br/>`annerose_sword` | `27.5` | `2.20` | `+0.85` / `+9%` | `+20.0` (`+36.0`) | **Seven Blades: Thunder Thrust** (`14`/`0.6s`)<br/>Speed II (6s) + 48% armor-piercing twin thrust (`68.0×2`) | **Azure Sky Soar** (`34`/`1.3s`)<br/>Sky leap + **dispels up to 5 enemy buffs** (`64.0`) + 60% armor-piercing slash (`92.0`) |
-| **Cursed Katana: Utsusemi (Fenrir)**<br/>`fenrir_katana` | `29.5` | `2.15` | `+0.95` / `+9%` | `+20.0×Bleed` (crit `+36.0×Bleed`) | **Utsusemi Blood Fang** (16 MP / 0.7s)<br/>Five blades point towards the target and home in. Each has 30.0 base damage and 36% armor penetration. | **Utsusemi Atomic** (40 MP / 1.6s)<br/>Nine upward blades become nine homing dragons in sequence. Each dragon bites twice. The cast splits 250.0 base damage among the nine dragons and uses 42% armor penetration. |
+| **Demon Sword: Bloodfang (Fenrir)**<br/>`fenrir_katana` | `29.5` | `2.15` | `+1.55` / `+9%` | `+20.0×Bleed` (crit `+36.0×Bleed` + Flame) | **Bloodfang Locust Shell** (16 MP / 0.7s)<br/>Unleashes a fiery crimson odachi sweep (`22.0`) alongside 5 homing blades (`30.0` each, 36% armor penetration). | **Atomic Locust Shell** (40 MP / 1.6s)<br/>Nine upward blades become nine homing dragons in sequence with a flame aura. Each dragon bites twice, splitting 250.0 base damage (42% armor penetration). |
 | **Sanctuary Magic Staff (Nelson)**<br/>`sanctuary_staff` | `27.0` | `1.90` | `+0.90` / `+5%` | `+19.0`<br/>(`+34.0` + Inhibit) | **Sanctuary Mana Drain** (`16`/`0.8s`)<br/>8m `48.0` + `[Inhibition]` & **absorbs `30 + (15 × hits)` [up to `90`] MP** | **Remnants of the Hero** (`38`/`1.4s`)<br/>6 radial orbs (`68.0×6`) + 7m `74.0` & `[Inhibition]` |
 | **Numbers Standard Slime Sword**<br/>`numbers_slime_sword` | `28.0` | `2.10` | `+0.85` / `+8%` | `+20.0` (`+36.0`) | **Jet-Black Triple Slash** (`14`/`0.6s`)<br/>3 jet-black waves (`68.0×3`) | **Sword of Judgment** (`34`/`1.3s`)<br/>Strength II (7s) + 5 judgment waves (`80.0×5`) |
+| **Lambda's Black Whip**<br/>`lambda_whip` | `28.5` | `2.20` | `+2.25` / `+8%` | `+22.0×Bleed` (crit `+38.0×Bleed` + Blind/Weak) | **Battle Command** (`14`/`0.7s`)<br/>Pulling whip spear (`68.0`, 38% pierce) + 4.6m `52.0`, +2 Bleed, Blind/Weak + 12m ally 4 HP heal & Strength I | **Raging Whip** (`36`/`1.4s`)<br/>3 slashes (`72.0×3`) + twin pulling spears (`58.0×2`) + 7.5m `68.0`, +3 Bleed, Depravity, Blind + 14m ally 20% heal, Strength II, Speed I & Absorption I |
 
 ---
 

@@ -2,7 +2,7 @@
 
 🌐 **言語切替 / Language**: **🇯🇵 日本語 (現在)** ｜ **[🇺🇸 Read in English](04-I-Am-Atomic-EN.md)**
 
-[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [次章：05. 全29種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)
+[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [次章：05. 全30種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)
 
 ---
 
@@ -69,4 +69,4 @@ sequenceDiagram
 
 ---
 
-[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](04-I-Am-Atomic-EN.md) ｜ [次章：05. 全29種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)
+[⬅ 前章：03. 戦闘・パリィ・7大刻印](03-Combat-Parry-and-Status-Marks.md) ｜ [🏠 日本語 Wiki ホーム](Home.md) ｜ [🇺🇸 Read in English](04-I-Am-Atomic-EN.md) ｜ [次章：05. 全30種 3D武器・アイテム図鑑 ➔](05-Weapons-and-Artifacts.md)

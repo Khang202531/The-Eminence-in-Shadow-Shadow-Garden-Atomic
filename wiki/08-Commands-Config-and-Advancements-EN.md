@@ -2,7 +2,7 @@
 
 🌐 **Language / 言語切替**: **[🇯🇵 日本語版はこちら](08-Commands-Config-and-Advancements.md)** ｜ **🇺🇸 English (Current)**
 
-[⬅ Prev: 07. All 51 Crafting Recipes](07-Crafting-Recipes-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md)
+[⬅ Prev: 07. All 52 Crafting Recipes](07-Crafting-Recipes-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md)
 
 ---
 
@@ -42,12 +42,12 @@ flowchart LR
 | `shadow_defeat` | **The Pinnacle of Shadow** / *陰の頂き――さらなる深淵へ* | Defeat Lord Shadow | Challenge |
 | `i_am_atomic` | **I am Atomic.** / *I am Atomic.* | Cast and detonate any *"I am Atomic."* ultimate art yourself | Challenge |
 
-### 1.2 Automatic Recipe Book Unlock Advancements (5 Advancements Covering All 51 Recipes)
+### 1.2 Automatic Recipe Book Unlock Advancements (5 Advancements Covering All 52 Recipes)
 Stored under `data/eminence_shadow/advancements/recipes/`, automatically unlocking recipes in the vanilla Recipe Book when you obtain their key materials:
 - `slime_core_recipes`: Obtaining a `Slimeball` unlocks the 4 Slime Bodysuit pieces + 8 canon boss resonators (12 recipes)
 - `starter_weapons`: Obtaining an `Iron Ingot` unlocks early-game weapons and tools (*Mithril Sword*, *Trusted Crowbar*, *Plain Sword*, etc. — 7 recipes)
 - `amethyst_and_kagemasu_resonators`: Obtaining an `Amethyst Shard` unlocks *Shadow's Encrypted Memo*, *Archetype Shadow Blade*, and all 18 Kagemasu/Cult resonators (19 recipes)
-- `netherite_relic_weapons`: Obtaining a `Netherite Ingot` unlocks the 11 Three Heroes, Witch, Blood Queen & Cult Executive weapons (11 recipes)
+- `netherite_relic_weapons`: Obtaining a `Netherite Ingot` unlocks the 12 Three Heroes, Witch, Blood Queen, Cult Executive weapons & *Lambda's Black Whip* (12 recipes)
 - `mitsugoshi_treats`: Obtaining `Cocoa Beans` unlocks *Mitsugoshi Special Chocolate* & *Mitsugoshi Roasted Blend Coffee* (2 recipes)
 
 ---
@@ -99,4 +99,4 @@ Stored under `data/eminence_shadow/advancements/recipes/`, automatically unlocki
 
 ---
 
-[⬅ Prev: 07. All 51 Crafting Recipes](07-Crafting-Recipes-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [🇯🇵 日本語版はこちら](08-Commands-Config-and-Advancements.md)
+[⬅ Prev: 07. All 52 Crafting Recipes](07-Crafting-Recipes-EN.md) ｜ [🏠 English Wiki Home](Home-EN.md) ｜ [🇯🇵 日本語版はこちら](08-Commands-Config-and-Advancements.md)
